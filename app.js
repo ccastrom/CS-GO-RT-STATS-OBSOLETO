@@ -7,27 +7,39 @@ const player_state = require('./services/player/player_state');
 const player_match_stats = require('./services/player/player_match_stats');
 const jsonPersonal = require('./services/json/myjson');
 const index=require('./routes/index');
-http = require('http');
+const hud=require('./routes/hud');
 fs = require('fs');
-port = 3000;
-host = '127.0.0.1';
 
 
 
-const express = require('express')
-const app = express()
-const portWeb = 2626
+var express = require('express');
+var app = express();
+const http = require('http');
+server = http.createServer(app);
+const { Server } = require('socket.io');
+const io = new Server(server);
+portCSGO=3000;
+webport=2626;
+
 
 app.use('/',index);
+app.use('/hud',hud)
+
+
+io.on('connection', (socket) => {
+    console.log('a user connected');
+  });
+  
+  server.listen(webport, () => {
+    console.log('listening on *:2626');
+  });
 
 
 app.set("view engine", "ejs");
 app.set("views", __dirname + "/views");
 
   
-  app.listen(portWeb, () => {
-    console.log(`Example app listening on port ${portWeb}`)
-  })
+
 
 server = http.createServer( function(req, res) {
 
@@ -50,17 +62,24 @@ server = http.createServer( function(req, res) {
             vPlayer_match_stats = player_match_stats.player_match_stats(datos, vMap[1], idReal);
       
             cadenaJSON = jsonPersonal.jsonPersonal(idReal, vPlayerId, vMap, vRound, vWeapons, vPlayer_state, vPlayer_match_stats);
+            realtimedata(cadenaJSON);
+            res.end('')
         });
     }
     else
     {
         console.log("Not expecting other request types...");
         res.writeHead(200, {'Content-Type': 'text/html'});
-		var html = '<html><body>HTTP Server at http://' + host + ':' + port + '</body></html>';
+        var html = "Puerto de cs go GSI: " + portCSGO;
         res.end(html);
     }
 
 });
 
-server.listen(port, host);
-console.log('Listening at http://' + host + ':' + port);
+function realtimedata(jsonData){
+    io.emit("update",jsonData)
+}
+
+
+server.listen(portCSGO);
+console.log('Listening at http://' + portCSGO);
