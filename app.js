@@ -6,10 +6,28 @@ const player_weapons = require('./services/player/player_weapons');
 const player_state = require('./services/player/player_state');
 const player_match_stats = require('./services/player/player_match_stats');
 const jsonPersonal = require('./services/json/myjson');
+const index=require('./routes/index');
 http = require('http');
 fs = require('fs');
 port = 3000;
 host = '127.0.0.1';
+
+
+
+const express = require('express')
+const app = express()
+const portWeb = 2626
+
+app.use('/',index);
+
+
+app.set("view engine", "ejs");
+app.set("views", __dirname + "/views");
+
+  
+  app.listen(portWeb, () => {
+    console.log(`Example app listening on port ${portWeb}`)
+  })
 
 server = http.createServer( function(req, res) {
 
