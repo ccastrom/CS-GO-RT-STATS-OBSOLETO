@@ -4,7 +4,7 @@ const ruta=express.Router();
 
 
 ruta.get('/',(req,res)=>{
-    res.render("index.ejs")
+    res.render("index.ejs",{name:"Pepe"})
 });
 
 module.exports=ruta;
