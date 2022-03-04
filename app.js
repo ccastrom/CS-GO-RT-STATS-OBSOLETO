@@ -8,8 +8,15 @@ const player_match_stats = require('./services/player/player_match_stats');
 const jsonPersonal = require('./services/json/myjson');
 const index=require('./routes/index');
 const hud=require('./routes/hud');
-fs = require('fs');
+const mongoose= require('mongoose');
 
+
+
+
+mongoose.connect("mongodb+srv://ccastrom:AlphaBravoCharlie@csgo.hws0u.mongodb.net/stats?retryWrites=true&w=majority"
+).then(()=>console.log("DB CONNECTION SUCCESS")).catch((err)=>{
+    console.log(err);
+});
 
 
 var express = require('express');
@@ -17,11 +24,14 @@ var app = express();
 const http = require('http');
 server = http.createServer(app);
 const { Server } = require('socket.io');
+const { error } = require('console');
+const ruta = require('./routes/index');
 const io = new Server(server);
 portCSGO=3000;
 webport=2626;
 
-
+app.use(express.json());
+app.use(express.urlencoded({extended:true}));
 app.use('/',index);
 app.use('/hud',hud)
 
@@ -63,6 +73,7 @@ server = http.createServer( function(req, res) {
       
             cadenaJSON = jsonPersonal.jsonPersonal(idReal, vPlayerId, vMap, vRound, vWeapons, vPlayer_state, vPlayer_match_stats);
             realtimedata(cadenaJSON);
+            
             res.end('')
         });
     }
@@ -79,6 +90,8 @@ server = http.createServer( function(req, res) {
 function realtimedata(jsonData){
     io.emit("update",jsonData)
 }
+
+ 
 
 
 server.listen(portCSGO);

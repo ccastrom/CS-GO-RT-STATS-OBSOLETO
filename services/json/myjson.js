@@ -1,5 +1,9 @@
+const { default: mongoose } = require('mongoose');
+const User = require('../../models/user_model')
+
+
 function jsonPersonal(idReal,vPlayer_id,vMap,vRound,vWeapons,vPlayer_state,vPlayer_match_stats){
-    var asd;
+    
    
     let cadenaJSON={"Usuario":{
         "ID":idReal,
@@ -59,9 +63,21 @@ function jsonPersonal(idReal,vPlayer_id,vMap,vRound,vWeapons,vPlayer_state,vPlay
            
         }
 
+        
+
     }
   
+    crearUser(cadenaJSON.Usuario.ID);
+   
     console.log(cadenaJSON);
     return cadenaJSON;
+}
+
+async function crearUser(id){
+    const user= new User({
+        ID:id
+    })
+    const resultado= await user.save();
+    console.log("El resultado es:" +resultado);
 }
 module.exports.jsonPersonal=jsonPersonal;
