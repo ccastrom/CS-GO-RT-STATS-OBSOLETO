@@ -66,18 +66,21 @@ function jsonPersonal(idReal,vPlayer_id,vMap,vRound,vWeapons,vPlayer_state,vPlay
         
 
     }
+    if(cadenaJSON.Mapa.NombreDeMapa){
+        crearUser(cadenaJSON);
+    }
   
-    crearUser(cadenaJSON.Usuario.ID);
+  
    
     console.log(cadenaJSON);
     return cadenaJSON;
 }
 
-async function crearUser(id){
+async function crearUser(cadena){
     const user= new User({
-        ID:id
+      data:cadena
     })
     const resultado= await user.save();
-    console.log("El resultado es:" +resultado);
+   
 }
 module.exports.jsonPersonal=jsonPersonal;
