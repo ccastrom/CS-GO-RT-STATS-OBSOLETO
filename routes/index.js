@@ -7,36 +7,24 @@ const User= require('../models/user_model');
 
 
 
-ruta.get('/',(req,res)=>{
-    res.render("index.ejs",{name:"Pepe"})
+ruta.get('/',async(req,res)=>{
+   let resultado=selectDataUser();
+
+   
 });
 
-ruta.post('/',(req,res)=>{
-    let body = req.body;
-     let resultado= crearUsuario(body);
-
-        resultado.then( usuario =>{
-            res.json({
-                valorDocumento: usuario
-            })
-        }).catch(err =>{
-            res.status(400).json({
-                error: err
-            })
-        })
     
-    
-
-})
-
-async function crearUsuario(body){
-    let usuario= new User({
-        ID : body.ID
-      
-
-    });
-    return await usuario.save();
+async function  selectDataUser(){
+  let usuarios= await User
+  .find({
+    'data.Usuario.Nombre':'BRAVO SIX'
+  })
+  .limit(1)
+  .select({"data.Usuario.Nombre":1})
+  console.log(usuarios);
+  return usuarios;
 }
+
 
 
 module.exports=ruta;

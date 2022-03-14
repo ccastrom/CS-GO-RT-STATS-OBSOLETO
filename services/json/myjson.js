@@ -67,7 +67,7 @@ function jsonPersonal(idReal,vPlayer_id,vMap,vRound,vWeapons,vPlayer_state,vPlay
 
     }
     if(cadenaJSON.Mapa.NombreDeMapa){
-        crearUser(cadenaJSON);
+        insertDataUser(cadenaJSON);
     }
   
   
@@ -76,7 +76,7 @@ function jsonPersonal(idReal,vPlayer_id,vMap,vRound,vWeapons,vPlayer_state,vPlay
     return cadenaJSON;
 }
 
-async function crearUser(cadena){
+async function insertDataUser(cadena){
     const user= new User({
       data:cadena
     })

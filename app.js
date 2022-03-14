@@ -13,6 +13,7 @@ const mongoose= require('mongoose');
 
 
 
+
 mongoose.connect("mongodb+srv://ccastrom:AlphaBravoCharlie@csgo.hws0u.mongodb.net/stats?retryWrites=true&w=majority"
 ).then(()=>console.log("DB CONNECTION SUCCESS")).catch((err)=>{
     console.log(err);
