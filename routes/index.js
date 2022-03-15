@@ -8,9 +8,19 @@ const User= require('../models/user_model');
 
 
 ruta.get('/',async(req,res)=>{
-   let resultado=selectDataUser();
+   //let resultado=selectDataUser();
+   res.render('index', { user: req.user });
 
    
+});
+
+ruta.get('/account', ensureAuthenticated, function(req, res){
+  res.render('account', { user: req.user });
+});
+
+ruta.get('/logout', function(req, res){
+  req.logout();
+  res.redirect('/');
 });
 
     
@@ -25,6 +35,11 @@ async function  selectDataUser(){
   return usuarios;
 }
 
+function ensureAuthenticated(req, res, next) {
+  if (req.isAuthenticated()) { return next(); }
+  res.redirect('/');
+  console.log("no autenticado")
+}
 
 
 module.exports=ruta;

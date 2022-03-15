@@ -10,14 +10,11 @@ const index=require('./routes/index');
 const hud=require('./routes/hud');
 const mongoose= require('mongoose');
 
+const passport=require('passport')
+, session = require('express-session')
+, SteamStrategy = require('./lib/passport/strategy')
+, authRoutes = require('./routes/auth');
 
-
-
-
-mongoose.connect("mongodb+srv://ccastrom:AlphaBravoCharlie@csgo.hws0u.mongodb.net/stats?retryWrites=true&w=majority"
-).then(()=>console.log("DB CONNECTION SUCCESS")).catch((err)=>{
-    console.log(err);
-});
 
 
 var express = require('express');
@@ -31,11 +28,10 @@ const io = new Server(server);
 portCSGO=3000;
 webport=2626;
 
-app.use(express.json());
-app.use(express.urlencoded({extended:true}));
-app.use('/',index);
-app.use('/hud',hud)
 
+
+
+  
 
 io.on('connection', (socket) => {
     console.log('a user connected');
@@ -46,10 +42,55 @@ io.on('connection', (socket) => {
   });
 
 
+  passport.serializeUser(function(user, done) {
+    done(null, user);
+  });
+  
+  passport.deserializeUser(function(obj, done) {
+    done(null, obj);
+  });
+  
+  
+  passport.use(new SteamStrategy({
+      returnURL: 'http://localhost:2626/auth/steam/return',
+      realm: 'http://localhost:2626/',
+      apiKey: '5DC20E24D2E76A091F52A43BCCBFA67A'
+    },
+    function(identifier, profile, done) {
+      
+      process.nextTick(function () {
+  
+      
+        profile.identifier = identifier;
+        return done(null, profile);
+      });
+    }
+  ));
+
+  app.use(session({
+    secret: 'your secret',
+    name: 'name of session id',
+    resave: true,
+    saveUninitialized: true}));
+
+
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+mongoose.connect("mongodb+srv://ccastrom:AlphaBravoCharlie@csgo.hws0u.mongodb.net/stats?retryWrites=true&w=majority"
+).then(()=>console.log("DB CONNECTION SUCCESS")).catch((err)=>{
+    console.log(err);
+});
+
+app.use(express.json());
+app.use(express.urlencoded({extended:true}));
+app.use('/',index);
+app.use('/hud',hud)
+app.use('/auth', authRoutes);
 app.set("view engine", "ejs");
 app.set("views", __dirname + "/views");
 
-  
 
 
 server = http.createServer( function(req, res) {
