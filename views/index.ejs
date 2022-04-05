@@ -1,10 +1,58 @@
-<% if (!user) { %>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="bootstrap.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="gradient-custom  ">
+	<nav class="navbar navbar-expand-lg navbar-light ">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="#">RT:STATS</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+				aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+				<div class="navbar-nav ms-auto">
+					<a class="nav-link active" aria-current="page" href="#">Home</a>
+					<a class="nav-link" href="#">Contact</a>
+					<a class="nav-link" href="auth/steam">Sign in via Steam</a>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<section class="section-1">
+		<div class="container-fluid ">
+			<div class="row">
+				<div class="col-6 ">
+					<h2 class="text-white">Stop playing for win Start playing for learning</h2>
+					<p class="text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero
+						et velit interdum, ac aliquet odio mattis.</p>
+					<a href="" class="btn btn-warning">GET STARTED</a>
+					<img src="Vector 1.svg" class="forecast" alt="">
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+<script src="/bootstrap.min.js"></script>
+</html>
+
+
+
+<!-- <% if (!user) { %>
 	<h2>Welcome! Please log in.</h2>
 	<p><a href="auth/steam">Sign On with Steam</a></p>
 <% } else { %>
 	<h2>Hello, <%= user.displayName %>. - <a href='logout'>Logout</a></h2>
 <% } %>
 
-<!-- Should redirect to homepage if you're not logged in -->
-<p><a href="account">See Account Information</a></p>
+ Should redirect to homepage if you're not logged in
+<p><a href="account">See Account Information</a></p> -->
 
