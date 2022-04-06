@@ -8,23 +8,41 @@ body {
     background: -webkit-linear-gradient(to right, rgba(24, 33, 65, 1), rgba(48, 77, 120, 1));
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background: linear-gradient(to right, rgba(24, 33, 65, 1), rgba(48, 77, 120, 1));
-  }
-  .vector{
-    
-    background-image: url(../public/images/Vector\ 1.svg);
-    background-color: black;
-    background-repeat: no-repeat;
-    background-size: cover;
-    object-fit: contain; 
+  
   }
 
+
   .forecast {
+    
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
     pointer-events: none;
   }
+
+  .soldier1{
+   position: fixed;
+   right: 0;
+   bottom: 0;
+   width: 31%;
+    pointer-events: none;
+  }
+
+  .chart{
+    position: fixed;
+    right: 0;
+    left: 0;
+    
+    width: 100%;
+    pointer-events: none;
+
+  }
+
+
+  
+
+
 
   .navbar .navbar-brand{
     font-size: 40px;
@@ -37,9 +55,7 @@ body {
   .navbar a{
     color:white !important;
   }
-  .section-1{
-    background-image: url(../public/images/Vector.png);
-  }
+  
   .section-1 h2{
     margin-top: 213px;
     margin-left: 50px;
