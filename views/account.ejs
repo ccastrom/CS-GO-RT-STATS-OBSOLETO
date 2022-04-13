@@ -1,8 +1,118 @@
-<p><img src='<%= user.photos[2].value %>' alt='Your Avatar Image' /></p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="gradient-custom">
+    <nav class="navbar navbar-expand-lg navbar-light ">
+		<div class="container-fluid">
+			<a class="navbar-brand " href="#">RT:STATS</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+				aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+				<div class="navbar-nav ms-auto">
+					
+					<a class="nav-link" href="#">Settings</a>
+					<a class="nav-link" href="logout">Logout</a>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<div class="section-2">
+		<div class="container-fluid px-5 mt-3">
+			<div class="card p-3 " style="background-color: #3f4766;">
+				<div class="row">
+					<div class="col-1 ms-3" >
+						<img class="img-fluid" src="<%= user.photos[2].value %>" alt="">
+					</div>
+					<div class="col-6 ms-4 ">
+						<h1 class="mb-4 text-white">Victorys: <a href="">image</a></h1>
+						<h2 class="text-white"><%= user.displayName %></h3>
+						<h4 class="text-white">Last Match</h4>
+					</div>
+					<div class="col-4 ms-auto  " >
+						<h2 class="text-center mb-4 text-white ">Victory/Defeat</h1>
+						<h2 class="text-center text-white ">0-0</h1>
+						<h2 class="text-center text-white ">MapName</h1>
+					</div>
+				</div>
+			
+			</div>
+			<div class="row ">
+				<div class="col-12">
+					<div class="card p-3 mt-5">
+						<h1>history</h1>
+					</div>
+				</div>
+			</div>
+			<h1 class="text-white mt-5">Perfomance</h1>
+			<div class="row ">
+				<div class="col-3">
+					<div class="card p-3 mt-4">
+						<h1>Chart#1</h1>
+					</div>
+				</div>
+				<div class="col-6">
+					<div class="card p-3 mt-4">
+						<h1>Chart#2</h1>
+					</div>
+				</div>
+				<div class="col-3">
+					<div class="card p-3 mt-4">
+						<h1>Chart#3</h1>
+					</div>
+				</div>
+			</div>
+			
+			<div class="row justify-content-center mt-5 ">
+				<div class="col-3 me-auto " >
+					<div class="card p-3 mt-4 ">
+
+					</div>
+				</div>
+				<div class="col-3">
+					<div class="card p-3 mt-4   ">
+							
+					</div>
+				</div>
+				<div class="col-3 ms-auto ">
+					<div class="card p-3 mt-4">
+
+					</div>
+				</div>
+			</div>
+			
+			
+			
+	
+		
+			
+			
+		</div>
+	</div>
+	
+
+    
+</body>
+<script src="/bootstrap.min.js"></script>
+</html>
+
+
+
+
+
+<!-- <p><img src='<%= user.photos[2].value %>' alt='Your Avatar Image' /></p>
  <p>ID: <%= user.id %></p> 
 <p>Name: <%= user.displayName %></p>
 <p>Country: <%= user.country %></p>
 <p>Stat: <%= stats %></p>
-
+<h2>Hello, <%= user.displayName %>. - <a href='logout'>Logout</a></h2> -->
 
 

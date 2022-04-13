@@ -80,4 +80,17 @@ body {
     padding: 17px,44px;
   }
 
+  
+  .section-2 .container-profile{
+    padding: 8px 12px; margin-left: 50px; margin-top: 50px; margin-right: 50px;
+  }
+  .section-2 .container-header{
+    margin-left:35px;
+    
+    
+    
+  }
+  .section-2 .container-userName{
+    margin-top: 60px;
+  }
 

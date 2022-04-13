@@ -4,9 +4,6 @@ const ruta=express.Router();
 const User= require('../models/user_model');
 
 var steam = require('steam-web');
-var kills;
-var stats;
-
 var s = new steam({
   apiKey: '5DC20E24D2E76A091F52A43BCCBFA67A',
   format: 'json' //optional ['json', 'xml', 'vdf']
@@ -22,32 +19,25 @@ ruta.use(express.static('public/images'));
 
 
 
-ruta.get('/',async(req,res)=>{
+ruta.get('/',(req,res)=>{
    //let resultado=selectDataUser();
-   res.render('index', { user: req.user });
-
-   if(req.user==null){
-     console.log("nada")
-   }else{
-    s.getUserStatsForGame({
-      steamid: req.user.id,
-      appid: 730,
-      callback: function(err,data) {
-        kills=data.playerstats.stats[0].value
-        console.log(data.playerstats.stats[0].value);
-      }
-    })
-   }
-   
-   
-
-   
+   res.render('index', { user: req.user }); 
 });
 
 ruta.get('/account', ensureAuthenticated, function(req, res){
-
-  res.render('account',  { user: req.user, stats:kills });
-
+  s.getUserStatsForGame({
+    steamid: req.user.id,
+    appid: 730,
+    callback: function(err,data) {
+      if(err){
+        res.status(400);
+      }else{
+      var kills=data.playerstats.stats[0].value
+       console.log(data.playerstats.stats[0].value);
+       res.render('account',  { user: req.user,stats:kills });
+      }
+    }
+  })
 });
 
 ruta.get('/logout', function(req, res){
