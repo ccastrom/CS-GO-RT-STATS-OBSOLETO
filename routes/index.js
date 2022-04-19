@@ -3,11 +3,6 @@ const express = require('express');
 const ruta=express.Router();
 const User= require('../models/user_model');
 
-var steam = require('steam-web');
-var s = new steam({
-  apiKey: '5DC20E24D2E76A091F52A43BCCBFA67A',
-  format: 'json' //optional ['json', 'xml', 'vdf']
-});
 
 
 
@@ -21,24 +16,10 @@ ruta.use(express.static('public/images'));
 
 ruta.get('/',(req,res)=>{
    //let resultado=selectDataUser();
-   res.render('index', { user: req.user }); 
+   res.render('index'); 
 });
 
-ruta.get('/account', ensureAuthenticated, function(req, res){
-  s.getUserStatsForGame({
-    steamid: req.user.id,
-    appid: 730,
-    callback: function(err,data) {
-      if(err){
-        res.status(400);
-      }else{
-      var kills=data.playerstats.stats[0].value
-       console.log(data.playerstats.stats[0].value);
-       res.render('account',  { user: req.user,stats:kills });
-      }
-    }
-  })
-});
+
 
 ruta.get('/logout', function(req, res){
   req.logout();
@@ -57,11 +38,7 @@ async function  selectDataUser(){
   return usuarios;
 }
 
-function ensureAuthenticated(req, res, next) {
-  if (req.isAuthenticated()) { return next(); }
-  res.redirect('/');
-  console.log("no autenticado")
-}
+
 
 
 module.exports=ruta;

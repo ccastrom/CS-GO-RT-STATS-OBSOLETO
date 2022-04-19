@@ -8,6 +8,7 @@ const player_match_stats = require('./services/player/player_match_stats');
 const jsonPersonal = require('./services/json/myjson');
 const index=require('./routes/index');
 const hud=require('./routes/hud');
+const account= require('./routes/account');
 const mongoose= require('mongoose');
 
 const passport=require('passport')
@@ -86,7 +87,8 @@ mongoose.connect("mongodb+srv://ccastrom:AlphaBravoCharlie@csgo.hws0u.mongodb.ne
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use('/',index);
-app.use('/hud',hud)
+app.use('/hud',hud);
+app.use('/account',account);
 app.use('/auth', authRoutes);
 app.set("view engine", "ejs");
 app.set("views", __dirname + "/views");
