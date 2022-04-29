@@ -35,7 +35,7 @@ ruta.get('/',(req,res)=>{
 
 
 async function  getActualRound(){
-    let actualRound= await Round.findOne({"round":{$gte:0},"kills":{$gte:0}}).sort({"round":1}).distinct("round");
+ let actualRound= await Round.findOne({"round":{$gte:0},"kills":{$gte:0}}).sort({"round":1}).distinct("round");
    
     return actualRound;
 }
