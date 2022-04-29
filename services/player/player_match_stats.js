@@ -1,16 +1,16 @@
+const ActualRound = require('../../models/round_model')
 
 
-
-function player_match_stats(JSON,map,idPlayer){
+function player_match_stats(JSON,map,round,idPlayer){
     var kills;
     var assists;
     var deaths;
     var mvps;
     var score;
-   
     var vPlayer_match_stats=[];
-    var vPlayer_match_stats_pasado=[];
-
+    var  actualRound=round;
+   
+    
     var matchid=JSON.player.steamid;
 
     if(map && matchid==idPlayer){
@@ -19,12 +19,11 @@ function player_match_stats(JSON,map,idPlayer){
         deaths=JSON.player.match_stats.deaths;
         mvps=JSON.player.match_stats.mvps;
         score=JSON.player.match_stats.score;
-        vPlayer_match_stats.push(kills,assists,deaths,mvps,score);
-        console.log(kills);
-        console.log(assists);
-        console.log(deaths);
 
+        vPlayer_match_stats.push(kills,assists,deaths,mvps,score);
+        insertActualRoundAndKills(actualRound,kills);
         return vPlayer_match_stats;
+        
 
     }else if(map && JSON.previously && JSON.previously.player.steamid==idPlayer) {
         
@@ -33,10 +32,11 @@ function player_match_stats(JSON,map,idPlayer){
             deaths=JSON.previously.player.match_stats.deaths;
             mvps=JSON.previously.player.match_stats.mvps;
             score=JSON.previously.player.match_stats.score;
+            
             vPlayer_match_stats.push(kills,assists,deaths,mvps,score);
-           
-           return vPlayer_match_stats;
-            ;
+            insertActualRoundAndKills(actualRound,kills);
+            return vPlayer_match_stats;
+            
 
       
        
@@ -47,4 +47,15 @@ function player_match_stats(JSON,map,idPlayer){
     
 
 }
+
+async function insertActualRoundAndKills(actualRound,actualKills){
+    const roundValue= new ActualRound({
+      round:actualRound,
+      kills:actualKills
+    })
+    const resultado= await roundValue.save();
+   
+}
+
+
 module.exports.player_match_stats=player_match_stats;

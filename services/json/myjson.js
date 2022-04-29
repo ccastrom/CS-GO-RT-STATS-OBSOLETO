@@ -72,7 +72,7 @@ function jsonPersonal(idReal,vPlayer_id,vMap,vRound,vWeapons,vPlayer_state,vPlay
   
   
    
-    console.log(jsonUserData);
+    //console.log(jsonUserData);
     return jsonUserData;
 }
 

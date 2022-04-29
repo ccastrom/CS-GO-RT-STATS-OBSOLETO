@@ -12,9 +12,21 @@ ruta.use(express.static('public/images'));
 
 
 ruta.get('/',(req,res)=>{
+    var element;
+    var element2;
     let resultado= getActualRound();
     resultado.then(actualRound=>{
-       res.render('hud.ejs',{ronda:actualRound})
+        var rondas= JSON.parse(JSON.stringify(actualRound));
+        console.log(rondas);
+        for (let i = 0; i < rondas.length; i++) {
+             element = rondas[i]
+            
+            console.log(element);
+           
+            
+        }
+        res.render('hud.ejs',{ronda:element})
+      
     })
 
     
@@ -23,7 +35,7 @@ ruta.get('/',(req,res)=>{
 
 
 async function  getActualRound(){
-    let actualRound= await Round.find().sort({"round":1}).distinct("round");
+    let actualRound= await Round.findOne({"round":{$gte:0},"kills":{$gte:0}}).sort({"round":1}).distinct("round");
    
     return actualRound;
 }

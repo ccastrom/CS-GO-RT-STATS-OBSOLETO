@@ -36,19 +36,28 @@ const labels = [
   );
 
   io.on("RoundData",function(roundData){
-    console.log("La data es: "+roundData);
-
-    for (let index = 0; index < roundData; index++) {
-      myChart.data.labels[index] = roundData
-      console.log(index);
+   
+    
+    var rondaActual=JSON.parse(JSON.stringify(roundData));
+    
+    
+    
+    for (let i = 0; i < rondaActual.length; i++) {
+      const element = rondaActual[i];
+      console.log(element);
+      myChart.data.labels[i] = element;
+     
+      myChart.update();
+    }
+    
+   
       
-  }
-  myChart.update();
   })
 
   io.on("update",function(jsonData){
-    round;
+    
     round=jsonData.Mapa.RondaActual;
+    
   
     //myChart.data.datasets[0].data[0] = round
    

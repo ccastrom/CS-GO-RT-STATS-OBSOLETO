@@ -116,10 +116,11 @@ server = http.createServer( function(req, res) {
             vRound = round.round(datos, vMap[1]);
             vWeapons = player_weapons.player_weapons(datos, vMap[1], idReal);
             vPlayer_state = player_state.player_state(datos, vMap[1], idReal);
-            vPlayer_match_stats = player_match_stats.player_match_stats(datos, vMap[1], idReal);
+            vPlayer_match_stats = player_match_stats.player_match_stats(datos, vMap[1],vMap[3], idReal);
       
             cadenaJSON = jsonPersonal.jsonPersonal(idReal, vPlayerId, vMap, vRound, vWeapons, vPlayer_state, vPlayer_match_stats);
             realtimedata(cadenaJSON);
+            getRound();
             
             res.end('')
         });
@@ -136,8 +137,18 @@ server = http.createServer( function(req, res) {
 
 function realtimedata(jsonData){
     io.emit("update",jsonData);
-    actualRound.findOne().sort({"round":-1}).distinct("round").then(result=>{
+ 
+}
+
+function getRound(){
+  
+  actualRound.findOne().sort({"round":1}).distinct("round").then(result=>{
     io.emit("RoundData",result)
+   
+    
+
+
+    
   });
 }
 

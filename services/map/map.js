@@ -3,6 +3,7 @@ const ActualRound = require('../../models/round_model')
 function map(JSON){
     let vMap=[];
     var mapname;
+   
     try{
         mapname=JSON.map.name;
 
@@ -40,7 +41,7 @@ function map(JSON){
         // console.log("Puntuacion T: "+teamTScore);
         // console.log("Rondas perdidas consecutivas T: "+tconsecutiveroundlosses);
         vMap.push(mapmode,mapname,phase,round,teamctScore,ctconsecutiveroundlosses,teamTScore,tconsecutiveroundlosses)
-         insertActualRound(round);
+         
         return vMap;
         
        
@@ -57,14 +58,6 @@ function map(JSON){
 
     }   
 
-}
-
-async function insertActualRound(actualRound){
-    const roundValue= new ActualRound({
-      round:actualRound
-    })
-    const resultado= await roundValue.save();
-   
 }
 
 
