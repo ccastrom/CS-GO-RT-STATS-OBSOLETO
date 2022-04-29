@@ -16,7 +16,7 @@ ruta.use(express.static('public/images'));
 
 ruta.get('/',(req,res)=>{
    //let resultado=selectDataUser();
-   res.render('index'); 
+   res.render('index',{user:req.user}); 
 });
 
 

@@ -18,7 +18,7 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 				<div class="navbar-nav ms-auto">
-					
+					<a class="nav-link" href="/hud">HUD</a>
 					<a class="nav-link" href="#">Settings</a>
 					<a class="nav-link" href="logout">Logout</a>
 				</div>
@@ -48,7 +48,7 @@
 			<div class="row ">
 				<div class="col-12">
 					<div class="card p-3 mt-5">
-						<h1>history</h1>
+						<h1 class="mx-auto">history</h1>
 					</div>
 				</div>
 			</div>
@@ -56,17 +56,17 @@
 			<div class="row ">
 				<div class="col-3">
 					<div class="card p-3 mt-4">
-						<h1>Chart#1</h1>
+						<h2 class="mx-auto">Premade W/R</h2>
 					</div>
 				</div>
 				<div class="col-6">
 					<div class="card p-3 mt-4">
-						<h1>Chart#2</h1>
+						<canvas style="width:70px; height:20px" id="myChart"></canvas>
 					</div>
 				</div>
 				<div class="col-3">
 					<div class="card p-3 mt-4">
-						<h1>Chart#3</h1>
+						<h2 class="mx-auto">top Maps</h2>
 					</div>
 				</div>
 			</div>
@@ -74,17 +74,17 @@
 			<div class="row justify-content-center mt-5 ">
 				<div class="col-3 me-auto " >
 					<div class="card p-3 mt-4 ">
-
+						<h2 class="mx-auto">top weapons</h2>
 					</div>
 				</div>
 				<div class="col-3">
 					<div class="card p-3 mt-4   ">
-							
+						<h2 class="mx-auto">Presicion</h2>	
 					</div>
 				</div>
 				<div class="col-3 ms-auto ">
 					<div class="card p-3 mt-4">
-
+						<h2 class="mx-auto">Clutch success</h2>
 					</div>
 				</div>
 			</div>
@@ -102,6 +102,11 @@
     
 </body>
 <script src="/bootstrap.min.js"></script>
+<script type="text/javascript" src="chart.min.js"></script>
+<script type="text/javascript" src="profileCharts/middleChart.js"></script>
+<script type="text/javascript" src="profileCharts/leftChart.js"></script>
+<script type="text/javascript" src="profileCharts/rightChart.js"></script>
+
 </html>
 
 

@@ -6,6 +6,8 @@ const player_weapons = require('./services/player/player_weapons');
 const player_state = require('./services/player/player_state');
 const player_match_stats = require('./services/player/player_match_stats');
 const jsonPersonal = require('./services/json/myjson');
+const actualRound= require('./models/round_model');
+
 const index=require('./routes/index');
 const hud=require('./routes/hud');
 const account= require('./routes/account');
@@ -36,6 +38,7 @@ webport=2626;
 
 io.on('connection', (socket) => {
     console.log('a user connected');
+
   });
   
   server.listen(webport, () => {
@@ -132,7 +135,10 @@ server = http.createServer( function(req, res) {
 });
 
 function realtimedata(jsonData){
-    io.emit("update",jsonData)
+    io.emit("update",jsonData);
+    actualRound.findOne().sort({"round":-1}).distinct("round").then(result=>{
+    io.emit("RoundData",result)
+  });
 }
 
  

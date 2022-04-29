@@ -5,7 +5,7 @@ const User = require('../../models/user_model')
 function jsonPersonal(idReal,vPlayer_id,vMap,vRound,vWeapons,vPlayer_state,vPlayer_match_stats){
     
    
-    let cadenaJSON={"Usuario":{
+    let jsonUserData={"Usuario":{
         "ID":idReal,
         "Nombre":vPlayer_id[2]
     },
@@ -66,19 +66,19 @@ function jsonPersonal(idReal,vPlayer_id,vMap,vRound,vWeapons,vPlayer_state,vPlay
         
 
     }
-    if(cadenaJSON.Mapa.NombreDeMapa){
-        insertDataUser(cadenaJSON);
+    if(jsonUserData.Mapa.NombreDeMapa){
+        insertDataUser(jsonUserData);
     }
   
   
    
-    console.log(cadenaJSON);
-    return cadenaJSON;
+    console.log(jsonUserData);
+    return jsonUserData;
 }
 
-async function insertDataUser(cadena){
+async function insertDataUser(dataUser){
     const user= new User({
-      data:cadena
+      data:dataUser
     })
     const resultado= await user.save();
    

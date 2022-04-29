@@ -5,13 +5,54 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="style.css">
     <script src="/socket.io/socket.io.js"></script>
   
 </head>
-<body>
-    <h1>HUD.EJS</h1>
-    <h1 id="gun">Arma actual:</h1>
+<body class="gradient-custom">
+    <nav class="navbar navbar-expand-lg navbar-light ">
+		<div class="container-fluid">
+			<a class="navbar-brand " href="#">RT:STATS</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+				aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+				<div class="navbar-nav ms-auto">
+					<a class="nav-link" href="/account">Profile</a>
+					<a class="nav-link" href="#">Settings</a>
+					<a class="nav-link" href="logout">Logout</a>
+				</div>
+			</div>
+		</div>
+	</nav>
+    <div class="section-2">
+        <div class="container-fluid px-5 mt-3">
+            <div class="row ">
+				<div class="col-3">
+					<div class="card p-3 mt-4">
+						<h2 class="mx-auto"><%=ronda %></h2>
+					</div>
+				</div>
+				<div class="col-6">
+					<div class="card p-3 mt-4">
+						<canvas style="width:70px; height:20px" id="myChart"></canvas>
+					</div>
+				</div>
+				<div class="col-3">
+					<div class="card p-3 mt-4">
+						<h2 class="mx-auto">top Maps</h2>
+					</div>
+				</div>
+			</div>
+        </div>
+    </div>
+    
 </body>
 
-<script type="text/javascript" src="hudScript.js"></script>
+
+<script type="text/javascript" src="chart.min.js"></script>
+<script type="text/javascript" src="hudCharts/hudKillsChart.js"></script>
+<script src="/bootstrap.min.js"></script>
 </html>

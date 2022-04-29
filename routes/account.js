@@ -2,6 +2,7 @@ const express = require('express');
 const ruta=express.Router();
 
 
+
 var steam = require('steam-web');
 var s = new steam({
   apiKey: '5DC20E24D2E76A091F52A43BCCBFA67A',
@@ -13,7 +14,9 @@ ruta.use(express.static('public'));
 ruta.use(express.static('views'));
 ruta.use(express.static('views/bootstrap'));
 ruta.use(express.static('node_modules/bootstrap/dist/js'));
+ruta.use(express.static('node_modules/chart.js/dist'));
 ruta.use(express.static('public/images'));
+
 
 ruta.get('/profile', ensureAuthenticated, function(req, res){
     s.getUserStatsForGame({
@@ -41,6 +44,8 @@ ruta.get('/profile', ensureAuthenticated, function(req, res){
     req.logout();
     res.redirect('/');
   });
+
+
 
 
 
