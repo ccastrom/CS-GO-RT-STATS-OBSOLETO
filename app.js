@@ -82,7 +82,7 @@ io.on('connection', (socket) => {
 app.use(passport.initialize());
 app.use(passport.session());
 
-mongoose.connect("mongodb+srv://ccastrom:AlphaBravoCharlie@csgo.hws0u.mongodb.net/stats?retryWrites=true&w=majority"
+mongoose.connect("mongodb+srv://ccastrom:123@csgo.hws0u.mongodb.net/stats?retryWrites=true&w=majority"
 ).then(()=>console.log("DB CONNECTION SUCCESS")).catch((err)=>{
     console.log(err);
 });
