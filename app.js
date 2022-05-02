@@ -121,6 +121,7 @@ server = http.createServer( function(req, res) {
             cadenaJSON = jsonPersonal.jsonPersonal(idReal, vPlayerId, vMap, vRound, vWeapons, vPlayer_state, vPlayer_match_stats);
             realtimedata(cadenaJSON);
             getRound();
+           
             
             res.end('')
         });
@@ -144,13 +145,9 @@ function getRound(){
   
   actualRound.findOne().sort({"round":1}).distinct("round").then(result=>{
     io.emit("RoundData",result)
-   
-    
-
-
-    
   });
 }
+
 
  
 

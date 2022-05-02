@@ -20,7 +20,7 @@ const labels = [
       label: 'My First dataset',
       backgroundColor: 'rgb(255, 99, 132)',
       borderColor: 'rgb(255, 99, 132)',
-      data: [20,30,40,12,25],
+      data: [],
     }]
   };
 
@@ -34,19 +34,23 @@ const labels = [
     document.getElementById('myChart'),
     config
   );
+  
 
   io.on("RoundData",function(roundData){
    
     
     var rondaActual=JSON.parse(JSON.stringify(roundData));
     
+   
     
     
     for (let i = 0; i < rondaActual.length; i++) {
+     
+      
       const element = rondaActual[i];
       console.log(element);
       myChart.data.labels[i] = element;
-     
+      myChart.data.datasets[0].data[i]=[3];
       myChart.update();
     }
     

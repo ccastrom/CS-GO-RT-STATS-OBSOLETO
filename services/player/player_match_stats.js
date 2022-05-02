@@ -53,7 +53,12 @@ async function insertActualRoundAndKills(actualRound,actualKills){
       round:actualRound,
       kills:actualKills
     })
-    const resultado= await roundValue.save();
+ 
+    const resultado= await roundValue.save(function(err){
+        if(err){
+            console.log("registro duplicado");
+        }
+    });
    
 }
 
