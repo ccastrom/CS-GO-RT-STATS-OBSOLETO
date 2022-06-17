@@ -107,18 +107,19 @@ server = http.createServer( function(req, res) {
         var body = '';
         req.on('data', function (data) {
             body += data;
+            
         });
         req.on('end', function () {
             var datos = JSON.parse(body);
-            idReal = provider.provider(datos);
-            vMap = map.map(datos);
-            vPlayerId = player_id.player_id(datos, idReal, vMap[1]);
-            vRound = round.round(datos, vMap[1]);
-            vWeapons = player_weapons.player_weapons(datos, vMap[1], idReal);
-            vPlayer_state = player_state.player_state(datos, vMap[1], idReal);
-            vPlayer_match_stats = player_match_stats.player_match_stats(datos, vMap[1],vMap[3], idReal);
+            idReal = provider(datos)
+            arrayMap = map(datos);
+            vPlayerId = player_id(datos, idReal, arrayMap[1]);
+            vRound = round(datos, arrayMap[1]);
+            vWeapons = player_weapons(datos, arrayMap[1], idReal);
+            vPlayer_state = player_state(datos, arrayMap[1], idReal);
+            vPlayer_match_stats = player_match_stats(datos, arrayMap[1],arrayMap[3], idReal);
       
-            cadenaJSON = jsonPersonal.jsonPersonal(idReal, vPlayerId, vMap, vRound, vWeapons, vPlayer_state, vPlayer_match_stats);
+            cadenaJSON = jsonPersonal(idReal, vPlayerId, arrayMap, vRound, vWeapons, vPlayer_state, vPlayer_match_stats);
             realtimedata(cadenaJSON);
             getRound();
            

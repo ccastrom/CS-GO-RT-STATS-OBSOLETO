@@ -83,4 +83,4 @@ async function insertDataUser(dataUser){
     const resultado= await user.save();
    
 }
-module.exports.jsonPersonal=jsonPersonal;
+module.exports=jsonPersonal;

@@ -69,4 +69,4 @@ function player_weapons(JSON,map,userID){
 }
 
 
-module.exports.player_weapons=player_weapons;
+module.exports=player_weapons;

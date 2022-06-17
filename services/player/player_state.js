@@ -42,4 +42,4 @@ function player_state(JSON,map,userID){
 
     
 }
-module.exports.player_state=player_state;
+module.exports=player_state;

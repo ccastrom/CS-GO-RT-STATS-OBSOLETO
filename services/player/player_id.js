@@ -46,4 +46,4 @@ function player_id(JSON,id,map){
     }
     return vStatus;
 }
-module.exports.player_id=player_id;
+module.exports=player_id;

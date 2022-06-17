@@ -45,4 +45,4 @@ function round(JSON,map){
     }
    
 }
-module.exports.round=round;
+module.exports=round;

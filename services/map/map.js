@@ -64,4 +64,4 @@ function map(JSON){
     
 
 
-module.exports.map=map;
+module.exports=map;

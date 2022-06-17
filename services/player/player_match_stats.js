@@ -63,4 +63,4 @@ async function insertActualRoundAndKills(actualRound,actualKills){
 }
 
 
-module.exports.player_match_stats=player_match_stats;
+module.exports=player_match_stats;
