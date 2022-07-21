@@ -1,36 +1,34 @@
 const express = require('express');
-const ruta=express.Router();
+const hudRoute=express.Router();
 const Round= require('../models/round_model');
 
 
-ruta.use(express.static('public'));
-ruta.use(express.static('views'));
-ruta.use(express.static('views/bootstrap'));
-ruta.use(express.static('node_modules/bootstrap/dist/js'));
-ruta.use(express.static('node_modules/chart.js/dist'));
-ruta.use(express.static('public/images'));
+hudRoute.use(express.static('public'));
+hudRoute.use(express.static('views'));
+hudRoute.use(express.static('views/bootstrap'));
+hudRoute.use(express.static('node_modules/bootstrap/dist/js'));
+hudRoute.use(express.static('node_modules/chart.js/dist'));
 
 
-ruta.get('/',(req,res)=>{
-    var element;
-    var element2;
-    let resultado= getActualRound();
-    resultado.then(actualRound=>{
-        var rondas= JSON.parse(JSON.stringify(actualRound));
-        console.log(rondas);
-        for (let i = 0; i < rondas.length; i++) {
-             element = rondas[i]
-            
-            console.log(element);
-           
-            
-        }
-        res.render('hud.ejs',{ronda:element})
+
+hudRoute.get('/', ensureAuthenticated, (req,res)=>{
+    
+        res.render('hud.ejs')
       
     })
 
-    
+
+
+hudRoute.get('/logout', (req, res)=>{
+    req.logout();
+    res.redirect('/');
 });
+
+function ensureAuthenticated(req, res, next) {
+    if (req.isAuthenticated()) { return next(); }
+    res.redirect('/');
+    console.log("no autenticado")
+  }
 
 
 
@@ -45,4 +43,4 @@ async function  getActualRound(){
 
 
 
-module.exports=ruta;
+module.exports=hudRoute;
