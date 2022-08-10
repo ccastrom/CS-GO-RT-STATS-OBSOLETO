@@ -1,11 +1,13 @@
 var express = require('express');
 var app = express();
+const socket_handler=require('./socket_events/socket.js')
 const http = require('http');
 server = http.createServer(app);
 const { Server } = require('socket.io');
 const io = new Server(server);
 portCSGO=3000;
 webport=2626;
+
 
 const provider = require('./services/provider/provider');
 const player_id = require('./services/player/player_id');
@@ -79,12 +81,16 @@ app.use(session({
 
   
 
-io.on('connection', (socket) => {
-    console.log('a user connected');
+socket_handler.socket_events(io);
 
-  });
-  
-  server.listen(webport, () => {
+
+
+
+
+
+
+ 
+    server.listen(webport, () => {
     console.log('web page listening on *: '+webport);
   });
 

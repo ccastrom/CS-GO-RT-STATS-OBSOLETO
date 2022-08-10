@@ -58,12 +58,18 @@ const labels = [
       
   })
 
-  io.on("update",function(jsonData){
+  io.on("update",(data)=>{
+    console.log(data);
+  })
+
+ 
+
+//   io.on("update",function(jsonData){
     
-    round=jsonData.Mapa.RondaActual;
+//     round=jsonData.Mapa.RondaActual;
     
   
-    //myChart.data.datasets[0].data[0] = round
+//     //myChart.data.datasets[0].data[0] = round
    
     
-})
+// })
