@@ -36,31 +36,32 @@ const labels = [
   );
   
 
-  io.on("RoundData",function(roundData){
+  // io.on("RoundData",function(roundData){
    
     
-    var rondaActual=JSON.parse(JSON.stringify(roundData));
+  //   var rondaActual=JSON.parse(JSON.stringify(roundData));
     
    
     
     
-    for (let i = 0; i < rondaActual.length; i++) {
+  //   for (let i = 0; i < rondaActual.length; i++) {
      
       
-      const element = rondaActual[i];
-      console.log(element);
-      myChart.data.labels[i] = element;
-      myChart.data.datasets[0].data[i]=[3];
-      myChart.update();
-    }
+  //     const element = rondaActual[i];
+  //     console.log(element);
+  //     myChart.data.labels[i] = element;
+  //     myChart.data.datasets[0].data[i]=[3];
+  //     myChart.update();
+  //   }
     
    
       
-  })
+  // })
 
   io.on("update",(data)=>{
-    console.log(data);
+    console.log("la data es: "+data);
   })
+
 
  
 

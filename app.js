@@ -79,17 +79,9 @@ app.use(session({
   app.use(passport.initialize());
   app.use(passport.session());
 
+
   
-
-socket_handler.socket_events(io);
-
-
-
-
-
-
-
- 
+  socket_handler.socket_events(io);
     server.listen(webport, () => {
     console.log('web page listening on *: '+webport);
   });
@@ -132,8 +124,8 @@ server = http.createServer( (req, res) =>{
             arrayPlayer_match_stats = player_match_stats(datos, arrayMap[1],arrayMap[3], idReal);
       
             cadenaJSON = jsonPersonal(idReal, arrayPlayerId, arrayMap, arrayRound, arrayWeapons, arrayPlayer_state, arrayPlayer_match_stats);
-            realtimedata(cadenaJSON);
-            getRound();
+            // realtimedata(cadenaJSON);
+            // getRound();
            
             
             res.end('')
@@ -149,17 +141,17 @@ server = http.createServer( (req, res) =>{
 
 });
 
-let  realtimedata=(jsonData)=>{
-    io.emit("update",jsonData);
+// let  realtimedata=(jsonData)=>{
+//     io.emit("update",jsonData);
  
-}
+// }
 
-let getRound=()=>{
+// let getRound=()=>{
   
-  actualRound.findOne().sort({"round":1}).distinct("round").then(result=>{
-    io.emit("RoundData",result)
-  });
-}
+//   actualRound.findOne().sort({"round":1}).distinct("round").then(result=>{
+//     io.emit("RoundData",result)
+//   });
+// }
 
 
  
