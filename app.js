@@ -81,7 +81,7 @@ app.use(session({
 
 
   
-  socket_handler.socket_events(io);
+  socket_handler.socket_connection(io);
     server.listen(webport, () => {
     console.log('web page listening on *: '+webport);
   });
@@ -124,7 +124,7 @@ server = http.createServer( (req, res) =>{
             arrayPlayer_match_stats = player_match_stats(datos, arrayMap[1],arrayMap[3], idReal);
       
             cadenaJSON = jsonPersonal(idReal, arrayPlayerId, arrayMap, arrayRound, arrayWeapons, arrayPlayer_state, arrayPlayer_match_stats);
-            // realtimedata(cadenaJSON);
+            socket_handler.socket_hud_data(io,cadenaJSON);
             // getRound();
            
             
@@ -141,10 +141,7 @@ server = http.createServer( (req, res) =>{
 
 });
 
-// let  realtimedata=(jsonData)=>{
-//     io.emit("update",jsonData);
- 
-// }
+
 
 // let getRound=()=>{
   

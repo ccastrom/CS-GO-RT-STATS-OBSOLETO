@@ -21,7 +21,7 @@ function player_match_stats(JSON,map,round,idPlayer){
         score=JSON.player.match_stats.score;
 
         vPlayer_match_stats.push(kills,assists,deaths,mvps,score);
-        insertActualRoundAndKills(actualRound,kills);
+        //insertActualRoundAndKills(actualRound,kills);
         return vPlayer_match_stats;
         
 
@@ -34,7 +34,7 @@ function player_match_stats(JSON,map,round,idPlayer){
             score=JSON.previously.player.match_stats.score;
             
             vPlayer_match_stats.push(kills,assists,deaths,mvps,score);
-            insertActualRoundAndKills(actualRound,kills);
+            //insertActualRoundAndKills(actualRound,kills);
             return vPlayer_match_stats;
             
 
@@ -48,19 +48,19 @@ function player_match_stats(JSON,map,round,idPlayer){
 
 }
 
-async function insertActualRoundAndKills(actualRound,actualKills){
-    const roundValue= new ActualRound({
-      round:actualRound,
-      kills:actualKills
-    })
+// async function insertActualRoundAndKills(actualRound,actualKills){
+//     const roundValue= new ActualRound({
+//       round:actualRound,
+//       kills:actualKills
+//     })
  
-    const resultado= await roundValue.save(function(err){
-        if(err){
-            console.log("registro duplicado");
-        }
-    });
+//     const resultado= await roundValue.save(function(err){
+//         if(err){
+//             console.log("registro duplicado");
+//         }
+//     });
    
-}
+// }
 
 
 module.exports=player_match_stats;

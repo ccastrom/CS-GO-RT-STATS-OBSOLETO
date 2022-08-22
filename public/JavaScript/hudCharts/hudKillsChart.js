@@ -5,13 +5,8 @@ var io =io();
 
 
 
-const labels = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
+const labels = ["","","","","","",""
+    
   ];
 
   const data = {
@@ -36,31 +31,47 @@ const labels = [
   );
   
 
-  // io.on("RoundData",function(roundData){
+  io.on("round_data",(roundData)=>{
    
-    
-  //   var rondaActual=JSON.parse(JSON.stringify(roundData));
-    
-   
-    
-    
-  //   for (let i = 0; i < rondaActual.length; i++) {
-     
-      
-  //     const element = rondaActual[i];
-  //     console.log(element);
-  //     myChart.data.labels[i] = element;
-  //     myChart.data.datasets[0].data[i]=[3];
-  //     myChart.update();
-  //   }
-    
-   
-      
-  // })
+    let vKills=[];
+    var roundPhase=roundData.Ronda.FaseActual
+    var rondaActual=roundData.Mapa.RondaActual;
+    var roundKills=roundData.Estado.round_kills;
 
-  io.on("update",(data)=>{
-    console.log("la data es: "+data);
-  })
+   
+
+
+
+
+     console.log("Actual Round: " +rondaActual);
+     console.log("Kills: "+roundKills);
+     
+     for (let i = 0; i <= rondaActual; i++) {
+      myChart.data.labels[i]=i;
+        for (let j = 0; j <= rondaActual; j++) {
+          myChart.data.datasets[0].data[j]=roundKills;
+        }
+     
+      myChart.update();
+      
+     }
+     
+    
+    
+   
+      
+   })
+
+
+
+   
+  // io.on("round_data",(data)=>{
+  //   var actualRound=data.Mapa.RondaActual
+  //   console.log("la data es: "+actualRound);
+  //   document.getElementById("txtGun").textContent=actualRound;
+   
+   
+  // })
 
 
  
