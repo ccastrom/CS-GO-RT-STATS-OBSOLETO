@@ -13,10 +13,10 @@
      }
 
      get weapon1ammo() {
-         return this._weapon1ammo;
+         return this._weapon_1_ammo;
      }
-     set weapon1ammo(in_weapon1ammo) {
-         this._weapon1ammo = in_weapon1ammo;
+     set weapon1ammo(in_weapon_1_ammo) {
+         this._weapon_1_ammo = in_weapon_1_ammo;
      }
 
      get weapon2ammo() {
@@ -56,6 +56,8 @@
         if(knife){
             if(knife_state=="active"){
                 player_weapons._actual_weapon=knife
+
+                // console.log(player_weapons._actual_weapon)
             }
         }
         if(weapon_1){
@@ -65,7 +67,9 @@
                
                 actual_weapon=weapon_1;
                 player_weapons._actual_weapon=weapon_1;
-                player_weapons._weapon1ammo=weapon_1_ammo;
+                player_weapons._weapon_1_ammo=weapon_1_ammo;
+                // console.log("Arma 1: "+player_weapons._actual_weapon)
+                // console.log("Ammo arma 1: "+player_weapons._weapon_1_ammo)
             }
          
         }
@@ -78,17 +82,19 @@
                 actual_weapon=weapon_2;
                 player_weapons._actual_weapon=weapon_2;
                 player_weapons._weapon_2_ammo=weapon_2_ammo;
+                // console.log("Arma 2: "+player_weapons._actual_weapon)
+                // console.log("Ammo arma 2: "+player_weapons._weapon_2_ammo)
             }
            
         }
       
        
-        return vWeapons;
+        return player_weapons;
         
       
        }else{
             player_weapons._actual_weapon="";
-            player_weapons._weapon1ammo="";
+            player_weapons._weapon_1_ammo="";
             player_weapons._weapon_2_ammo="";
         }
          return player_weapons;

@@ -113,14 +113,14 @@ server = http.createServer( (req, res) =>{
             var id64 = jsonGameData.provider.steamid;
 
             mapInfo = Map.fillMapInfo(jsonGameData)
-            playerInfo = Player.fillPlayerInfo(jsonGameData, id64, mapInfo._phase);
+            playerInfo = Player.fillPlayerInfo(jsonGameData,mapInfo._phase,id64);
             roundInfo = Round.fillRoundInfo(jsonGameData, mapInfo._phase);
             
             weaponsInfo = Player_weapons.fill_player_weapons_info(jsonGameData, mapInfo._phase, id64);
             player_status = Player_status.fill_player_status_info(jsonGameData, mapInfo._phase, id64);
             player_match_stats = Player_match_stats.fill_player_match_stats(jsonGameData, mapInfo._phase, id64);
       
-            cadenaJSON = jsonPersonal( mapInfo, playerInfo, arrayRound, arrayWeapons, arrayPlayer_state, arrayPlayer_match_stats);
+            cadenaJSON = jsonPersonal( mapInfo, playerInfo, roundInfo, weaponsInfo, player_status, player_match_stats);
             socket_handler.socket_hud_data(io,cadenaJSON);
         });
         req.on('end', function () {

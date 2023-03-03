@@ -4,8 +4,9 @@ const { set } = require('express/lib/application');
 
    class Map{
        
-       constructor(mapmode, phase, round, teamctScore, ctconsecutiveroundlosses, teamTScore, tconsecutiveroundlosses) {
-           this._mapmode = mapmode;
+       constructor(mapname,mapmode, phase, round, teamctScore, ctconsecutiveroundlosses, teamTScore, tconsecutiveroundlosses) {
+           this._mapname=mapname
+            this._mapmode = mapmode;
            this._phase = phase;
            this._round = round;
            this._teamctScore = teamctScore;
@@ -13,6 +14,13 @@ const { set } = require('express/lib/application');
            this._teamTScore = teamTScore;
            this._tconsecutiveroundlosses = tconsecutiveroundlosses;
        }
+       get mapname() {
+        return this._mapname;
+    }
+        set mapname(in_mapname) {
+            this._mapname = in_mapname;
+        }
+
        get mapmode() {
            return this._mapmode;
        }
@@ -82,7 +90,7 @@ const { set } = require('express/lib/application');
             var teamTScore;
             var tconsecutiveroundlosses;
              mapmode=JSON.map.mode;//0
-           //1
+             //1
              phase=JSON.map.phase;//2
              round=JSON.map.round;//3
             
@@ -97,14 +105,14 @@ const { set } = require('express/lib/application');
              
              tconsecutiveroundlosses=JSON.map.team_t.consecutive_round_losses;//7
             
-
-            mapInfo.mapmode=mapmode
-            mapInfo.phase=phase
-            mapInfo.round=round
-            mapInfo.teamctScore=teamctScore
-            mapInfo.ctconsecutiveroundlosses=ctconsecutiveroundlosses
-            mapInfo.teamTScore=teamTScore
-            mapInfo.tconsecutiveroundlosses=tconsecutiveroundlosses
+            mapInfo._mapname=mapname
+            mapInfo._mapmode=mapmode
+            mapInfo._phase=phase
+            mapInfo._round=round
+            mapInfo._teamctScore=teamctScore
+            mapInfo._ctconsecutiveroundlosses=ctconsecutiveroundlosses
+            mapInfo._teamTScore=teamTScore
+            mapInfo._tconsecutiveroundlosses=tconsecutiveroundlosses
 
            
             
@@ -117,14 +125,14 @@ const { set } = require('express/lib/application');
           
           
         }else{
-            
-            mapInfo.mapmode=""
-            mapInfo.phase=""
-            mapInfo.round=""
-            mapInfo.teamctScore=""
-            mapInfo.ctconsecutiveroundlosses=""
-            mapInfo.teamTScore=""
-            mapInfo.tconsecutiveroundlosses=""
+            mapInfo._mapname=""
+            mapInfo._mapmode=""
+            mapInfo._phase=""
+            mapInfo._round=""
+            mapInfo._teamctScore=""
+            mapInfo._ctconsecutiveroundlosses=""
+            mapInfo._teamTScore=""
+            mapInfo._tconsecutiveroundlosses=""
 
             return mapInfo
 

@@ -130,7 +130,7 @@ class Player_status{
             player_status._money=money;
             player_status._burning=burning;
             player_status._round_kills=round_kills;
-            player_status._round_killshs=round_killshs;
+            player_status._round_killshs=round_killhs;
             player_status._equip_value=equip_value;
             return player_status;
                 

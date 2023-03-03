@@ -1,19 +1,19 @@
 
 class Player{
-    constructor(id, team, name, status) {
+    constructor(id64, team, name, status) {
         
-        this._id = id;
+        this._id64 = id64;
         this._team = team;
         this._name = name;
         this._status = status;
     }
    
 
-    get id() {
-        return this._id;
+    get id64() {
+        return this._id64;
     }
-    set id(in_id) {
-        this._id = in_id;
+    set id64(in_id64) {
+        this._id64 = in_id64;
     }
 
     get team() {
@@ -39,10 +39,11 @@ class Player{
 
 
 
-    static fillPlayerInfo(JSON,id,Map){
+    static fillPlayerInfo(JSON,Map,id64){
         
-        const player = new Player();
-        var matchid=JSON.player.steamid;
+        const player_info = new Player();
+        var matchid64=JSON.player.steamid;
+        
         var activity=JSON.player.activity;
         var team;
         var name;
@@ -52,45 +53,45 @@ class Player{
         
        
     
-        if(Map[1]){
-            // console.log("====PARTIDA EN CURSO====");
-            if(id==matchid){
+        if(Map){
+             //console.log("====PARTIDA EN CURSO====");
+            if(id64==matchid64){
                 // console.log("====JUGADOR VIVO====");
                  team=JSON.player.team
                  name=JSON.player.name;
                  status="Vivo"
-                // console.log("Equipo actual: "+team);
-                // console.log(name);
-                // console.log(status);
+                //  console.log("Equipo actual: "+team);
+                //  console.log(name);
+                //  console.log(status);
 
-                player.id=id;
-                player.team=team;
-                player.name=name;
-                player.status=status;
+                 player_info._id64=id64;
+                 player_info._team=team;
+                 player_info._name=name;
+                 player_info._status=status;
                 
-                 return player;
+                 return player_info;
                 
             }else{
                
                 team=JSON.player.team;
-                player.id=id;
-                player.team=team;
-                player.name=name;
-                player.status=status;
+                player_info._id64=id64;
+                player_info._team=team;
+                player_info._name=name;
+                player_info._status=status;
                 // console.log("Jugador muerto");
                 status="Muerto";
-                return player;
+                return player_info;
                
             }
            
         }else{
            
-            player.id="";
-            player.team="";
-            player.name="";
-            player.status="";
+            player_info._id64="";
+            player_info._team="";
+            player_info._name="";
+            player_info._status="";
 
-            return player;
+            return player_info;
             
             
         }
