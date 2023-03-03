@@ -10,7 +10,7 @@ webport=2626;
 
 
 const Map = require('./services/map/Map');
-const Player = require('./services/player/Player_id');
+const Player = require('./services/player/Player');
 const Round = require('./services/round/Round');
 const Player_weapons = require('./services/player/Player_weapons');
 const Player_status = require('./services/player/Player_status');
@@ -120,7 +120,7 @@ server = http.createServer( (req, res) =>{
             player_status = Player_status.fill_player_status_info(jsonGameData, mapInfo._phase, id64);
             player_match_stats = Player_match_stats.fill_player_match_stats(jsonGameData, mapInfo._phase, id64);
       
-            cadenaJSON = jsonPersonal(id64, mapInfo, playerInfo, arrayRound, arrayWeapons, arrayPlayer_state, arrayPlayer_match_stats);
+            cadenaJSON = jsonPersonal( mapInfo, playerInfo, arrayRound, arrayWeapons, arrayPlayer_state, arrayPlayer_match_stats);
             socket_handler.socket_hud_data(io,cadenaJSON);
         });
         req.on('end', function () {

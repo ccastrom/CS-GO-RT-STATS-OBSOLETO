@@ -2,64 +2,64 @@ const { default: mongoose } = require('mongoose');
 const User = require('../../models/user_model')
 
 
-function jsonPersonal(idReal,vMap,vPlayer_id,vRound,vWeapons,vPlayer_state,vPlayer_match_stats){
+function jsonPersonal(idReal,Map,Player,Round,Weapon,Player_status,Player_match_stats){
     
    
     let jsonUserData={Usuario:{
         ID:idReal,
-        Nombre:vPlayer_id[2]
+        Nombre:Player[2]
     },
         player_id:{
-            Actividad:vPlayer_id[0],
-            Equipo:vPlayer_id[1],
-            Estado:vPlayer_id[3]
+            Actividad:Player[0],
+            Equipo:Player[1],
+            Estado:Player[3]
         },
         Mapa:{
-            TipoDePartida:vMap[0],
-            NombreDeMapa:vMap[1],
-            FaseActual:vMap[2],
-            RondaActual:vMap[3],
-            PuntuacionCT:vMap[4],
-            RondasPerdidasConsecutivasCT:vMap[5],
-            PuntuacionT:vMap[6],
-            RondasPerdidasConsecutivasT:vMap[7]
+            TipoDePartida:Map[0],
+            NombreDeMapa:Map[1],
+            FaseActual:Map[2],
+            RondaActual:Map[3],
+            PuntuacionCT:Map[4],
+            RondasPerdidasConsecutivasCT:Map[5],
+            PuntuacionT:Map[6],
+            RondasPerdidasConsecutivasT:Map[7]
 
         },
         Ronda:{
-            EstadoDeBomba:vRound[0],
-            EquipoGanador:vRound[1],
-            FaseActual:vRound[2]
+            EstadoDeBomba:Round[0],
+            EquipoGanador:Round[1],
+            FaseActual:Round[2]
         },
         Armas:{
-            ArmaEquipada:vWeapons[0],
-            MunicionRestanteArma1:vWeapons[1],
-            Estado:vWeapons[2],
-            Arma1:vWeapons[3],
-            Arma2:vWeapons[4],
-            Arma3:vWeapons[5]
+            ArmaEquipada:Weapon[0],
+            MunicionRestanteArma1:Weapon[1],
+            Estado:Weapon[2],
+            Arma1:Weapon[3],
+            Arma2:Weapon[4],
+            Arma3:Weapon[5]
             
 
         },
         Estado:{
-            Vida:vPlayer_state[0],
-            Armor:vPlayer_state[1],
-            Helmet:vPlayer_state[2],
-            defuseKit:vPlayer_state[3],
-            flashed:vPlayer_state[4],
-            smoked:vPlayer_state[5],
-            burning:vPlayer_state[6],
-            money:vPlayer_state[7],
-            round_kills:vPlayer_state[8],
-            round_killsHS:vPlayer_state[9],
-            equip_value:vPlayer_state[10],
+            Vida:Player_status[0],
+            Armor:Player_status[1],
+            Helmet:Player_status[2],
+            defuseKit:Player_status[3],
+            flashed:Player_status[4],
+            smoked:Player_status[5],
+            burning:Player_status[6],
+            money:Player_status[7],
+            round_kills:Player_status[8],
+            round_killsHS:Player_status[9],
+            equip_value:Player_status[10],
         },
       
         StatsPlayer:{
-            kills:vPlayer_match_stats[0],
-            assists:vPlayer_match_stats[1],
-            deaths:vPlayer_match_stats[2],
-            mvps:vPlayer_match_stats[3],
-            score:vPlayer_match_stats[4],
+            kills:Player_match_stats[0],
+            assists:Player_match_stats[1],
+            deaths:Player_match_stats[2],
+            mvps:Player_match_stats[3],
+            score:Player_match_stats[4],
            
         }
 
