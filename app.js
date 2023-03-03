@@ -9,13 +9,12 @@ portCSGO=3000;
 webport=2626;
 
 
-const provider = require('./services/provider/provider');
-const player_id = require('./services/player/player_id');
-const map = require('./services/map/map');
-const round = require('./services/round/round');
-const player_weapons = require('./services/player/player_weapons');
-const player_state = require('./services/player/player_state');
-const player_match_stats = require('./services/player/player_match_stats');
+const Map = require('./services/map/Map');
+const Player = require('./services/player/Player_id');
+const Round = require('./services/round/Round');
+const Player_weapons = require('./services/player/Player_weapons');
+const Player_status = require('./services/player/Player_status');
+const Player_match_stats = require('./services/player/Player_match_stats');
 const jsonPersonal = require('./services/json/myjson');
 const actualRound= require('./models/round_model');
 
@@ -25,13 +24,12 @@ const accountRoute= require('./routes/account');
 const mongoose= require('mongoose');
 
 
-
-let arrayMap=[];
-let arrayPlayerId=[];
-let arrayRound=[];
-let arrayWeapons=[];
-let arrayPlayer_state=[];
-let arrayPlayer_match_stats=[];
+let mapInfo = new Map();
+let playerInfo= new Player();
+let roundInfo= new Round();
+let weaponsInfo=new Player_weapons();
+let player_status=new Player_status();
+let player_match_stats=new Player_match_stats();
 let cadenaJSON=[];
 
 
@@ -111,23 +109,24 @@ server = http.createServer( (req, res) =>{
         var body = '';
         req.on('data', function (data) {
             body += data;
+            var jsonGameData = JSON.parse(body);
+            var id64 = jsonGameData.provider.steamid;
+
+            mapInfo = Map.fillMapInfo(jsonGameData)
+            playerInfo = Player.fillPlayerInfo(jsonGameData, id64, mapInfo._phase);
+            roundInfo = Round.fillRoundInfo(jsonGameData, mapInfo._phase);
             
+            weaponsInfo = Player_weapons.fill_player_weapons_info(jsonGameData, mapInfo._phase, id64);
+            player_status = Player_status.fill_player_status_info(jsonGameData, mapInfo._phase, id64);
+            player_match_stats = Player_match_stats.fill_player_match_stats(jsonGameData, mapInfo._phase, id64);
+      
+            cadenaJSON = jsonPersonal(id64, mapInfo, playerInfo, arrayRound, arrayWeapons, arrayPlayer_state, arrayPlayer_match_stats);
+            socket_handler.socket_hud_data(io,cadenaJSON);
         });
         req.on('end', function () {
-            var datos = JSON.parse(body);
-            idReal = provider(datos)
-            arrayMap = map(datos);
-            arrayPlayerId = player_id(datos, idReal, arrayMap[1]);
-            arrayRound = round(datos, arrayMap[1]);
-            arrayWeapons = player_weapons(datos, arrayMap[1], idReal);
-            arrayPlayer_state = player_state(datos, arrayMap[1], idReal);
-            arrayPlayer_match_stats = player_match_stats(datos, arrayMap[1],arrayMap[3], idReal);
-      
-            cadenaJSON = jsonPersonal(idReal, arrayPlayerId, arrayMap, arrayRound, arrayWeapons, arrayPlayer_state, arrayPlayer_match_stats);
-            socket_handler.socket_hud_data(io,cadenaJSON);
-            // getRound();
            
-            
+            // getRound();
+                       
             res.end('')
         });
     }
@@ -143,12 +142,6 @@ server = http.createServer( (req, res) =>{
 
 
 
-// let getRound=()=>{
-  
-//   actualRound.findOne().sort({"round":1}).distinct("round").then(result=>{
-//     io.emit("RoundData",result)
-//   });
-// }
 
 
  

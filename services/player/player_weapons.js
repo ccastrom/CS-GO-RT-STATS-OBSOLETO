@@ -1,72 +1,102 @@
+ class Player_weapons{
+     constructor(actual_weapon, weapon_1_ammo, weapon_2_ammo) {
+         this._actual_weapon = actual_weapon;
+         this._weapon_1_ammo = weapon_1_ammo;
+         this._weapon_2_ammo = weapon_2_ammo;
 
-function player_weapons(JSON,map,userID){
-    var matchid=JSON.player.steamid;
-    let vWeapons=[];
-    var knife;
-    var knife_state;
-    var arma_1;
-    var arma_1_state;
-    var arma_2;
-    var arma2_state;
-    var arma_1_ammo;
-    var arma_2_ammo;
-    var arma_actual;
-   
-   if(map && userID==matchid){
-    try {
-         knife= JSON.player.weapons.weapon_0.name;
-         knife_state=JSON.player.weapons.weapon_0.state;
-         arma_1=JSON.player.weapons.weapon_1.name;
-         arma_1_state=JSON.player.weapons.weapon_1.state;
-         arma_2=JSON.player.weapons.weapon_2.name;
-         arma2_state=JSON.player.weapons.weapon_2.state;
+     }
+     get actualweapon() {
+         return this._actualweapon;
+     }
+     set actualweapon(in_actualweapon) {
+         this._actualweapon = in_actualweapon;
+     }
+
+     get weapon1ammo() {
+         return this._weapon1ammo;
+     }
+     set weapon1ammo(in_weapon1ammo) {
+         this._weapon1ammo = in_weapon1ammo;
+     }
+
+     get weapon2ammo() {
+         return this._weapon2ammo;
+     }
+     set weapon2ammo(in_weapon2ammo) {
+         this._weapon2ammo = in_weapon2ammo;
+     }
+     static fill_player_weapons_info(JSON,map,userID){
+        var matchid=JSON.player.steamid;
+        var knife;
+        var knife_state;
+        var weapon_1;
+        var weapon_1_state;
+        var weapon_2;
+        var weapon_2_state;
+        var weapon_1_ammo;
+        var weapon_2_ammo;
+        var actual_weapon;
+
+        const player_weapons= new Player_weapons();
        
-
-        
-    } catch (error) {
-      
-    }
-    if(knife){
-        //console.log(knife);
-        if(knife_state=="active"){
-            //console.log("★★Arma equipada★★: "+knife);
-            arma_actual=knife;
-            vWeapons.push(arma_actual,"",knife_state);
-        
-        }
-    }
-    if(arma_1){
-        if(arma_1_state=="active"){
-            //console.log("★★Arma equipada★★: "+arma_1);
-            arma_1_ammo=JSON.player.weapons.weapon_1.ammo_clip;
-            //console.log("Munición restante: "+arma_1_ammo);
-            arma_actual=arma_1;
-            vWeapons.push(arma_actual,arma_1_ammo,arma_1_state);
-        }
-        //console.log("Arma corta: "+arma_1);
-    }
-    if(arma_2){
-        if(arma2_state=="active"){
-            //console.log("★★Arma equipada★★: "+arma_2);
-            arma_2_ammo=JSON.player.weapons.weapon_2.ammo_clip;
-            //console.log("Munición restante: "+arma_2_ammo);
-
-            arma_actual=arma_2;
-            vWeapons.push(arma_actual,arma_2_ammo,arma2_state);
-        }
-        //console.log("Rifle: "+arma_2);
-    }
-    //vWeapons.push(knife,arma_1,arma_2);
-   
-    return vWeapons;
+       if(map && userID==matchid){
+        try {
+             knife= JSON.player.weapons.weapon_0.name;
+             knife_state=JSON.player.weapons.weapon_0.state;
+             weapon_1=JSON.player.weapons.weapon_1.name;
+             weapon_1_state=JSON.player.weapons.weapon_1.state;
+             weapon_2=JSON.player.weapons.weapon_2.name;
+             weapon_2_state=JSON.player.weapons.weapon_2.state;
+           
     
-  
-   }else{
-     vWeapons.push("","","","","","","");
-     return vWeapons;
+            
+        } catch (error) {
+          
+        }
+        if(knife){
+            if(knife_state=="active"){
+                player_weapons._actual_weapon=knife
+            }
+        }
+        if(weapon_1){
+            if(weapon_1_state=="active"){
+               
+                weapon_1_ammo=JSON.player.weapons.weapon_1.ammo_clip;
+               
+                actual_weapon=weapon_1;
+                player_weapons._actual_weapon=weapon_1;
+                player_weapons._weapon1ammo=weapon_1_ammo;
+            }
+         
+        }
+        if(weapon_2){
+            if(weapon_2_state=="active"){
+              
+                weapon_2_ammo=JSON.player.weapons.weapon_2.ammo_clip;
+               
+    
+                actual_weapon=weapon_2;
+                player_weapons._actual_weapon=weapon_2;
+                player_weapons._weapon_2_ammo=weapon_2_ammo;
+            }
+           
+        }
+      
+       
+        return vWeapons;
+        
+      
+       }else{
+            player_weapons._actual_weapon="";
+            player_weapons._weapon1ammo="";
+            player_weapons._weapon_2_ammo="";
+        }
+         return player_weapons;
+    
+       }
+    }
 
-   }
-}
+ 
 
 
-module.exports=player_weapons;
+module.exports=Player_weapons;
