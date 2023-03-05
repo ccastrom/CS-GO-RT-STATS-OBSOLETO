@@ -1,3 +1,6 @@
+
+
+const ActualKill = require('../../mongoDB/models/round_model')
 class Player_status{
     constructor(health, armor, helmet, defusekit, flashed, smoked, burning, money, round_kills, round_killshs, equip_value) {
         this._health = health;
@@ -132,6 +135,8 @@ class Player_status{
             player_status._round_kills=round_kills;
             player_status._round_killshs=round_killhs;
             player_status._equip_value=equip_value;
+
+            insertRoundKill( player_status._round_kills=round_kills);
             return player_status;
                 
     
@@ -156,6 +161,19 @@ class Player_status{
     }
 
 
+}
+
+async function insertRoundKill(kill){
+   
+    const killValue= new ActualKill({
+        roundKills:kill
+     
+    })
+ 
+    const resultado= await killValue.save()
+        
+
+   
 }
 
  

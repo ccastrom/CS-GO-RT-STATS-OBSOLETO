@@ -2,15 +2,11 @@ const mongoose= require('mongoose');
 
 const roundSchema= new mongoose.Schema({
     
-    round:{
+    roundKills:{
         type:Number,
-        
-        
+         
     },
-    kills:{
-        type:Number,
-       
-    }
+    
    
 
    

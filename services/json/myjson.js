@@ -1,7 +1,5 @@
 const { default: mongoose } = require('mongoose');
-const User = require('../../models/user_model')
-
-
+const User = require('../../mongoDB/models/user_model')
 function jsonPersonal(Map,Player,Round,Weapon,Player_status,Player_match_stats){
     
    
@@ -64,10 +62,11 @@ function jsonPersonal(Map,Player,Round,Weapon,Player_status,Player_match_stats){
         
 
     }
-    console.log(jsonUserData)
+    //console.log(jsonUserData)
     
     if(jsonUserData.Mapa.NombreDeMapa){
         insertDataUser(jsonUserData);
+       
     }
   
   
@@ -75,6 +74,8 @@ function jsonPersonal(Map,Player,Round,Weapon,Player_status,Player_match_stats){
     //console.log(jsonUserData);
     return jsonUserData;
 }
+
+
 
 async function insertDataUser(dataUser){
     const user= new User({

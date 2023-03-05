@@ -9,8 +9,9 @@
 
    
   }
-  const socket_hud_data=(io,payload)=>{
-    io.emit('round_data',payload);
+  const socket_hud_data=(io,payload,json)=>{
+    
+    io.emit('round_data',payload,json);
   }
 
   

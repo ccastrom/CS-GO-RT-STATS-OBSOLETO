@@ -1,4 +1,5 @@
-const ActualRound = require('../../models/round_model')
+const { json } = require('express');
+const ActualRound = require('../../mongoDB/models/round_model')
 
 class Player_match_stats{
     constructor(kills, assists, deaths, mvps, score) {
@@ -45,25 +46,27 @@ class Player_match_stats{
         this._score = in_score;
     }
 
-    static fill_player_match_stats(JSON,map,idPlayer){
+    static fill_player_match_stats(JSONData,map,idPlayer,round){
         var kills;
         var assists;
         var deaths;
         var mvps;
         var score;
+
+        
         const player_match_stats= new Player_match_stats();
        
         
        
         
-        var matchid=JSON.player.steamid;
+        var matchid=JSONData.player.steamid;
     
         if(map && matchid==idPlayer){
-            kills=JSON.player.match_stats.kills;
-            assists=JSON.player.match_stats.assists;
-            deaths=JSON.player.match_stats.deaths;
-            mvps=JSON.player.match_stats.mvps;
-            score=JSON.player.match_stats.score;
+            kills=JSONData.player.match_stats.kills;
+            assists=JSONData.player.match_stats.assists;
+            deaths=JSONData.player.match_stats.deaths;
+            mvps=JSONData.player.match_stats.mvps;
+            score=JSONData.player.match_stats.score;
     
             player_match_stats._kills=kills;
             player_match_stats._assists=assists;
@@ -71,8 +74,21 @@ class Player_match_stats{
             player_match_stats._mvps=mvps;
             player_match_stats._score=score;
            
+
+        //    let myObject= {
+        //         roundValues:round,
+        //         playerKills:player_match_stats.kills
+        //    }
            
-            //insertActualRoundAndKills(actualRound,kills);
+            // let createRecord=insertActualRoundAndKills(myObject);
+
+            // createRecord.then(recordValue=>{
+            //     console.log("all ok")
+            // }).catch(err=>{
+            //     console.log("error")
+            // })
+          
+           
             return player_match_stats;
             
     
@@ -94,19 +110,20 @@ class Player_match_stats{
 
 
 
-// async function insertActualRoundAndKills(actualRound,actualKills){
+// async function insertActualRoundAndKills(jsonObject){
+   
 //     const roundValue= new ActualRound({
-//       round:actualRound,
-//       kills:actualKills
+//         MyData:jsonObject
+     
 //     })
  
-//     const resultado= await roundValue.save(function(err){
-//         if(err){
-//             console.log("registro duplicado");
-//         }
-//     });
+//     const resultado= await roundValue.save()
+        
+
    
 // }
+
+
 
 
 module.exports=Player_match_stats;

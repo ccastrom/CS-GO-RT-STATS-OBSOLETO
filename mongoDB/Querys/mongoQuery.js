@@ -1,4 +1,4 @@
-const roundKillsBD= require('../models/round_kills_model');
+const ActualRound= require('../models/round_model');
 
 const getRoundKills=async()=>{
     let round_kills= await roundKillsBD.find({}).sort({"_id":-1})
@@ -6,7 +6,16 @@ const getRoundKills=async()=>{
 }
 
 
+async function findLastRecord(){
+    let statsBD= await ActualRound.find().sort({_id:1});
+ 
+    return statsBD;
+ 
+ }
+
+
 
 module.exports={
-    getRoundKills
+    getRoundKills,
+    findLastRecord
 }

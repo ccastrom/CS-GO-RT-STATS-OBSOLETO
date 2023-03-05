@@ -1,6 +1,7 @@
 const express = require('express');
 const hudRoute=express.Router();
-const Round= require('../models/round_model');
+const Round= require('../mongoDB/models/round_model');
+const mongoQuerys= require('../mongoDB/Querys/mongoQuery');
 
 
 hudRoute.use(express.static('public'));
@@ -31,13 +32,11 @@ function ensureAuthenticated(req, res, next) {
     console.log("no autenticado")
   }
 
+  
 
 
-async function  getActualRound(){
- let actualRound= await Round.findOne({"round":{$gte:0},"kills":{$gte:0}}).sort({"round":1}).distinct("round");
-   
-    return actualRound;
-}
+
+  
 
 
 

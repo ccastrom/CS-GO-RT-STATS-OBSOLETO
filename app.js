@@ -16,7 +16,8 @@ const Player_weapons = require('./services/player/Player_weapons');
 const Player_status = require('./services/player/Player_status');
 const Player_match_stats = require('./services/player/Player_match_stats');
 const jsonPersonal = require('./services/json/myjson');
-const actualRound= require('./models/round_model');
+const mongoQuerys= require('./mongoDB/Querys/mongoQuery')
+
 
 const indexRoute=require('./routes/index');
 const hudRoute=require('./routes/hud');
@@ -30,7 +31,7 @@ let roundInfo= new Round();
 let weaponsInfo=new Player_weapons();
 let player_status=new Player_status();
 let player_match_stats=new Player_match_stats();
-let cadenaJSON=[];
+
 
 
 const passport=require('passport')
@@ -82,6 +83,7 @@ app.use(session({
   socket_handler.socket_connection(io);
     server.listen(webport, () => {
     console.log('web page listening on *: '+webport);
+     
   });
 
 mongoose.connect("mongodb+srv://ccastrom:123@csgo.hws0u.mongodb.net/stats?retryWrites=true&w=majority"
@@ -109,7 +111,15 @@ server = http.createServer( (req, res) =>{
         var body = '';
         req.on('data', function (data) {
             body += data;
-            var jsonGameData = JSON.parse(body);
+            
+            
+          
+            
+        });
+        req.on('end', function () {
+
+
+          var jsonGameData = JSON.parse(body);
             var id64 = jsonGameData.provider.steamid;
 
             mapInfo = Map.fillMapInfo(jsonGameData)
@@ -118,17 +128,20 @@ server = http.createServer( (req, res) =>{
             
             weaponsInfo = Player_weapons.fill_player_weapons_info(jsonGameData, mapInfo._phase, id64);
             player_status = Player_status.fill_player_status_info(jsonGameData, mapInfo._phase, id64);
-            player_match_stats = Player_match_stats.fill_player_match_stats(jsonGameData, mapInfo._phase, id64);
+            player_match_stats = Player_match_stats.fill_player_match_stats(jsonGameData, mapInfo._phase,id64,mapInfo._round);
       
             cadenaJSON = jsonPersonal( mapInfo, playerInfo, roundInfo, weaponsInfo, player_status, player_match_stats);
-            socket_handler.socket_hud_data(io,cadenaJSON);
-        });
-        req.on('end', function () {
-           
-            // getRound();
+            //socket_handler.socket_hud_data(io,cadenaJSON)
+          let findRecords=mongoQuerys.findLastRecord() 
+          findRecords.then(values=>{
+            console.log(values)
+            socket_handler.socket_hud_data(io,values,cadenaJSON);
+          })
                        
             res.end('')
         });
+       
+        
     }
     else
     {
