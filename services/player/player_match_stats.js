@@ -46,7 +46,7 @@ class Player_match_stats{
         this._score = in_score;
     }
 
-    static fill_player_match_stats(JSONData,map,idPlayer,round){
+    static fill_player_match_stats(JSONData,map,idPlayer){
         var kills;
         var assists;
         var deaths;
@@ -75,18 +75,7 @@ class Player_match_stats{
             player_match_stats._score=score;
            
 
-        //    let myObject= {
-        //         roundValues:round,
-        //         playerKills:player_match_stats.kills
-        //    }
-           
-            // let createRecord=insertActualRoundAndKills(myObject);
-
-            // createRecord.then(recordValue=>{
-            //     console.log("all ok")
-            // }).catch(err=>{
-            //     console.log("error")
-            // })
+     
           
            
             return player_match_stats;

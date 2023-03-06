@@ -136,7 +136,6 @@ class Player_status{
             player_status._round_killshs=round_killhs;
             player_status._equip_value=equip_value;
 
-            insertRoundKill( player_status._round_kills=round_kills);
             return player_status;
                 
     
@@ -163,18 +162,7 @@ class Player_status{
 
 }
 
-async function insertRoundKill(kill){
-   
-    const killValue= new ActualKill({
-        roundKills:kill
-     
-    })
- 
-    const resultado= await killValue.save()
-        
 
-   
-}
 
  
 module.exports=Player_status;

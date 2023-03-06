@@ -128,15 +128,11 @@ server = http.createServer( (req, res) =>{
             
             weaponsInfo = Player_weapons.fill_player_weapons_info(jsonGameData, mapInfo._phase, id64);
             player_status = Player_status.fill_player_status_info(jsonGameData, mapInfo._phase, id64);
-            player_match_stats = Player_match_stats.fill_player_match_stats(jsonGameData, mapInfo._phase,id64,mapInfo._round);
+            player_match_stats = Player_match_stats.fill_player_match_stats(jsonGameData, mapInfo._phase,id64);
       
             cadenaJSON = jsonPersonal( mapInfo, playerInfo, roundInfo, weaponsInfo, player_status, player_match_stats);
-            //socket_handler.socket_hud_data(io,cadenaJSON)
-          let findRecords=mongoQuerys.findLastRecord() 
-          findRecords.then(values=>{
-            console.log(values)
-            socket_handler.socket_hud_data(io,values,cadenaJSON);
-          })
+            socket_handler.socket_hud_data(io,cadenaJSON)
+         
                        
             res.end('')
         });
