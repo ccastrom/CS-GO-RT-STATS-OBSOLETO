@@ -15,8 +15,7 @@ indexRoute.use(express.static('public/images'));
 
 
 indexRoute.get('/',(req,res)=>{
-   //let resultado=selectDataUser();
-   res.render('index',{user:req.user}); 
+   res.render('index'); 
 });
 
 

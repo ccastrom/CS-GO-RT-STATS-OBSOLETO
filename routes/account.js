@@ -26,8 +26,13 @@ accountRoute.get('/profile', ensureAuthenticated, (req, res)=>{
         if(err){
           res.status(400);
         }else{
-        var kills=data.playerstats.stats[0].value
-         res.render('profile',  { user: req.user,stats:kills });
+        var userStats={
+          userData:req.user,
+          userKills:data.playerstats.stats
+
+        }
+        
+         res.render('profile',  { steamUserData: userStats });
         }
       }
     })

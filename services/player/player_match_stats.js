@@ -1,5 +1,5 @@
 const { json } = require('express');
-const ActualRound = require('../../mongoDB/models/round_model')
+
 
 class Player_match_stats{
     constructor(kills, assists, deaths, mvps, score) {
@@ -99,18 +99,7 @@ class Player_match_stats{
 
 
 
-// async function insertActualRoundAndKills(jsonObject){
-   
-//     const roundValue= new ActualRound({
-//         MyData:jsonObject
-     
-//     })
- 
-//     const resultado= await roundValue.save()
-        
 
-   
-// }
 
 
 

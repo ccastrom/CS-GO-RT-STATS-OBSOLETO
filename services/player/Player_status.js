@@ -1,6 +1,6 @@
 
 
-const ActualKill = require('../../mongoDB/models/round_model')
+
 class Player_status{
     constructor(health, armor, helmet, defusekit, flashed, smoked, burning, money, round_kills, round_killshs, equip_value) {
         this._health = health;

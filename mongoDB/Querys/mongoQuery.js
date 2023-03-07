@@ -1,4 +1,4 @@
-const ActualRound= require('../models/round_model');
+const ActualRound= require('../models/steamUserAPIGameData_model');
 
 const getRoundKills=async()=>{
     let round_kills= await roundKillsBD.find({}).sort({"_id":-1})
