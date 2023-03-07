@@ -19,7 +19,8 @@ function jsonPersonal(Map,Player,Round,Weapon,Player_status,Player_match_stats){
             PuntuacionCT:Map._teamctScore,
             RondasPerdidasConsecutivasCT:Map._ctconsecutiveroundlosses,
             PuntuacionT:Map._teamTScore,
-            RondasPerdidasConsecutivasT:Map._tconsecutiveroundlosses
+            RondasPerdidasConsecutivasT:Map._tconsecutiveroundlosses,
+            HistorialDeRondas:Map._roundWins
 
         },
 

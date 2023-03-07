@@ -111,6 +111,8 @@ server = http.createServer( (req, res) =>{
         var body = '';
         req.on('data', function (data) {
             body += data;
+            //console.log(body)
+            
             
             
           

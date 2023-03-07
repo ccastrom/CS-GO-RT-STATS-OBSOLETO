@@ -1,9 +1,9 @@
 const mongoose= require('mongoose');
 
-const roundSchema= new mongoose.Schema({
+const steamUserAPIGameDataSchema= new mongoose.Schema({
     
     steamUserAPIGameData:{
-        type:Object,
+        type:Object
          
     },
     
@@ -15,4 +15,4 @@ const roundSchema= new mongoose.Schema({
 })
 
 
-module.exports=mongoose.model('steamUserAPIGameData',roundSchema);
+module.exports=mongoose.model('steamUserAPIGameData',steamUserAPIGameDataSchema);

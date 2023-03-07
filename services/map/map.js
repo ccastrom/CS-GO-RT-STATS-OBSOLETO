@@ -4,15 +4,16 @@ const { set } = require('express/lib/application');
 
    class Map{
        
-       constructor(mapname,mapmode, phase, round, teamctScore, ctconsecutiveroundlosses, teamTScore, tconsecutiveroundlosses) {
+       constructor(mapname,mapmode, phase, round, teamctScore, ctconsecutiveroundlosses, teamTScore, tconsecutiveroundlosses,roundWins) {
            this._mapname=mapname
-            this._mapmode = mapmode;
+           this._mapmode = mapmode;
            this._phase = phase;
            this._round = round;
            this._teamctScore = teamctScore;
            this._ctconsecutiveroundlosses = ctconsecutiveroundlosses;
            this._teamTScore = teamTScore;
            this._tconsecutiveroundlosses = tconsecutiveroundlosses;
+           this._roundWins = roundWins;
        }
        get mapname() {
         return this._mapname;
@@ -70,6 +71,13 @@ const { set } = require('express/lib/application');
            this._tconsecutiveroundlosses = in_tconsecutiveroundlosses;
        }
 
+        get roundWins() {
+           return this._roundWins;
+       }
+       set roundWins(in_roundWins) {
+           this._roundWins = in_roundWins;
+       }
+
         static fillMapInfo(JSON){
         var mapname;
         const mapInfo = new Map();
@@ -89,6 +97,7 @@ const { set } = require('express/lib/application');
             var ctconsecutiveroundlosses;
             var teamTScore;
             var tconsecutiveroundlosses;
+            var roundWins=[];
              mapmode=JSON.map.mode;//0
              //1
              phase=JSON.map.phase;//2
@@ -104,6 +113,16 @@ const { set } = require('express/lib/application');
              teamTScore=JSON.map.team_t.score;//6
              
              tconsecutiveroundlosses=JSON.map.team_t.consecutive_round_losses;//7
+             roundWins=[JSON.map.round_wins]
+
+             roundWins.forEach(element => {
+                console.log(element)
+             });
+
+            
+            
+
+           
             
             mapInfo._mapname=mapname
             mapInfo._mapmode=mapmode
@@ -113,6 +132,8 @@ const { set } = require('express/lib/application');
             mapInfo._ctconsecutiveroundlosses=ctconsecutiveroundlosses
             mapInfo._teamTScore=teamTScore
             mapInfo._tconsecutiveroundlosses=tconsecutiveroundlosses
+            mapInfo._roundWins=roundWins
+
 
            
             
@@ -133,6 +154,7 @@ const { set } = require('express/lib/application');
             mapInfo._ctconsecutiveroundlosses=""
             mapInfo._teamTScore=""
             mapInfo._tconsecutiveroundlosses=""
+            mapInfo._roundWins=roundWins=""
 
             return mapInfo
 

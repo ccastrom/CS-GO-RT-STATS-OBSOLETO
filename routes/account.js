@@ -1,5 +1,6 @@
 const express = require('express');
 const accountRoute=express.Router();
+const mongoQuery= require('../mongoDB/Querys/mongoQuery')
 
 
 
@@ -26,6 +27,11 @@ accountRoute.get('/profile', ensureAuthenticated, (req, res)=>{
         if(err){
           res.status(400);
         }else{
+        let insertAPIDataResult=mongoQuery.insertAPIData(data.playerstats.stats)
+        insertAPIDataResult.then(APIData=>{
+        }).catch(err=>{
+          console.log(err)
+        })
         var userStats={
           userData:req.user,
           userKills:data.playerstats.stats
