@@ -48,11 +48,6 @@ class Player{
         var team;
         var name;
         var status;
-    
-        
-        
-       
-    
         if(Map){
              //console.log("====PARTIDA EN CURSO====");
             if(id64==matchid64){

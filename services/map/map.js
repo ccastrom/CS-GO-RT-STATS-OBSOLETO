@@ -115,15 +115,8 @@ const { set } = require('express/lib/application');
              tconsecutiveroundlosses=JSON.map.team_t.consecutive_round_losses;//7
              roundWins=[JSON.map.round_wins]
 
-             roundWins.forEach(element => {
-                console.log(element)
-             });
+             console.log(phase)
 
-            
-            
-
-           
-            
             mapInfo._mapname=mapname
             mapInfo._mapmode=mapmode
             mapInfo._phase=phase

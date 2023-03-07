@@ -13,7 +13,7 @@ const Map = require('./services/map/Map');
 const Player = require('./services/player/Player');
 const Round = require('./services/round/Round');
 const Player_weapons = require('./services/player/Player_weapons');
-const Player_status = require('./services/player/Player_status');
+const Player_status = require('./services/player/Player_state');
 const Player_match_stats = require('./services/player/Player_match_stats');
 const jsonPersonal = require('./services/json/myjson');
 const mongoQuerys= require('./mongoDB/Querys/mongoQuery')
@@ -111,7 +111,7 @@ server = http.createServer( (req, res) =>{
         var body = '';
         req.on('data', function (data) {
             body += data;
-            //console.log(body)
+            
             
             
             
@@ -119,8 +119,6 @@ server = http.createServer( (req, res) =>{
             
         });
         req.on('end', function () {
-
-
           var jsonGameData = JSON.parse(body);
             var id64 = jsonGameData.provider.steamid;
 

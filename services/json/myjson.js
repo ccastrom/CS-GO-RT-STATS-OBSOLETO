@@ -21,16 +21,13 @@ function jsonPersonal(Map,Player,Round,Weapon,Player_status,Player_match_stats){
             PuntuacionT:Map._teamTScore,
             RondasPerdidasConsecutivasT:Map._tconsecutiveroundlosses,
             HistorialDeRondas:Map._roundWins
-
         },
-
         StatsPlayer:{
             kills:Player_match_stats._kills,
             assists:Player_match_stats._assists,
             deaths:Player_match_stats._deaths,
             mvps:Player_match_stats._mvps,
             score:Player_match_stats._score,
-           
         },
         Ronda:{
             EstadoDeBomba:Round._bombStatus,
@@ -41,8 +38,6 @@ function jsonPersonal(Map,Player,Round,Weapon,Player_status,Player_match_stats){
             ArmaEquipada:Weapon._actual_weapon,
             MunicionRestanteArma1:Weapon._weapon_1_ammo,
             MunicionRestanteArma2:Weapon._weapon_2_ammo,
-            
-
         },
         Estado:{
             Vida:Player_status._health,
@@ -57,32 +52,61 @@ function jsonPersonal(Map,Player,Round,Weapon,Player_status,Player_match_stats){
             round_killsHS:Player_status._round_killshs,
             equip_value:Player_status._equip_value,
         },
-      
-       
-
-        
-
     }
-    //console.log(jsonUserData)
+    let lastMatchInfo={
+        Usuario:{
+            ID:Player._id64,
+            Nombre:Player._name
+        },
+            player_id:{
+                Equipo:Player._team,
+                Estado:Player._status
+            },
+            Mapa:{
+                NombreDeMapa:Map._mapname,
+                TipoDePartida:Map._mapmode,
+                FaseActual:Map._phase,
+                RondaActual:Map._round,
+                PuntuacionCT:Map._teamctScore,
+                RondasPerdidasConsecutivasCT:Map._ctconsecutiveroundlosses,
+                PuntuacionT:Map._teamTScore,
+                RondasPerdidasConsecutivasT:Map._tconsecutiveroundlosses,
+                HistorialDeRondas:Map._roundWins
     
-    if(jsonUserData.Mapa.NombreDeMapa){
-        insertDataUser(jsonUserData);
+            },
+            StatsPlayer:{
+                kills:Player_match_stats._kills,
+                assists:Player_match_stats._assists,
+                deaths:Player_match_stats._deaths,
+                mvps:Player_match_stats._mvps,
+                score:Player_match_stats._score,
+               
+            }
+    }
+    lastMatchInsert(lastMatchInfo); 
+    return jsonUserData;
+}
+
+function lastMatchInsert(JSON){
+
+    if(JSON.Mapa.NombreDeMapa && JSON.Mapa.FaseActual=="gameover"){
+        let insertData=insertLastMatch(JSON)
+        insertData.then(result=>{
+            console.log("All ok: "+result);
+        }).catch(err=>{
+            console.log(err)
+        })
        
     }
-  
-  
-   
-    //console.log(jsonUserData);
-    return jsonUserData;
 }
 
 
 
-async function insertDataUser(dataUser){
+async function insertLastMatch(dataUser){
     const user= new User({
       data:dataUser
     })
-    const resultado= await user.save();
+     return await user.save();
    
 }
 module.exports=jsonPersonal;
