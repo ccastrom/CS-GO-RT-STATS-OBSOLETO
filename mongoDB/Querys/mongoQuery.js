@@ -1,31 +1,38 @@
-const dataAPI= require('../models/steamUserAPIGameData_model');
+const steamUserAPIGameData= require('../models/steamUserAPIGameData_model');
+const userInGameData= require('../models/userDataIngame');
+
+async function insertInGameData(dataUser){
+    let dataObject= new userInGameData({
+        user_Data_InGame:dataUser
+    })
+     return await dataObject.save();
+   
+}
+
+
+
 
 const insertAPIData=async(jsonData)=>{
-    let dataObject= new dataAPI({
-        steamUserAPIGameData:jsonData
+    let dataObject= new steamUserAPIGameData({
+        steamUser_APIGame_Data:jsonData
     })
     return await dataObject.save();
 }
 
-
-
-const getRoundKills=async()=>{
-    let round_kills= await roundKillsBD.find({}).sort({"_id":-1})
-    return round_kills;
-}
-
-
 async function findLastRecord(){
-    let statsBD= await ActualRound.find().sort({_id:1});
+    let statsBD= await userInGameData.findOne({}).sort({"_id":-1});
  
     return statsBD;
  
  }
 
+ 
+
 
 
 module.exports={
+    insertInGameData,
     insertAPIData,
-    getRoundKills,
     findLastRecord
+   
 }

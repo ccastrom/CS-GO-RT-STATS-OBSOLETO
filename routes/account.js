@@ -32,13 +32,33 @@ accountRoute.get('/profile', ensureAuthenticated, (req, res)=>{
         }).catch(err=>{
           console.log(err)
         })
-        var userStats={
-          userData:req.user,
-          userKills:data.playerstats.stats
 
-        }
+       
+
+        const getLastGameMatch=mongoQuery.findLastRecord()
+        .then(result=>{
+
+          const userStats={
+            userAPIData:{
+              userData:req.user,
+              userKills:data.playerstats.stats,
+            },
+            userLastMatch:{
+              userObject:result
+            }
+           
+          }
+  
+       
+          res.render('profile',  { steamProfileData: userStats });
+         
+        })
+
         
-         res.render('profile',  { steamUserData: userStats });
+
+      
+       
+        
         }
       }
     })

@@ -3,9 +3,7 @@
   var deathsFromEJS=document.getElementById("totalDeaths").value
   var killsAndDeathsValue= (killsFromEJS/deathsFromEJS);
 
-  console.log(killsFromEJS)
-  console.log(deathsFromEJS)
-  console.log(killsAndDeathsValue)
+
 
 
   function twoDecimals(number){

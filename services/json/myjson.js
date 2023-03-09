@@ -1,11 +1,13 @@
 const { default: mongoose } = require('mongoose');
-const User = require('../../mongoDB/models/user_model')
+const userDataInGame = require('../../mongoDB/models/userDataIngame')
+const mongoQuery= require('../../mongoDB/Querys/mongoQuery')
 function jsonPersonal(Map,Player,Round,Weapon,Player_status,Player_match_stats){
     
-   
+    const date= new Date();
     let jsonUserData={Usuario:{
         ID:Player._id64,
-        Nombre:Player._name
+        Nombre:Player._name,
+       
     },
         player_id:{
             Equipo:Player._team,
@@ -56,7 +58,8 @@ function jsonPersonal(Map,Player,Round,Weapon,Player_status,Player_match_stats){
     let lastMatchInfo={
         Usuario:{
             ID:Player._id64,
-            Nombre:Player._name
+            Nombre:Player._name,
+            fechaDePartida:date
         },
             player_id:{
                 Equipo:Player._team,
@@ -83,18 +86,18 @@ function jsonPersonal(Map,Player,Round,Weapon,Player_status,Player_match_stats){
                
             }
     }
-    lastMatchInsert(lastMatchInfo); 
+    insertInGameData(lastMatchInfo); 
     return jsonUserData;
 }
 
-function lastMatchInsert(JSON){
+function insertInGameData(JSON){
 
     if(JSON.Mapa.NombreDeMapa && JSON.Mapa.FaseActual=="gameover"){
-        let insertData=insertLastMatch(JSON)
+        let insertData=mongoQuery.insertInGameData(JSON)
         insertData.then(result=>{
             console.log("All ok: "+result);
         }).catch(err=>{
-            console.log(err)
+            console.log("Duplicated")
         })
        
     }
@@ -102,11 +105,5 @@ function lastMatchInsert(JSON){
 
 
 
-async function insertLastMatch(dataUser){
-    const user= new User({
-      data:dataUser
-    })
-     return await user.save();
-   
-}
+
 module.exports=jsonPersonal;

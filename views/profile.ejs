@@ -28,21 +28,26 @@
 	<div class="section-2">
 		<div class="container-fluid px-5 mt-3">
 			<div class="card p-3 " style="background-color: #3f4766;">
-				<input type="text" hidden  name="" id="totalKills" value=<%= steamUserData.userKills[0].value %>>
-				<input type="text" hidden  name="" id="totalDeaths" value=<%= steamUserData.userKills[1].value %>>
+				<input type="text" hidden  name="" id="totalKills" value=<%= steamProfileData.userAPIData.userKills[0].value %>>
+				<input type="text" hidden  name="" id="totalDeaths" value=<%= steamProfileData.userAPIData.userKills[1].value %>>
+				<input type="text" hidden  name="" id="userID" value=<%= steamProfileData.userLastMatch.userObject.user_Data_InGame.Usuario.ID %>>
+				<input type="text" hidden  name="" id="roundCT" value=<%= steamProfileData.userLastMatch.userObject.user_Data_InGame.Mapa.PuntuacionCT %>>
+				<input type="text" hidden  name="" id="roundT" value=<%= steamProfileData.userLastMatch.userObject.user_Data_InGame.Mapa.PuntuacionCT %>>
+				<input type="text" hidden  name="" id="userTeam" value=<%= steamProfileData.userLastMatch.userObject.user_Data_InGame.player_id.Equipo %>>
+				
 				<div class="row">
 					<div class="col-1 ms-3" >
-						<img class="img-fluid" src="<%= steamUserData.userData.photos[2].value %>" alt="">
+						<img class="img-fluid" src="<%= steamProfileData.userAPIData.userData.photos[2].value %>" alt="">
 					</div>
 					<div class="col-6 ms-4 ">
-						<h1 class="mb-4 text-white">Victorys: <a href="">image</a></h1>
-						<h2 class="text-white"><%= steamUserData.userData.displayName %></h3>
+						<h1 class="mb-4 text-white" >Victorys: <a href="">image</a></h1>
+						<h2 class="text-white"><%= steamProfileData.userAPIData.userData.displayName %></h3>
 						<h4 class="text-white">Last Match</h4>
 					</div>
 					<div class="col-4 ms-auto  " >
-						<h2 class="text-center mb-4 text-white ">Victory/Defeat</h1>
-						<h2 class="text-center text-white ">0-0</h1>
-						<h2 class="text-center text-white ">MapName</h1>
+						<h2 class="text-center mb-4 text-white " id="victoryOrDefeat">Victory/Defeat</h1>
+						<h2 class="text-center text-white "><%= steamProfileData.userLastMatch.userObject.user_Data_InGame.Mapa.PuntuacionCT%> -- <%= steamProfileData.userLastMatch.userObject.user_Data_InGame.Mapa.PuntuacionT %></h1>
+						<h2 class="text-center text-white "><%= steamProfileData.userLastMatch.userObject.user_Data_InGame.Mapa.NombreDeMapa %></h1>
 					</div>
 				</div>
 			
@@ -50,7 +55,7 @@
 			<div class="row ">
 				<div class="col-12">
 					<div class="card p-3 mt-5">
-						<h1 class="mx-auto"></h1>
+						<h1 class="mx-auto">History Match</h1>
 					</div>
 				</div>
 			</div>
@@ -108,6 +113,7 @@
 <script type="text/javascript" src="JavaScript/profileCharts/middleChart.js"></script>
 <script type="text/javascript" src="JavaScript/profileCharts/leftChart.js"></script>
 <script type="text/javascript" src="JavaScript/profileCharts/rightChart.js"></script>
+<script type="text/javascript" src="JavaScript/profile.js"></script>
 
 </html>
 

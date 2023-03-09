@@ -2,7 +2,7 @@ const mongoose= require('mongoose');
 
 const steamUserAPIGameDataSchema= new mongoose.Schema({
     
-    steamUserAPIGameData:{
+    steamUser_APIGame_Data:{
         type:Object
          
     },
