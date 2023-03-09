@@ -26,6 +26,11 @@ async function findLastRecord(){
  
  }
 
+ async function findLastDocumentdByID(documetID){
+    let documentBD= await userInGameData.findById(documetID)
+    return documentBD;
+ }
+
  
 
 
@@ -33,6 +38,7 @@ async function findLastRecord(){
 module.exports={
     insertInGameData,
     insertAPIData,
-    findLastRecord
+    findLastRecord,
+    findLastDocumentdByID
    
 }

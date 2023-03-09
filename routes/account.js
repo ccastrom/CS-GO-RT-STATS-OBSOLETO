@@ -1,5 +1,8 @@
 const express = require('express');
 const accountRoute=express.Router();
+accountRoute.use(express.json());
+accountRoute.use(express.urlencoded());
+
 const mongoQuery= require('../mongoDB/Querys/mongoQuery')
 
 
@@ -63,6 +66,18 @@ accountRoute.get('/profile', ensureAuthenticated, (req, res)=>{
       }
     })
   });
+
+  accountRoute.post('/matchDetail',(req,res)=>{
+    console.log(req.body.gameDocumentID)
+    
+    let getDocument=mongoQuery.findLastDocumentdByID(req.body.gameDocumentID)
+    .then(result=>{
+      console.log(result)
+    })
+    res.render('matchDetails',  { data: req.body.gameDocumentID });
+    
+
+  })
 
   function ensureAuthenticated(req, res, next) {
     if (req.isAuthenticated()) { return next(); }

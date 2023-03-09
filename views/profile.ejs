@@ -34,6 +34,7 @@
 				<input type="text" hidden  name="" id="roundCT" value=<%= steamProfileData.userLastMatch.userObject.user_Data_InGame.Mapa.PuntuacionCT %>>
 				<input type="text" hidden  name="" id="roundT" value=<%= steamProfileData.userLastMatch.userObject.user_Data_InGame.Mapa.PuntuacionCT %>>
 				<input type="text" hidden  name="" id="userTeam" value=<%= steamProfileData.userLastMatch.userObject.user_Data_InGame.player_id.Equipo %>>
+			
 				
 				<div class="row">
 					<div class="col-1 ms-3" >
@@ -46,8 +47,13 @@
 					</div>
 					<div class="col-4 ms-auto  " >
 						<h2 class="text-center mb-4 text-white " id="victoryOrDefeat">Victory/Defeat</h1>
+						
 						<h2 class="text-center text-white "><%= steamProfileData.userLastMatch.userObject.user_Data_InGame.Mapa.PuntuacionCT%> -- <%= steamProfileData.userLastMatch.userObject.user_Data_InGame.Mapa.PuntuacionT %></h1>
 						<h2 class="text-center text-white "><%= steamProfileData.userLastMatch.userObject.user_Data_InGame.Mapa.NombreDeMapa %></h1>
+						<form action="/account/matchDetail" method="POST">
+							<input type="text"   name="gameDocumentID" id="gameDocumentID" value=<%= steamProfileData.userLastMatch.userObject._id %>>
+							<input type="submit" name="btnSend" id="btnSend" value="Check Details">
+						</form>	
 					</div>
 				</div>
 			
