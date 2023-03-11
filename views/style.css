@@ -1,14 +1,11 @@
 body {
     font-family: 'Poppins', sans-serif; 
+    background-color: #20244a;
   }
-  .gradient-custom {
-    /* fallback for old browsers */
-    background: #182141;
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: -webkit-linear-gradient(to right, rgba(24, 33, 65, 1), rgba(48, 77, 120, 1));
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background: linear-gradient(to right, rgba(24, 33, 65, 1), rgba(48, 77, 120, 1));
   
+
+  h1,h2,h3,h4,h5,h6{
+    color: #9b9ca7;
   }
 
 
@@ -37,6 +34,9 @@ body {
     width: 100%;
     pointer-events: none;
 
+  }
+  .card{
+    background: radial-gradient(circle, #1a2049 0%, #13162f 100%);
   }
 
 
@@ -104,9 +104,41 @@ body {
     background-repeat: no-repeat;
   }
 
+  ul {
+    display: flex;
+    align-items: stretch; /* Default */
+    justify-content: space-between;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
 
+li {
+    display: block;
+    flex: 0 1 auto; /* Default */
+    list-style-type: none;
+    background-color: white;
+    padding: 0 0.75em;
+    z-index: 1;
+}
 
+li:first-child {
+    padding-left: 0;
+}
 
+li:last-child {
+    padding-right: 0;
+}
+
+ul:after {
+    content: '';
+    border-bottom: 1px solid lightgray;
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+    width: 100%;
+}
 
   
 

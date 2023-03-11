@@ -41,18 +41,18 @@
 						<img class="img-fluid" src="<%= steamProfileData.userAPIData.userData.photos[2].value %>" alt="">
 					</div>
 					<div class="col-6 ms-4 ">
-						<h1 class="mb-4 text-white" >Victorys: <a href="">image</a></h1>
-						<h2 class="text-white"><%= steamProfileData.userAPIData.userData.displayName %></h3>
-						<h4 class="text-white">Last Match</h4>
+						<h1 class="mb-4 " >Victorys: <a href="">image</a></h1>
+						<h2 class=""><%= steamProfileData.userAPIData.userData.displayName %></h3>
+						<h4 class="">Last Match</h4>
 					</div>
 					<div class="col-4 ms-auto  " >
-						<h2 class="text-center mb-4 text-white " id="victoryOrDefeat">Victory/Defeat</h1>
+						<h2 class="text-center mb-4  " id="victoryOrDefeat">Victory/Defeat</h1>
 						
-						<h2 class="text-center text-white "><%= steamProfileData.userLastMatch.userObject.user_Data_InGame.Mapa.PuntuacionCT%> -- <%= steamProfileData.userLastMatch.userObject.user_Data_InGame.Mapa.PuntuacionT %></h1>
-						<h2 class="text-center text-white "><%= steamProfileData.userLastMatch.userObject.user_Data_InGame.Mapa.NombreDeMapa %></h1>
+						<h2 class="text-center  "><%= steamProfileData.userLastMatch.userObject.user_Data_InGame.Mapa.PuntuacionCT%> -- <%= steamProfileData.userLastMatch.userObject.user_Data_InGame.Mapa.PuntuacionT %></h1>
+						<h2 class="text-center  "><%= steamProfileData.userLastMatch.userObject.user_Data_InGame.Mapa.NombreDeMapa %></h1>
 						<form action="/account/matchDetail" method="POST">
 							<input type="text"   name="gameDocumentID" id="gameDocumentID" value=<%= steamProfileData.userLastMatch.userObject._id %>>
-							<input type="submit" name="btnSend" id="btnSend" value="Check Details">
+							<input type="submit" name="btnSend" class=" btn btn-primary  btn-lg" id="btnSend" value="Check Details">
 						</form>	
 					</div>
 				</div>
@@ -65,7 +65,7 @@
 					</div>
 				</div>
 			</div>
-			<h1 class="text-white mt-5">Perfomance</h1>
+			<h1 class=" mt-5">Perfomance</h1>
 			<div class="row ">
 				<div class="col-3">
 					<div class="card p-3 mt-4">
@@ -74,7 +74,7 @@
 				</div>
 				<div class="col-6">
 					<div class="card p-3 mt-4">
-						<canvas style="width:70px; height:20px" id="myChart"></canvas>
+						<canvas  id="MyChart1"></canvas>
 					</div>
 				</div>
 				<div class="col-3">
