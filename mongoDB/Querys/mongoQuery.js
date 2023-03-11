@@ -1,5 +1,6 @@
 const steamUserAPIGameData= require('../models/steamUserAPIGameData_model');
 const userInGameData= require('../models/userDataIngame');
+const botData= require('../models/botSteam_model');
 
 async function insertInGameData(dataUser){
     let dataObject= new userInGameData({
@@ -7,6 +8,14 @@ async function insertInGameData(dataUser){
     })
      return await dataObject.save();
    
+}
+
+async function insertBotData(botDataInfo){
+    let dataObject = new botData({
+        botSteamData:botDataInfo
+    })
+
+    return await dataObject.save();
 }
 
 
@@ -17,6 +26,10 @@ const insertAPIData=async(jsonData)=>{
         steamUser_APIGame_Data:jsonData
     })
     return await dataObject.save();
+}
+async function findLastAPIRecord(){
+    let data= await steamUserAPIGameData.findOne({}).sort({"_id":-1})
+    return data;
 }
 
 async function findLastRecord(){
@@ -37,6 +50,8 @@ async function findLastRecord(){
 
 module.exports={
     insertInGameData,
+    insertBotData,
+    findLastAPIRecord,
     insertAPIData,
     findLastRecord,
     findLastDocumentdByID

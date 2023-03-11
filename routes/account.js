@@ -72,10 +72,17 @@ accountRoute.get('/profile', ensureAuthenticated, (req, res)=>{
     
     let getDocument=mongoQuery.findLastDocumentdByID(req.body.gameDocumentID)
     .then(result=>{
-      console.log(result)
-
-      res.render('matchDetails',  { data: result });
+      let getAPIDocument=mongoQuery.findLastAPIRecord()
+      .then(apiResult=>{
+        console.log(apiResult)
+        res.render('matchDetails',  { dataInGame: result,dataAPI:apiResult });
+      })
+      //console.log(result)  
+       
+    
     })
+    
+    
   
     
 

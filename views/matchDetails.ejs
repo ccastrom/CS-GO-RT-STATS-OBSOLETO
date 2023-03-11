@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,45 +9,52 @@
     <link rel="stylesheet" href="bootstrap.css">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body class="gradient-custom">
     <nav class="navbar navbar-expand-lg navbar-light ">
-		<div class="container-fluid">
-			<a class="navbar-brand " href="#">RT:STATS</a>
-			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-				aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-				<div class="navbar-nav ms-auto">
-					<a class="nav-link" href="/account/profile">Profile</a>
-					<a class="nav-link" href="#">Settings</a>
-					<a class="nav-link" href="logout">Logout</a>
-				</div>
-			</div>
-		</div>
-	</nav>
-    <input type="text" hidden  name="" id="totalKills" value=<%=  data.user_Data_InGame.StatsPlayer.kills %>>
-				<input type="text" hidden  name="" id="totalDeaths" value=<%= data.user_Data_InGame.StatsPlayer.deaths %>>
-				<input type="text" hidden  name="" id="totalAssists" value=<%= data.user_Data_InGame.StatsPlayer.assists %>>
+        <div class="container-fluid">
+            <a class="navbar-brand " href="#">RT:STATS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link" href="/account/profile">Profile</a>
+                    <a class="nav-link" href="#">Settings</a>
+                    <a class="nav-link" href="logout">Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <input type="text" hidden name="" id="totalKills" value=<%=dataInGame.user_Data_InGame.StatsPlayer.kills %>>
+    <input type="text" hidden name="" id="totalDeaths" value=<%=dataInGame.user_Data_InGame.StatsPlayer.deaths %>>
+    <input type="text" hidden name="" id="totalAssists" value=<%=dataInGame.user_Data_InGame.StatsPlayer.assists %>>
     <header class="masthead">
         <div class="container h-100">
-          <div class="row h-100 align-items-center">
-            <div class="col-3 text-center">
-              <h1 class="text-white text-end"><%= data.user_Data_InGame.Mapa.PuntuacionCT %></h1>
-             
+            <div class="row h-100 align-items-center">
+                <div class="col-3 text-center">
+                    <h1 class="text-white text-end">
+                        <%= dataInGame.user_Data_InGame.Mapa.PuntuacionCT %>
+                    </h1>
+
+                </div>
+                <div class="col-6 text-center">
+                    <h1 class="text-white">
+                        <%= dataInGame.user_Data_InGame.Mapa.NombreDeMapa %>
+                    </h1>
+                    <h5 class="text-white fw-lighter">Date</h5>
+
+                </div>
+                <div class="col-3 text-center">
+                    <h1 class="text-white text-start">
+                        <%= dataInGame.user_Data_InGame.Mapa.PuntuacionT %>
+                    </h1>
+
+                </div>
             </div>
-            <div class="col-6 text-center">
-                <h1 class="text-white"><%= data.user_Data_InGame.Mapa.NombreDeMapa %></h1>
-                <h5 class="text-white fw-lighter">Date</h5>
-               
-              </div>
-              <div class="col-3 text-center">
-                <h1 class="text-white text-start"><%= data.user_Data_InGame.Mapa.PuntuacionT %></h1>
-              
-              </div>
-          </div>
         </div>
-      </header>
+    </header>
 
     <div class="section-2">
         <div class="container-fluid px-5 my-2">
@@ -54,55 +62,81 @@
 
             <div class="row">
                 <div class="col-sm-12 mx-auto my-2 ">
-                    <div class=" card mx-auto shadow "style="background-color: #113f67;" >
-                        <div class="card-header shadow-sm">
-                            <h1>Graphs</h1>
+                    <div class=" card shadow  col-3 mx-auto " style="background-color:#385170 ;">
+                        <div class="card-header">
+                            <h5>KDA</h5>
                         </div>
-                        <div class="card-body ">
-                            <div class=" card shadow  col-3 mx-auto " style="background-color:#385170 ;">
-                                <div class="card-header">
-                                    <h5>KDA</h5>
-                                </div>
-                                <div class=" p-3 ">
-                                    <canvas  id="radarChart"></canvas>
-                                </div>
-                            </div>
+                        <div class=" p-3 ">
+                            <canvas id="radarChart"></canvas>
                         </div>
-                     
                     </div>
                 </div>
-              
-                
-               
-                
+
+
 
             </div>
             <div class="row ">
-				<div class="col-12">
-					
-					<table border="5px" style="border-color: aliceblue;">
+                <div class="col-12" style="background-color: beige;">
+
+                    <table>
                         <tr>
                             <td rowspan="0"></td>
                         </tr>
                         <tr>
                             <td colspan="100%">
-                                <ul style="padding:0; margin:0; list-style-type:none;">
-                                   <li style=" float:left;">testing</li>
+                                <ul class="list-group list-group-horizontal" ></ul>
+                                  
+
+                                    <% for (let i=0; i < dataInGame.user_Data_InGame.Mapa.HistorialDeRondas.length; i++) { %>
+
+                                        <li class="list-group-item">
+                                            <%= Object.values(dataInGame.user_Data_InGame.Mapa.HistorialDeRondas[i]) %>
+                                        </li>
+                                        <%}%>
                                 </ul>
-                                
+
                             </td>
                         </tr>
                     </table>
-					
-				</div>
-			</div>
+
+                  
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12" style="background-color: brown;">
+                    <div class="card col-6">
+                        <div class="card-header">
+                            Fav Gun stats
+                          </div>
+                          <div class="card-body">
+                              <ul class="list-group list-group-horizontal">
+                                  <li class="list-group-item">
+                                    <h5 class="card-title">Favorite Gun</h5>
+                                      <%= dataAPI.steamUser_APIGame_Data[94].value %>
+                                  </li>
+                                  <li class="list-group-item">
+                                    <h5 class="card-title">Shots</h5>
+                                    <%= dataAPI.steamUser_APIGame_Data[95].value %>
+                                </li>
+                                <li class="list-group-item">
+                                    <h5 class="card-title">Favorite Gun Kills</h5>
+                                    <%= dataAPI.steamUser_APIGame_Data[97].value %>
+                                </li>
+                              </ul>
+                          </div>
+                    </div>
+                    
+                </div>
+            </div>
 
         </div>
     </div>
- 
+
 </body>
 <script src="/bootstrap.min.js"></script>
 <script type="text/javascript" src="chart.min.js"></script>
 <script type="text/javascript" src="JavaScript/matchDetailsCharts/radarChart.js"></script>
 <script type="text/javascript" src="JavaScript/matchDetails.js"></script>
+
 </html>
