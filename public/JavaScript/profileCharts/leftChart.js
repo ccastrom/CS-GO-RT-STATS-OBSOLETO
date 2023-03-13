@@ -67,6 +67,7 @@
     type: 'doughnut',
     data: data_left_chart,
     options: {
+       
         
     },
     plugins:[centerText]

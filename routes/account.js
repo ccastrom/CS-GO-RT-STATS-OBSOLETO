@@ -70,14 +70,15 @@ accountRoute.get('/profile', ensureAuthenticated, (req, res)=>{
   accountRoute.post('/matchDetail',(req,res)=>{
     console.log(req.body.gameDocumentID)
     
-    let getDocument=mongoQuery.findLastDocumentdByID(req.body.gameDocumentID)
+    let getDocument=mongoQuery.findLastBotDocumentdByID()
     .then(result=>{
-      let getAPIDocument=mongoQuery.findLastAPIRecord()
-      .then(apiResult=>{
-        console.log(apiResult)
-        res.render('matchDetails',  { dataInGame: result,dataAPI:apiResult });
-      })
-      //console.log(result)  
+      console.log(result.botSteamData.roundstatsall);
+      // let getAPIDocument=mongoQuery.findLastAPIRecord()
+      // .then(apiResult=>{
+      //   //console.log(apiResult)
+      //   res.render('matchDetails',  { dataInGame: result,dataAPI:apiResult });
+      // })
+      // //console.log(result)  
        
     
     })

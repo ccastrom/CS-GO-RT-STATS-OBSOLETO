@@ -39,8 +39,17 @@ async function findLastRecord(){
  
  }
 
- async function findLastDocumentdByID(documetID){
-    let documentBD= await userInGameData.findById(documetID)
+ async function findLastDocumentdByID(documentID){
+    let documentBD= await userInGameData.findById(documentID)
+    return documentBD;
+ }
+
+ async function findLastBotDocumentdByID(documentID){
+    let documentBD= await botData.findOne().select({"botSteamData.roundstatsall":{
+        "$slice":-1}
+    })
+     
+       
     return documentBD;
  }
 
@@ -54,6 +63,7 @@ module.exports={
     findLastAPIRecord,
     insertAPIData,
     findLastRecord,
-    findLastDocumentdByID
+    findLastDocumentdByID,
+    findLastBotDocumentdByID
    
 }
