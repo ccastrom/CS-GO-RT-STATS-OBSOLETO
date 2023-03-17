@@ -1,6 +1,7 @@
 const steamUserAPIGameData= require('../models/steamUserAPIGameData_model');
 const userInGameData= require('../models/userDataIngame');
 const botData= require('../models/botSteam_model');
+const demoData= require('../models/demoData_model');
 
 async function insertInGameData(dataUser){
     let dataObject= new userInGameData({
@@ -16,6 +17,14 @@ async function insertBotData(botDataInfo){
     })
 
     return await dataObject.save();
+}
+
+async function insertDemoData(dataJson){
+   let dataObject= new demoData({
+    demo_Data:dataJson
+   })
+   return await dataObject.save();
+   
 }
 
 
@@ -60,6 +69,7 @@ async function findLastRecord(){
 module.exports={
     insertInGameData,
     insertBotData,
+    insertDemoData,
     findLastAPIRecord,
     insertAPIData,
     findLastRecord,

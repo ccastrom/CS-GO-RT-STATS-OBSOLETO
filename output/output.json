@@ -1,0 +1,1899 @@
+[{
+    "Encabezado": {
+        "magic": "HL2DEMO",
+        "protocol": 4,
+        "networkProtocol": 13855,
+        "serverName": "Valve CS:GO Chile Server (srcds1026-scl1.241.14)",
+        "clientName": "GOTV Demo",
+        "mapName": "de_dust2",
+        "gameDirectory": "csgo",
+        "playbackTime": 1281.84375,
+        "playbackTicks": 82038,
+        "playbackFrames": 40956,
+        "signonLength": 566808
+    }
+},[
+    {
+        "AttackerLogs": {
+            "attacker": "Andrheiz",
+            "weaponUsed": "galilar",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "BRAVO SIX"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "Nazi Autista 777",
+            "weaponUsed": "glock",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "꧁Elagui꧂"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "Andrheiz",
+            "weaponUsed": "m4a1_silencer",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "♦\"iKaRi\"♦"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "BRAVO SIX",
+            "weaponUsed": "m4a1",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "negro weco"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "JesLaM-",
+            "weaponUsed": "galilar",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "bart sexsom"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "negro weco",
+            "weaponUsed": "deagle",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "BRAVO SIX"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "Andrheiz",
+            "weaponUsed": "galilar",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "♦\"iKaRi\"♦"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "negro weco",
+            "weaponUsed": "awp",
+            "headshotStatus": "",
+            "flashed": "No Flash Assist",
+            "victim": "BRAVO SIX"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "Nazi Autista 777",
+            "weaponUsed": "knife",
+            "headshotStatus": "",
+            "flashed": "No Flash Assist",
+            "victim": "꧁Elagui꧂"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "BRAVO SIX",
+            "weaponUsed": "usp_silencer",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "Nazi Autista 777"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "Andrheiz",
+            "weaponUsed": "m4a1_silencer",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "♦\"iKaRi\"♦"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "Nazi Autista 777",
+            "weaponUsed": "galilar",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "BRAVO SIX"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "꧁Elagui꧂",
+            "weaponUsed": "knife_cord",
+            "headshotStatus": "",
+            "flashed": "No Flash Assist",
+            "victim": "negro weco"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "Nazi Autista 777",
+            "weaponUsed": "usp_silencer",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "BRAVO SIX"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "JesLaM-",
+            "weaponUsed": "awp",
+            "headshotStatus": "",
+            "flashed": "No Flash Assist",
+            "victim": "bart sexsom"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "♦\"iKaRi\"♦",
+            "weaponUsed": "famas",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "Andrheiz"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "꧁Elagui꧂",
+            "weaponUsed": "knife_cord",
+            "headshotStatus": "",
+            "flashed": "No Flash Assist",
+            "victim": "negro weco"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "Wolfmeister",
+            "weaponUsed": "m4a1",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "Unless"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "BRAVO SIX",
+            "weaponUsed": "deagle",
+            "headshotStatus": "",
+            "flashed": "No Flash Assist",
+            "victim": "Nazi Autista 777"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "JesLaM-",
+            "weaponUsed": "deagle",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "bart sexsom"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "negro weco",
+            "weaponUsed": "knife",
+            "headshotStatus": "",
+            "flashed": "No Flash Assist",
+            "victim": "♦\"iKaRi\"♦"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "Wolfmeister",
+            "weaponUsed": "usp_silencer",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "Unless"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "BRAVO SIX",
+            "weaponUsed": "ak47",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "bart sexsom"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "Andrheiz",
+            "weaponUsed": "famas",
+            "headshotStatus": "",
+            "flashed": "No Flash Assist",
+            "victim": "꧁Elagui꧂"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "♦\"iKaRi\"♦",
+            "weaponUsed": "knife",
+            "headshotStatus": "",
+            "flashed": "No Flash Assist",
+            "victim": "negro weco"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "BRAVO SIX",
+            "weaponUsed": "m4a1",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "bart sexsom"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "Andrheiz",
+            "weaponUsed": "m4a1",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "Unless"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "Wolfmeister",
+            "weaponUsed": "glock",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "꧁Elagui꧂"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "Andrheiz",
+            "weaponUsed": "m4a1",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "Unless"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "negro weco",
+            "weaponUsed": "ak47",
+            "headshotStatus": "",
+            "flashed": "No Flash Assist",
+            "victim": "♦\"iKaRi\"♦"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "Unless",
+            "weaponUsed": "awp",
+            "headshotStatus": "",
+            "flashed": "No Flash Assist",
+            "victim": "negro weco"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "BRAVO SIX",
+            "weaponUsed": "ak47",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "bart sexsom"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "꧁Elagui꧂",
+            "weaponUsed": "glock",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "Wolfmeister"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "BRAVO SIX",
+            "weaponUsed": "awp",
+            "headshotStatus": "",
+            "flashed": "No Flash Assist",
+            "victim": "negro weco"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "Wolfmeister",
+            "weaponUsed": "usp_silencer",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "Unless"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "Andrheiz",
+            "weaponUsed": "galilar",
+            "headshotStatus": "",
+            "flashed": "No Flash Assist",
+            "victim": "♦\"iKaRi\"♦"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "꧁Elagui꧂",
+            "weaponUsed": "famas",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "bart sexsom"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "Unless",
+            "weaponUsed": "glock",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "Wolfmeister"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "♦\"iKaRi\"♦",
+            "weaponUsed": "usp_silencer",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "Andrheiz"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "negro weco",
+            "weaponUsed": "knife",
+            "headshotStatus": "",
+            "flashed": "No Flash Assist",
+            "victim": "BRAVO SIX"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "Unless",
+            "weaponUsed": "famas",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "Wolfmeister"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "Andrheiz",
+            "weaponUsed": "usp_silencer",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "♦\"iKaRi\"♦"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "♦\"iKaRi\"♦",
+            "weaponUsed": "famas",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "Andrheiz"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "BRAVO SIX",
+            "weaponUsed": "knife",
+            "headshotStatus": "",
+            "flashed": "No Flash Assist",
+            "victim": "negro weco"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "Andrheiz",
+            "weaponUsed": "awp",
+            "headshotStatus": "",
+            "flashed": "No Flash Assist",
+            "victim": "♦\"iKaRi\"♦"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "Wolfmeister",
+            "weaponUsed": "ak47",
+            "headshotStatus": "",
+            "flashed": "No Flash Assist",
+            "victim": "Unless"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "♦\"iKaRi\"♦",
+            "weaponUsed": "usp_silencer",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "Wolfmeister"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "Andrheiz",
+            "weaponUsed": "famas",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "Unless"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "Wolfmeister",
+            "weaponUsed": "deagle",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "♦\"iKaRi\"♦"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "꧁Elagui꧂",
+            "weaponUsed": "knife_cord",
+            "headshotStatus": "",
+            "flashed": "No Flash Assist",
+            "victim": "bart sexsom"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "BRAVO SIX",
+            "weaponUsed": "knife",
+            "headshotStatus": "",
+            "flashed": "No Flash Assist",
+            "victim": "negro weco"
+        }
+    }
+],[
+    {
+        "RoundData": {
+            "roundValue": 0,
+            "tScore": 0,
+            "ctScore": 0
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "JesLaM-",
+            "weaponUsed": "glock",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "Nazi Autista 777"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "Wolfmeister",
+            "weaponUsed": "usp_silencer",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "♦\"iKaRi\"♦"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "BRAVO SIX",
+            "weaponUsed": "glock",
+            "headshotStatus": "",
+            "flashed": "No Flash Assist",
+            "victim": "Wolfmeister"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "negro weco",
+            "weaponUsed": "usp_silencer",
+            "headshotStatus": "",
+            "flashed": "No Flash Assist",
+            "victim": "Unless"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "BRAVO SIX",
+            "weaponUsed": "glock",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "Andrheiz"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "JesLaM-",
+            "weaponUsed": "glock",
+            "headshotStatus": "",
+            "flashed": "No Flash Assist",
+            "victim": "bart sexsom"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "꧁Elagui꧂",
+            "weaponUsed": "glock",
+            "headshotStatus": "",
+            "flashed": "No Flash Assist",
+            "victim": "negro weco"
+        }
+    }
+],[
+    {
+        "RoundData": {
+            "roundValue": 1,
+            "tScore": 1,
+            "ctScore": 0
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "꧁Elagui꧂",
+            "weaponUsed": "mp7",
+            "headshotStatus": "",
+            "flashed": "No Flash Assist",
+            "victim": "bart sexsom"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "꧁Elagui꧂",
+            "weaponUsed": "mp7",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "Andrheiz"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "♦\"iKaRi\"♦",
+            "weaponUsed": "mp5sd",
+            "headshotStatus": "",
+            "flashed": "No Flash Assist",
+            "victim": "negro weco"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "꧁Elagui꧂",
+            "weaponUsed": "mp7",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "Nazi Autista 777"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "Wolfmeister",
+            "weaponUsed": "mp9",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "♦\"iKaRi\"♦"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "BRAVO SIX",
+            "weaponUsed": "mac10",
+            "headshotStatus": "",
+            "flashed": "No Flash Assist",
+            "victim": "Wolfmeister"
+        }
+    }
+],[
+    {
+        "RoundData": {
+            "roundValue": 2,
+            "tScore": 2,
+            "ctScore": 0
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "JesLaM-",
+            "weaponUsed": "ssg08",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "Andrheiz"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "Wolfmeister",
+            "weaponUsed": "inferno",
+            "headshotStatus": "",
+            "flashed": "Flash Assist!",
+            "victim": "꧁Elagui꧂"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "♦\"iKaRi\"♦",
+            "weaponUsed": "mp5sd",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "Wolfmeister"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "JesLaM-",
+            "weaponUsed": "ssg08",
+            "headshotStatus": "",
+            "flashed": "No Flash Assist",
+            "victim": "bart sexsom"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "negro weco",
+            "weaponUsed": "bizon",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "Unless"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "BRAVO SIX",
+            "weaponUsed": "mp5sd",
+            "headshotStatus": "",
+            "flashed": "No Flash Assist",
+            "victim": "negro weco"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "Nazi Autista 777",
+            "weaponUsed": "usp_silencer",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "JesLaM-"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "♦\"iKaRi\"♦",
+            "weaponUsed": "mp5sd",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "Nazi Autista 777"
+        }
+    }
+],[
+    {
+        "RoundData": {
+            "roundValue": 3,
+            "tScore": 3,
+            "ctScore": 0
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "negro weco",
+            "weaponUsed": "aug",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "BRAVO SIX"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "꧁Elagui꧂",
+            "weaponUsed": "inferno",
+            "headshotStatus": "",
+            "flashed": "No Flash Assist",
+            "victim": "negro weco"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "꧁Elagui꧂",
+            "weaponUsed": "ak47",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "bart sexsom"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "Unless",
+            "weaponUsed": "mp5sd",
+            "headshotStatus": "",
+            "flashed": "No Flash Assist",
+            "victim": "Andrheiz"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "Nazi Autista 777",
+            "weaponUsed": "mp9",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "Unless"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "Wolfmeister",
+            "weaponUsed": "mp9",
+            "headshotStatus": "",
+            "flashed": "No Flash Assist",
+            "victim": "JesLaM-"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "꧁Elagui꧂",
+            "weaponUsed": "ak47",
+            "headshotStatus": "",
+            "flashed": "No Flash Assist",
+            "victim": "Nazi Autista 777"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "Wolfmeister",
+            "weaponUsed": "mp9",
+            "headshotStatus": "",
+            "flashed": "No Flash Assist",
+            "victim": "♦\"iKaRi\"♦"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "Wolfmeister",
+            "weaponUsed": "usp_silencer",
+            "headshotStatus": "",
+            "flashed": "No Flash Assist",
+            "victim": "꧁Elagui꧂"
+        }
+    }
+],[
+    {
+        "RoundData": {
+            "roundValue": 4,
+            "tScore": 3,
+            "ctScore": 1
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "Andrheiz",
+            "weaponUsed": "awp",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "Unless"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "Nazi Autista 777",
+            "weaponUsed": "mp9",
+            "headshotStatus": "",
+            "flashed": "No Flash Assist",
+            "victim": "BRAVO SIX"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "negro weco",
+            "weaponUsed": "m4a1_silencer",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "♦\"iKaRi\"♦"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "JesLaM-",
+            "weaponUsed": "deagle",
+            "headshotStatus": "",
+            "flashed": "No Flash Assist",
+            "victim": "Andrheiz"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "Wolfmeister",
+            "weaponUsed": "ak47",
+            "headshotStatus": "",
+            "flashed": "No Flash Assist",
+            "victim": "JesLaM-"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "꧁Elagui꧂",
+            "weaponUsed": "sg556",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "Nazi Autista 777"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "Wolfmeister",
+            "weaponUsed": "ak47",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "꧁Elagui꧂"
+        }
+    }
+],[
+    {
+        "RoundData": {
+            "roundValue": 5,
+            "tScore": 3,
+            "ctScore": 2
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "꧁Elagui꧂",
+            "weaponUsed": "mp7",
+            "headshotStatus": "",
+            "flashed": "Flash Assist!",
+            "victim": "Wolfmeister"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "Andrheiz",
+            "weaponUsed": "awp",
+            "headshotStatus": "",
+            "flashed": "No Flash Assist",
+            "victim": "꧁Elagui꧂"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "♦\"iKaRi\"♦",
+            "weaponUsed": "mp5sd",
+            "headshotStatus": "",
+            "flashed": "No Flash Assist",
+            "victim": "Andrheiz"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "bart sexsom",
+            "weaponUsed": "m4a1_silencer",
+            "headshotStatus": "",
+            "flashed": "No Flash Assist",
+            "victim": "♦\"iKaRi\"♦"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "Nazi Autista 777",
+            "weaponUsed": "awp",
+            "headshotStatus": "",
+            "flashed": "No Flash Assist",
+            "victim": "Unless"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "bart sexsom",
+            "weaponUsed": "m4a1_silencer",
+            "headshotStatus": "",
+            "flashed": "No Flash Assist",
+            "victim": "BRAVO SIX"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "JesLaM-",
+            "weaponUsed": "ak47",
+            "headshotStatus": "",
+            "flashed": "No Flash Assist",
+            "victim": "bart sexsom"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "negro weco",
+            "weaponUsed": "m4a1_silencer",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "JesLaM-"
+        }
+    }
+],[
+    {
+        "RoundData": {
+            "roundValue": 6,
+            "tScore": 3,
+            "ctScore": 3
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "꧁Elagui꧂",
+            "weaponUsed": "mp7",
+            "headshotStatus": "",
+            "flashed": "No Flash Assist",
+            "victim": "bart sexsom"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "Andrheiz",
+            "weaponUsed": "deagle",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "♦\"iKaRi\"♦"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "Unless",
+            "weaponUsed": "ak47",
+            "headshotStatus": "HS",
+            "flashed": "Flash Assist!",
+            "victim": "Wolfmeister"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "Unless",
+            "weaponUsed": "ak47",
+            "headshotStatus": "",
+            "flashed": "No Flash Assist",
+            "victim": "Andrheiz"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "negro weco",
+            "weaponUsed": "m4a1_silencer",
+            "headshotStatus": "",
+            "flashed": "No Flash Assist",
+            "victim": "JesLaM-"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "BRAVO SIX",
+            "weaponUsed": "ak47",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "negro weco"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "Nazi Autista 777",
+            "weaponUsed": "ak47",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "BRAVO SIX"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "Nazi Autista 777",
+            "weaponUsed": "ak47",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "Unless"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "Nazi Autista 777",
+            "weaponUsed": "ak47",
+            "headshotStatus": "",
+            "flashed": "No Flash Assist",
+            "victim": "꧁Elagui꧂"
+        }
+    }
+],[
+    {
+        "RoundData": {
+            "roundValue": 7,
+            "tScore": 3,
+            "ctScore": 4
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "꧁Elagui꧂",
+            "weaponUsed": "sg556",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "Andrheiz"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "bart sexsom",
+            "weaponUsed": "m4a1_silencer",
+            "headshotStatus": "",
+            "flashed": "No Flash Assist",
+            "victim": "♦\"iKaRi\"♦"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "Wolfmeister",
+            "weaponUsed": "m4a1",
+            "headshotStatus": "",
+            "flashed": "No Flash Assist",
+            "victim": "BRAVO SIX"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "Wolfmeister",
+            "weaponUsed": "m4a1",
+            "headshotStatus": "",
+            "flashed": "No Flash Assist",
+            "victim": "Unless"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "Wolfmeister",
+            "weaponUsed": "m4a1",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "JesLaM-"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "꧁Elagui꧂",
+            "weaponUsed": "sg556",
+            "headshotStatus": "",
+            "flashed": "No Flash Assist",
+            "victim": "bart sexsom"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "Nazi Autista 777",
+            "weaponUsed": "ak47",
+            "headshotStatus": "",
+            "flashed": "No Flash Assist",
+            "victim": "꧁Elagui꧂"
+        }
+    }
+],[
+    {
+        "RoundData": {
+            "roundValue": 8,
+            "tScore": 3,
+            "ctScore": 5
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "BRAVO SIX",
+            "weaponUsed": "usp_silencer",
+            "headshotStatus": "",
+            "flashed": "No Flash Assist",
+            "victim": "Wolfmeister"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "Nazi Autista 777",
+            "weaponUsed": "glock",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "♦\"iKaRi\"♦"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "JesLaM-",
+            "weaponUsed": "usp_silencer",
+            "headshotStatus": "",
+            "flashed": "No Flash Assist",
+            "victim": "negro weco"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "bart sexsom",
+            "weaponUsed": "glock",
+            "headshotStatus": "",
+            "flashed": "No Flash Assist",
+            "victim": "꧁Elagui꧂"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "Nazi Autista 777",
+            "weaponUsed": "glock",
+            "headshotStatus": "",
+            "flashed": "No Flash Assist",
+            "victim": "Unless"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "BRAVO SIX",
+            "weaponUsed": "usp_silencer",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "bart sexsom"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "Andrheiz",
+            "weaponUsed": "tec9",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "JesLaM-"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "Andrheiz",
+            "weaponUsed": "tec9",
+            "headshotStatus": "",
+            "flashed": "No Flash Assist",
+            "victim": "BRAVO SIX"
+        }
+    }
+],[
+    {
+        "RoundData": {
+            "roundValue": 9,
+            "tScore": 6,
+            "ctScore": 3
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "Andrheiz",
+            "weaponUsed": "tec9",
+            "headshotStatus": "",
+            "flashed": "No Flash Assist",
+            "victim": "꧁Elagui꧂"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "Wolfmeister",
+            "weaponUsed": "mac10",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "BRAVO SIX"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "Nazi Autista 777",
+            "weaponUsed": "usp_silencer",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "♦\"iKaRi\"♦"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "JesLaM-",
+            "weaponUsed": "usp_silencer",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "Andrheiz"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "bart sexsom",
+            "weaponUsed": "deagle",
+            "headshotStatus": "",
+            "flashed": "No Flash Assist",
+            "victim": "JesLaM-"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "negro weco",
+            "weaponUsed": "glock",
+            "headshotStatus": "",
+            "flashed": "No Flash Assist",
+            "victim": "Unless"
+        }
+    }
+],[
+    {
+        "RoundData": {
+            "roundValue": 10,
+            "tScore": 7,
+            "ctScore": 3
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "JesLaM-",
+            "weaponUsed": "ssg08",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "Andrheiz"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "Nazi Autista 777",
+            "weaponUsed": "ak47",
+            "headshotStatus": "",
+            "flashed": "No Flash Assist",
+            "victim": "Unless"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "Nazi Autista 777",
+            "weaponUsed": "ak47",
+            "headshotStatus": "",
+            "flashed": "No Flash Assist",
+            "victim": "JesLaM-"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "BRAVO SIX",
+            "weaponUsed": "famas",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "bart sexsom"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "BRAVO SIX",
+            "weaponUsed": "famas",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "negro weco"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "Nazi Autista 777",
+            "weaponUsed": "ak47",
+            "headshotStatus": "",
+            "flashed": "No Flash Assist",
+            "victim": "BRAVO SIX"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "꧁Elagui꧂",
+            "weaponUsed": "p90",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "Nazi Autista 777"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "꧁Elagui꧂",
+            "weaponUsed": "famas",
+            "headshotStatus": "",
+            "flashed": "No Flash Assist",
+            "victim": "Wolfmeister"
+        }
+    }
+],[
+    {
+        "RoundData": {
+            "roundValue": 11,
+            "tScore": 7,
+            "ctScore": 4
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "Andrheiz",
+            "weaponUsed": "tec9",
+            "headshotStatus": "",
+            "flashed": "Flash Assist!",
+            "victim": "Unless"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "bart sexsom",
+            "weaponUsed": "ak47",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "BRAVO SIX"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "Nazi Autista 777",
+            "weaponUsed": "ak47",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "꧁Elagui꧂"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "♦\"iKaRi\"♦",
+            "weaponUsed": "m4a1",
+            "headshotStatus": "",
+            "flashed": "No Flash Assist",
+            "victim": "bart sexsom"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "♦\"iKaRi\"♦",
+            "weaponUsed": "m4a1",
+            "headshotStatus": "",
+            "flashed": "No Flash Assist",
+            "victim": "Andrheiz"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "Nazi Autista 777",
+            "weaponUsed": "ak47",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "♦\"iKaRi\"♦"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "JesLaM-",
+            "weaponUsed": "ssg08",
+            "headshotStatus": "",
+            "flashed": "No Flash Assist",
+            "victim": "Nazi Autista 777"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "Wolfmeister",
+            "weaponUsed": "p250",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "JesLaM-"
+        }
+    }
+],[
+    {
+        "RoundData": {
+            "roundValue": 12,
+            "tScore": 8,
+            "ctScore": 4
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "♦\"iKaRi\"♦",
+            "weaponUsed": "m4a1",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "Nazi Autista 777"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "꧁Elagui꧂",
+            "weaponUsed": "m4a1_silencer",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "Andrheiz"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "bart sexsom",
+            "weaponUsed": "ak47",
+            "headshotStatus": "",
+            "flashed": "No Flash Assist",
+            "victim": "♦\"iKaRi\"♦"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "bart sexsom",
+            "weaponUsed": "ak47",
+            "headshotStatus": "",
+            "flashed": "No Flash Assist",
+            "victim": "JesLaM-"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "bart sexsom",
+            "weaponUsed": "ak47",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "꧁Elagui꧂"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "BRAVO SIX",
+            "weaponUsed": "ssg08",
+            "headshotStatus": "",
+            "flashed": "No Flash Assist",
+            "victim": "bart sexsom"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "BRAVO SIX",
+            "weaponUsed": "ssg08",
+            "headshotStatus": "",
+            "flashed": "No Flash Assist",
+            "victim": "Wolfmeister"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "BRAVO SIX",
+            "weaponUsed": "ssg08",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "negro weco"
+        }
+    }
+],[
+    {
+        "RoundData": {
+            "roundValue": 13,
+            "tScore": 8,
+            "ctScore": 5
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "Wolfmeister",
+            "weaponUsed": "mac10",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "♦\"iKaRi\"♦"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "꧁Elagui꧂",
+            "weaponUsed": "famas",
+            "headshotStatus": "",
+            "flashed": "No Flash Assist",
+            "victim": "Andrheiz"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "Wolfmeister",
+            "weaponUsed": "mac10",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "꧁Elagui꧂"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "Wolfmeister",
+            "weaponUsed": "mac10",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "JesLaM-"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "Unless",
+            "weaponUsed": "m4a1_silencer",
+            "headshotStatus": "",
+            "flashed": "No Flash Assist",
+            "victim": "bart sexsom"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "Nazi Autista 777",
+            "weaponUsed": "deagle",
+            "headshotStatus": "",
+            "flashed": "No Flash Assist",
+            "victim": "Unless"
+        }
+    }
+],[
+    {
+        "AttackerLogs": {
+            "attacker": "Wolfmeister",
+            "weaponUsed": "mac10",
+            "headshotStatus": "HS",
+            "flashed": "No Flash Assist",
+            "victim": "BRAVO SIX"
+        }
+    }
+],[
+    {
+        "AccountsInfo": {
+            "idAccount": 1131589976,
+            "playerName": "Nazi Autista 777",
+            "oldRank": 9,
+            "NewRank": 9
+        }
+    },
+    {
+        "AccountsInfo": {
+            "idAccount": 1132678967,
+            "playerName": "bart sexsom",
+            "oldRank": 9,
+            "NewRank": 9
+        }
+    },
+    {
+        "AccountsInfo": {
+            "idAccount": 205218370,
+            "playerName": "Wolfmeister",
+            "oldRank": 8,
+            "NewRank": 8
+        }
+    },
+    {
+        "AccountsInfo": {
+            "idAccount": 386664186,
+            "playerName": "negro weco",
+            "oldRank": 7,
+            "NewRank": 7
+        }
+    },
+    {
+        "AccountsInfo": {
+            "idAccount": 131553492,
+            "playerName": "Andrheiz",
+            "oldRank": 7,
+            "NewRank": 8
+        }
+    },
+    {
+        "AccountsInfo": {
+            "idAccount": 454190306,
+            "playerName": "꧁Elagui꧂",
+            "oldRank": 9,
+            "NewRank": 9
+        }
+    },
+    {
+        "AccountsInfo": {
+            "idAccount": 838382844,
+            "playerName": "♦\"iKaRi\"♦",
+            "oldRank": 9,
+            "NewRank": 9
+        }
+    },
+    {
+        "AccountsInfo": {
+            "idAccount": 77807758,
+            "playerName": "BRAVO SIX",
+            "oldRank": 0,
+            "NewRank": 0
+        }
+    },
+    {
+        "AccountsInfo": {
+            "idAccount": 487065584,
+            "playerName": "JesLaM-",
+            "oldRank": 7,
+            "NewRank": 7
+        }
+    },
+    {
+        "AccountsInfo": {
+            "idAccount": 191571797,
+            "playerName": "Unless",
+            "oldRank": 4,
+            "NewRank": 4
+        }
+    }
+],[
+    {
+        "playerPostMatchStats": {
+            "steamId": "BOT",
+            "steam64Id": "0",
+            "playerName": "GOTV",
+            "kills": 0,
+            "assists": 0,
+            "deaths": 0
+        }
+    },
+    {
+        "playerPostMatchStats": {
+            "team": "TERRORIST",
+            "steamId": "STEAM_1:0:102609185",
+            "steam64Id": "76561198165484098",
+            "playerName": "Wolfmeister",
+            "kills": 17,
+            "assists": 4,
+            "deaths": 8
+        }
+    },
+    {
+        "playerPostMatchStats": {
+            "team": "CT",
+            "steamId": "STEAM_1:0:227095153",
+            "steam64Id": "76561198414456034",
+            "playerName": "꧁Elagui꧂",
+            "kills": 16,
+            "assists": 2,
+            "deaths": 11
+        }
+    },
+    {
+        "playerPostMatchStats": {
+            "team": "CT",
+            "steamId": "STEAM_1:0:243532792",
+            "steam64Id": "76561198447331312",
+            "playerName": "JesLaM-",
+            "kills": 10,
+            "assists": 2,
+            "deaths": 12
+        }
+    },
+    {
+        "playerPostMatchStats": {
+            "team": "TERRORIST",
+            "steamId": "STEAM_1:0:193332093",
+            "steam64Id": "76561198346929914",
+            "playerName": "negro weco",
+            "kills": 7,
+            "assists": 1,
+            "deaths": 8
+        }
+    },
+    {
+        "playerPostMatchStats": {
+            "team": "CT",
+            "steamId": "STEAM_1:0:419191422",
+            "steam64Id": "76561198798648572",
+            "playerName": "♦\"iKaRi\"♦",
+            "kills": 7,
+            "assists": 2,
+            "deaths": 12
+        }
+    },
+    {
+        "playerPostMatchStats": {
+            "team": "CT",
+            "steamId": "STEAM_1:0:38903879",
+            "steam64Id": "76561198038073486",
+            "playerName": "BRAVO SIX",
+            "kills": 12,
+            "assists": 4,
+            "deaths": 10
+        }
+    },
+    {
+        "playerPostMatchStats": {
+            "team": "TERRORIST",
+            "steamId": "STEAM_1:0:65776746",
+            "steam64Id": "76561198091819220",
+            "playerName": "Andrheiz",
+            "kills": 7,
+            "assists": 3,
+            "deaths": 13
+        }
+    },
+    {
+        "playerPostMatchStats": {
+            "team": "TERRORIST",
+            "steamId": "STEAM_1:0:565794988",
+            "steam64Id": "76561199091855704",
+            "playerName": "Nazi Autista 777",
+            "kills": 17,
+            "assists": 3,
+            "deaths": 8
+        }
+    },
+    {
+        "playerPostMatchStats": {
+            "team": "TERRORIST",
+            "steamId": "STEAM_1:1:566339483",
+            "steam64Id": "76561199092944695",
+            "playerName": "bart sexsom",
+            "kills": 9,
+            "assists": 3,
+            "deaths": 12
+        }
+    },
+    {
+        "playerPostMatchStats": {
+            "team": "CT",
+            "steamId": "STEAM_1:1:95785898",
+            "steam64Id": "76561198151837525",
+            "playerName": "Unless",
+            "kills": 4,
+            "assists": 2,
+            "deaths": 12
+        }
+    }
+]]
