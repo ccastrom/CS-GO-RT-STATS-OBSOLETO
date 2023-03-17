@@ -212,7 +212,7 @@ const parseDemosInInput = () => {
 
 
 
-const inputDir = './demoFile'
+const inputDir = '/demoFile/Demos_Replays'
 const outputPath = './output/output.json'
 
 
