@@ -30,6 +30,7 @@ const labels = [
     type: 'radar',
     data: data,
     options: {
+      aspectRatio: 2,
       plugins:{
         legend:{
           labels:{

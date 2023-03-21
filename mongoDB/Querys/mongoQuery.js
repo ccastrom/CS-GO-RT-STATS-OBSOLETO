@@ -41,15 +41,15 @@ async function findLastAPIRecord(){
     return data;
 }
 
-async function findLastRecord(){
-    let statsBD= await userInGameData.findOne({}).sort({"_id":-1});
+async function findLastDemoFileRecord(){
+    let statsBD= await demoData.findOne({}).sort({"_id":-1});
  
     return statsBD;
  
  }
 
- async function findLastDocumentdByID(documentID){
-    let documentBD= await userInGameData.findById(documentID)
+ async function findLastDemoFileRecordByID(documentID){
+    let documentBD= await demoData.findById(documentID)
     return documentBD;
  }
 
@@ -72,8 +72,8 @@ module.exports={
     insertDemoData,
     findLastAPIRecord,
     insertAPIData,
-    findLastRecord,
-    findLastDocumentdByID,
+    findLastDemoFileRecord,
+    findLastDemoFileRecordByID,
     findLastBotDocumentdByID
    
 }

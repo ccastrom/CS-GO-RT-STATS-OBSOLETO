@@ -14,7 +14,7 @@ if(ctRoundsValueFromEJS>tRoundsValueFromEJS && userTeamFromEJS=="CT"){
 }else{
     victoryOrDefeatFromEJS.innerHTML="Derrota"
 }
-if(tRoundsValueFromEJS>ctRoundsValueFromEJS && userTeamFromEJS=="T"){
+if(tRoundsValueFromEJS>ctRoundsValueFromEJS && userTeamFromEJS=="TERRORIST"){
     victoryOrDefeatFromEJS.innerHTML="Victoria"
 }else{
     victoryOrDefeatFromEJS.innerHTML="Derrota"

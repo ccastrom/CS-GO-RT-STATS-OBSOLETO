@@ -38,16 +38,20 @@ accountRoute.get('/profile', ensureAuthenticated, (req, res)=>{
 
        
 
-        const getLastGameMatch=mongoQuery.findLastRecord()
+        const getLastGameMatch=mongoQuery.findLastDemoFileRecord()
         .then(result=>{
-
+         
           const userStats={
             userAPIData:{
               userData:req.user,
               userKills:data.playerstats.stats,
             },
             userLastMatch:{
-              userObject:result
+             demo_id:result._id,
+             userLastMap:result.demo_Data[0].Encabezado.mapName,
+             userLastTscore:result.demo_Data[164][0].RoundData.tScore,           
+             userLastCTscore:result.demo_Data[164][0].RoundData.ctScore,
+             userLastMatchTeam: result.demo_Data[173][6].playerPostMatchStats.playerName,            
             }
            
           }
@@ -56,11 +60,6 @@ accountRoute.get('/profile', ensureAuthenticated, (req, res)=>{
           res.render('profile',  { steamProfileData: userStats });
          
         })
-
-        
-
-      
-       
         
         }
       }
@@ -68,17 +67,70 @@ accountRoute.get('/profile', ensureAuthenticated, (req, res)=>{
   });
 
   accountRoute.post('/matchDetail',(req,res)=>{
-    console.log(req.body.gameDocumentID)
+    console.log(req.body.demoFileID)
     
-    let getDocument=mongoQuery.findLastBotDocumentdByID()
+    let getLastDemoFileDocument=mongoQuery.findLastDemoFileRecordByID(req.body.demoFileID)
     .then(result=>{
-      console.log(result.botSteamData.roundstatsall);
-      // let getAPIDocument=mongoQuery.findLastAPIRecord()
-      // .then(apiResult=>{
-      //   //console.log(apiResult)
-      //   res.render('matchDetails',  { dataInGame: result,dataAPI:apiResult });
-      // })
-      // //console.log(result)  
+      var str=" "+result.demo_Data[0].Encabezado.serverName
+      var serverParsed= str.slice(1,25)
+    
+      let getAPIDocument=mongoQuery.findLastAPIRecord()
+      .then(apiResult=>{
+
+        const userStatsDemoFile={
+        
+          userLastMatch:{
+           demo_id:result._id,
+           userLastMap:result.demo_Data[0].Encabezado.mapName,
+           userLasServer:serverParsed,
+           userLastTscore:result.demo_Data[164][0].RoundData.tScore,           
+           userLastCTscore:result.demo_Data[164][0].RoundData.ctScore,
+           userLastMatchTeamKDA: result.demo_Data[173][6].playerPostMatchStats,            
+          }
+         
+        }
+
+        
+        const roundDemoLogs=[
+           
+            result.demo_Data[52],//0
+            result.demo_Data[60],
+            result.demo_Data[67],
+            result.demo_Data[76],
+            result.demo_Data[86],
+            result.demo_Data[94],
+            result.demo_Data[103],
+            result.demo_Data[113],
+            result.demo_Data[121],
+            result.demo_Data[130],
+            result.demo_Data[137],
+            result.demo_Data[146],
+            result.demo_Data[155],
+            result.demo_Data[164],
+           ]
+          
+           
+           
+         
+        
+          
+         
+        
+
+        for (let i = 0; i < roundDemoLogs.length; i++) {
+          const element = roundDemoLogs[i];
+          console.log(element)
+          
+        }
+
+       
+       
+
+       
+        
+        res.render('matchDetails',  { dataDemoFile: userStatsDemoFile,dataAPI:apiResult,roundData:roundDemoLogs });
+      })
+    
        
     
     })

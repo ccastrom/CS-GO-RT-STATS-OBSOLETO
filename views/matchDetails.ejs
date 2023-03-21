@@ -27,28 +27,36 @@
             </div>
         </div>
     </nav>
-    <input type="text" hidden name="" id="totalKills" value=<%=dataInGame.user_Data_InGame.StatsPlayer.kills %>>
-    <input type="text" hidden name="" id="totalDeaths" value=<%=dataInGame.user_Data_InGame.StatsPlayer.deaths %>>
-    <input type="text" hidden name="" id="totalAssists" value=<%=dataInGame.user_Data_InGame.StatsPlayer.assists %>>
+    <input type="text" hidden name="" id="totalKills" value=<%= dataDemoFile.userLastMatch.userLastMatchTeamKDA.kills %>>
+    <input type="text" hidden name="" id="totalDeaths" value=<%= dataDemoFile.userLastMatch.userLastMatchTeamKDA.deaths %>>
+    <input type="text" hidden name="" id="totalAssists" value=<%= dataDemoFile.userLastMatch.userLastMatchTeamKDA.assists %>>
     <header class="masthead">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-3 text-center">
+                    <h5 class="text-white text-end">
+                        CT
+                    </h5>
                     <h1 class="text-white text-end">
-                        <%= dataInGame.user_Data_InGame.Mapa.PuntuacionCT %>
+                        <%= dataDemoFile.userLastMatch.userLastCTscore %>
                     </h1>
 
                 </div>
                 <div class="col-6 text-center">
                     <h1 class="text-white">
-                        <%= dataInGame.user_Data_InGame.Mapa.NombreDeMapa %>
+                        <%= dataDemoFile.userLastMatch.userLastMap%>
                     </h1>
-                    <h5 class="text-white fw-lighter">Date</h5>
+                    <h5 class="text-white fw-lighter">
+                        <%= dataDemoFile.userLastMatch.userLasServer%>
+                    </h5>
 
                 </div>
                 <div class="col-3 text-center">
+                    <h5 class="text-white text-start">
+                        Terrorist
+                    </h5>
                     <h1 class="text-white text-start">
-                        <%= dataInGame.user_Data_InGame.Mapa.PuntuacionT %>
+                        <%= dataDemoFile.userLastMatch.userLastTscore %>
                     </h1>
 
                 </div>
@@ -56,72 +64,140 @@
         </div>
     </header>
 
-    <div class="section-2">
-        <div class="container-fluid px-5 my-2">
+    <div class="section-2 ">
+        <div class="container-fluid px-5 my-2  " >
 
 
-            <div class="row">
-                <div class="col-sm-12 mx-auto my-2 ">
-                    <div class=" card shadow  col-3 mx-auto " style="background-color:#385170 ;">
+            <div class="row ">
+                <div class="col-1 ">
+                    
+                </div>
+                <div class="card shadow  col-4 my-2 ">
+                    <div class="card-header">
+                      <h5>Favorite Gun</h5>
+                      </div>
+                      <div class="card-body">
+                          <ul class="list-group list-group-horizontal ">
+                              <li class="list-group-item">
+                                <div class="card-title">
+                                    <h5>Favorite Gun</h5>
+                                </div>
+                                  <%= dataAPI.steamUser_APIGame_Data[94].value %>
+                              </li>
+                              <li class="list-group-item">
+                                <h5 class="card-title">Shots</h5>
+                                <%= dataAPI.steamUser_APIGame_Data[95].value %>
+                            </li>
+                            <li class="list-group-item">
+                                <h5 class="card-title">Favorite Gun Kills</h5>
+                                <%= dataAPI.steamUser_APIGame_Data[97].value %>
+                            </li>
+                          </ul>
+                      </div>
+                </div>
+                <div class="col-6 my-2 "  >
+                    <div class=" card shadow   col-12 mx-auto " style="background-color:#385170 ;">
                         <div class="card-header">
                             <h5>KDA</h5>
                         </div>
-                        <div class=" p-3 ">
+                        <div class=" p-3 mx-5 " >
                             <canvas id="radarChart"></canvas>
                         </div>
                     </div>
                 </div>
+                <div class="col-1 ms-5">
+                    
+                </div>
+                
 
 
 
             </div>
             <div class="row ">
-                <div class="col-12" >
-
-                   
-                                <ul class=" " >
-                                  
-
-                                    <% for (let i=0; i < dataInGame.user_Data_InGame.Mapa.HistorialDeRondas.length; i++) { %>
-
-                                        <li class="" >
-                                            <%= Object.values(dataInGame.user_Data_InGame.Mapa.HistorialDeRondas[i]) %>
-                                        </li>
-                                        <%}%>
-                                </ul>
-
-                  
-
-                  
-
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12" style="background-color: brown;">
-                    <div class="card col-6">
-                        <div class="card-header">
-                            Fav Gun stats
-                          </div>
-                          <div class="card-body">
-                              <ul class="list-group list-group-horizontal">
-                                  <li class="list-group-item">
-                                    <h5 class="card-title">Favorite Gun</h5>
-                                      <%= dataAPI.steamUser_APIGame_Data[94].value %>
-                                  </li>
-                                  <li class="list-group-item">
-                                    <h5 class="card-title">Shots</h5>
-                                    <%= dataAPI.steamUser_APIGame_Data[95].value %>
-                                </li>
-                                <li class="list-group-item">
-                                    <h5 class="card-title">Favorite Gun Kills</h5>
-                                    <%= dataAPI.steamUser_APIGame_Data[97].value %>
-                                </li>
-                              </ul>
-                          </div>
+                <div class="col-10 mx-auto card shadow" >
+                  <div class="card-header">
+                    <h5>Round History</h5>
                     </div>
-                    
+                  <div id="carouselExampleControls" class="carousel slide"  data-bs-interval="false" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <table class="table table-success">
+                          <thead>
+                            <tr>
+                              <th scope="col">Round 0</th>
+                              <th scope="col">Killer</th>
+                              <th scope="col">Weapon</th>
+                              <th scope="col">Victim</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <th scope="row"></th>
+                              <td>Mark</td>
+                              <td>Otto</td>
+                              <td>@mdo</td>
+                            </tr>
+                            <tr>
+                              <th scope="row"></th>
+                              <td>Jacob</td>
+                              <td>Thornton</td>
+                              <td>@fat</td>
+                            </tr>
+                            <tr>
+                              <th scope="row"></th>
+                              <td colspan="2">Larry the Bird</td>
+                              <td>@twitter</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                   
+                      <%   for (let i = 1; i < roundData.length; i++) { %>
+                       
+                      <div class="carousel-item">
+                        <table class="table table-success">
+                          <thead>
+                            <tr>
+                              <th scope="col">Round <%= i %></th>
+                              <th scope="col">Killer</th>
+                              <th scope="col">Weapon</th>
+                              <th scope="col">Victim</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                         
+                            <tr>
+                              <th scope="row"></th>
+                              
+                              <td>Mark</td>
+                              <td>Otto</td>
+                              <td>@mdo</td>
+                              
+                            </tr>
+                          
+                           
+                          </tbody>
+                        </table>
+                      </div>
+                      <% }%>
+                     
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+                      
+                        
                 </div>
+                      
             </div>
+            
+        
 
         </div>
     </div>

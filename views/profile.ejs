@@ -30,10 +30,10 @@
 			<div class="card p-3 " style="background-color: #3f4766;">
 				<input type="text" hidden  name="" id="totalKills" value=<%= steamProfileData.userAPIData.userKills[0].value %>>
 				<input type="text" hidden  name="" id="totalDeaths" value=<%= steamProfileData.userAPIData.userKills[1].value %>>
-				<input type="text" hidden  name="" id="userID" value=<%= steamProfileData.userLastMatch.userObject.user_Data_InGame.Usuario.ID %>>
-				<input type="text" hidden  name="" id="roundCT" value=<%= steamProfileData.userLastMatch.userObject.user_Data_InGame.Mapa.PuntuacionCT %>>
-				<input type="text" hidden  name="" id="roundT" value=<%= steamProfileData.userLastMatch.userObject.user_Data_InGame.Mapa.PuntuacionCT %>>
-				<input type="text" hidden  name="" id="userTeam" value=<%= steamProfileData.userLastMatch.userObject.user_Data_InGame.player_id.Equipo %>>
+				<input type="text" hidden  name="" id="userID" value=<%= steamProfileData.userLastMatch.demo_id %>>
+				<input type="text" hidden  name="" id="roundCT" value=<%= steamProfileData.userLastMatch.userLastTscore %>>
+				<input type="text" hidden  name="" id="roundT" value=<%= steamProfileData.userLastMatch.userLastCTscore %>>
+				<input type="text" hidden  name="" id="userTeam" value=<%= steamProfileData.userLastMatch.userLastMatchTeam %>>
 			
 				
 				<div class="row">
@@ -48,10 +48,10 @@
 					<div class="col-4 ms-auto  " >
 						<h2 class="text-center mb-4  " id="victoryOrDefeat">Victory/Defeat</h1>
 						
-						<h2 class="text-center  "><%= steamProfileData.userLastMatch.userObject.user_Data_InGame.Mapa.PuntuacionCT%> -- <%= steamProfileData.userLastMatch.userObject.user_Data_InGame.Mapa.PuntuacionT %></h1>
-						<h2 class="text-center  "><%= steamProfileData.userLastMatch.userObject.user_Data_InGame.Mapa.NombreDeMapa %></h1>
+						<h2 class="text-center  "><%= steamProfileData.userLastMatch.userLastCTscore%> -- <%= steamProfileData.userLastMatch.userLastTscore %></h1>
+						<h2 class="text-center  "><%= steamProfileData.userLastMatch.userLastMap %></h1>
 						<form action="/account/matchDetail" method="POST">
-							<input type="text"   name="gameDocumentID" id="gameDocumentID" value=<%= steamProfileData.userLastMatch.userObject._id %>>
+							<input type="text"   name="demoFileID" id="demoFileID" value=<%= steamProfileData.userLastMatch.demo_id %>>
 							<input type="submit" name="btnSend" class=" btn btn-primary  btn-lg" id="btnSend" value="Check Details">
 						</form>	
 					</div>

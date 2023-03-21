@@ -2,6 +2,10 @@
 
 var round = 0;
 var io = io();
+
+/**
+ * Line Chart
+ */
 var chart    = document.getElementById('myChart').getContext('2d'),
     gradient = chart.createLinearGradient(0, 0, 0, 450);
 
@@ -13,15 +17,26 @@ gradient.addColorStop(1, 'rgba(0, 199, 214, 0)');
 var data  = {
     labels: [ '0', '1', '2', '3', '4', '5', '6','7','8','9', '10','11','12','13','14','15' ],
     datasets: [{
-			label: 'Applications',
-			backgroundColor: gradient,
-			pointBackgroundColor: '#00c7d6',
+			label: 'Kills per round',
+			backgroundColor: '#39963f',
+			pointBackgroundColor: '#39963f',
 			
-      fill:true,
-			borderColor: '#0e1a2f',
+      
+			borderColor: '#39963f',
       borderWidth:1,
 			data: []
+    },
+    {
+			label: 'Headshots per round',
+			backgroundColor: '#c6a235',
+			pointBackgroundColor: '#c6a235',
+			
+     
+			borderColor: '#c6a235',
+      borderWidth:3,
+			data: []
     }]
+    
 };
 
 var options = {
@@ -34,7 +49,7 @@ var options = {
 	scales: {
 		y: {
       ticks: {
-        color: '#5e6a81'
+        color: '#eaeaea'
       },
 			grid: {
 				color: 'rgba(226, 222, 222, 0.09)',
@@ -44,7 +59,7 @@ var options = {
 		},
     x:{
       ticks: {
-        color: '#5e6a81'
+        color: '#eaeaea'
       }
     },
   
@@ -53,10 +68,12 @@ var options = {
 	},
 	
 	legend: {
-		display: false
+		labels:{
+      fontColor:"red"
+    }
 	},
 	point: {
-		backgroundColor: '#00c7d6'
+		backgroundColor: '#eaeaea'
 	},
 
 };
@@ -68,6 +85,10 @@ var chartInstance = new Chart(chart, {
     data: data,
 		options: options
 });
+
+/**
+ * Line Chart
+ */
 
 
 
@@ -109,24 +130,6 @@ var data = {
 
 
 
-const centerText={
-  id:'centerText',
-  afterDatasetsDraw(chart,args,options){
-    const {ctx,chartArea:{left,right,top,bottom,width,height}}=chart;
-    ctx.save();
-    ctx.font='bolder 30px Arial';
-    ctx.fillStyle='rgb(235, 235, 235)';
-    ctx.fillText("",120,160)
-    ctx.restore();
-    
-
-    ctx.font='bolder 20px Arial';
-    ctx.fillStyle='rgb(235, 235, 235)';
-    ctx.fillText('',135,205)
-    ctx.restore();
-    
-  }
-}
 
 const config_left_chart = {
   type: 'doughnut',
@@ -135,7 +138,7 @@ const config_left_chart = {
     aspectRatio: 2,
       
   },
-  plugins:[centerText]
+ 
 };
 
 const left_chart = new Chart(
@@ -148,34 +151,132 @@ const left_chart = new Chart(
  */
 
 
+
+
+const labels_bar_chart = [
+  'CT LOSS',
+  'T LOSS',
+  
+];
+
+const data_bar_chart = {
+  labels: labels_bar_chart,
+  datasets: [{
+    label: ['CT Consecutive Loss','T Consecutive Loss'],
+    backgroundColor: ['rgba(255, 99, 132,1)',"green"],
+    borderColor: ['rgba(255, 99, 132,1)', "green"],
+    barPercentage:0.4,
+    data: [3,6],
+  },
+  
+ ],
+ 
+  
+};
+
+const config_bar_chart = {
+  type: 'bar',
+  data: data_bar_chart,
+  options: {
+    aspectRatio: 2,
+    scales: {
+      y: {
+        ticks: {
+          color: '#eaeaea'
+        },
+        grid: {
+          color: 'rgba(226, 222, 222, 0.09)',
+          lineWidth: 1
+          
+        }
+      },
+      x:{
+        ticks: {
+          color: '#eaeaea'
+        }
+      },
+    
+      
+      
+    }
+  }
+};
+
+const bar_chart = new Chart(
+  document.getElementById('barChartHUD'),
+  config_bar_chart
+);
+
+
+
+
 io.on("round_data", (myData) => {
+  const playerTeam=myData.player_id.Equipo
+  const ctConsecutiveLossRounds=myData.Mapa.RondasPerdidasConsecutivasCT
+  const tConsecutiveLossRounds=myData.Mapa.RondasPerdidasConsecutivasT
   const round = myData.Mapa.RondaActual;
   const roundKills = myData.Estado.round_kills;
+  const roundKillsHS = myData.Estado.round_killsHS;
   const roundKillsArray = []
-  roundKillsArray.push(roundKills);
-
   const money= myData.Estado.money
   const equipmentValue= myData.Estado.equip_value
+  const defuser= myData.Estado.defuseKit;
+  const equipedWeapon= myData.Armas.ArmaEquipada;
+  const primaryWeapon= myData.Armas.MunicionRestanteArma1;
+  const secondaryWeapon= myData.Armas.MunicionRestanteArma2;
+  
+  console.log(primaryWeapon);
+  console.log(ctConsecutiveLossRounds);
+  console.log(tConsecutiveLossRounds);
+
+  if(playerTeam=="CT" && defuser ){
+    document.getElementById("cardDefuser").style.visibility = "visible";
+    document.getElementById('defuserStatus').innerHTML="Defuser equipped"
+  }else{
+    document.getElementById("cardDefuser").style.visibility = "hidden";
+    document.getElementById('defuserStatus').innerHTML="Defuser not equipped"
+  }
+
+  roundKillsArray.push(roundKills);
+
+  if(primaryWeapon){
+    document.getElementById('weaponAmmo').innerHTML=primaryWeapon
+  }else{
+    document.getElementById('weaponAmmo').innerHTML= "-"
+  }
+  if(secondaryWeapon){
+    document.getElementById('weapon2Ammo').innerHTML=secondaryWeapon
+  }else{
+    document.getElementById('weapon2Ammo').innerHTML= "-"
+  }
 
   document.getElementById('MoneyValue').innerHTML="Money: $"+money
   document.getElementById('EquipmentValue').innerHTML="Equipment Value: $"+equipmentValue
+  
+  
+  
   
 
  left_chart.data.datasets[0].data[0]=money
  left_chart.data.datasets[0].data[1]=equipmentValue
  left_chart.update();
 
- 
+ bar_chart.data.datasets[0].data[0]=ctConsecutiveLossRounds;
+ bar_chart.data.datasets[0].data[1]=tConsecutiveLossRounds;
+ bar_chart.update();
 
   for (let i = 0; i <= round; i++) {
     chartInstance.update();
     if (chartInstance.data.datasets[0].data.length <= round) {
 
       chartInstance.data.datasets[0].data.push(roundKills);
+      chartInstance.data.datasets[1].data.push(roundKillsHS);
 
 
     }
   };
+
+
 
 })
 

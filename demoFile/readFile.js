@@ -1,7 +1,7 @@
 const fs = require("fs");
 
 const mongoose= require('mongoose');
-const mongoQuery=require('./mongoDB/Querys/mongoQuery')
+const mongoQuery=require('../mongoDB/Querys/mongoQuery')
 
 mongoose.connect("mongodb+srv://ccastrom:123@csgo.hws0u.mongodb.net/stats?retryWrites=true&w=majority"
 ).then(()=>console.log("DB CONNECTION SUCCESS")).catch((err)=>{

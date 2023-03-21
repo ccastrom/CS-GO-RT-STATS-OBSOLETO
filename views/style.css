@@ -104,41 +104,6 @@ body {
     background-repeat: no-repeat;
   }
 
-  ul {
-    display: flex;
-    align-items: stretch; /* Default */
-    justify-content: space-between;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    position: relative;
-}
-
-li {
-    display: block;
-    flex: 0 1 auto; /* Default */
-    list-style-type: none;
-    background-color: white;
-    padding: 0 0.75em;
-    z-index: 1;
-}
-
-li:first-child {
-    padding-left: 0;
-}
-
-li:last-child {
-    padding-right: 0;
-}
-
-ul:after {
-    content: '';
-    border-bottom: 1px solid lightgray;
-    position: absolute;
-    transform: translateY(-50%);
-    top: 50%;
-    width: 100%;
-}
 
   
 
