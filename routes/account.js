@@ -52,7 +52,8 @@ accountRoute.get('/profile', ensureAuthenticated, (req, res)=>{
              userLastTscore:result.demo_Data[164][0].RoundData.tScore,           
              userLastCTscore:result.demo_Data[164][0].RoundData.ctScore,
              userLastMatchTeam: result.demo_Data[173][6].playerPostMatchStats.playerName,            
-            }
+            },
+         
            
           }
   

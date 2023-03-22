@@ -166,7 +166,7 @@ const data_bar_chart = {
     backgroundColor: ['rgba(255, 99, 132,1)',"green"],
     borderColor: ['rgba(255, 99, 132,1)', "green"],
     barPercentage:0.4,
-    data: [3,6],
+    data: [],
   },
   
  ],
