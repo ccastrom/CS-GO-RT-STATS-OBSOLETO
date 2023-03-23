@@ -3,7 +3,8 @@ const mongoose= require('mongoose');
 const DemoDataSchema= new mongoose.Schema({
     
     demo_Data:{
-        type:Object
+        type:Object,
+        date:Date
          
     },
     

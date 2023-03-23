@@ -34,6 +34,10 @@
 				<input type="text" hidden  name="" id="roundCT" value=<%= steamProfileData.userLastMatch.userLastTscore %>>
 				<input type="text" hidden  name="" id="roundT" value=<%= steamProfileData.userLastMatch.userLastCTscore %>>
 				<input type="text" hidden  name="" id="userTeam" value=<%= steamProfileData.userLastMatch.userLastMatchTeam %>>
+				<input type="text" hidden  name="" id="matchDate" value=<%= steamProfileData.userLastMatch.userGameDate %>>
+				<input type="text" hidden  name="" id="userRankOld" value=<%= steamProfileData.userLastMatch.userRankOld %>>
+				<input type="text" hidden  name="" id="userRankNew" value=<%= steamProfileData.userLastMatch.userRankNew %>>
+
 			
 				
 				<div class="row">
@@ -90,7 +94,7 @@
 					
 						<h5 class="card-title">Top 5 weapons</h5>
 						<ul class="nav nav-tabs card-header-tabs mt-2 " data-bs-tabs="tabs">
-							<li class="nav-item">
+							<li class="nav-item active">
 								<a class="nav-link active" aria-current="true" data-bs-toggle="tab" href="#rifles">Rifles</a>
 							</li>
 							<li class="nav-item">
@@ -106,8 +110,8 @@
 						<div class="tab-content mt-4">
 							<div id="rifles" class="tab-pane fade in active">
 							  
-							  <table class="table table-primary my-1">
-								<thead>
+							  <table class="table table-borderless table-responsive  my-1 text-muted ">
+								<thead style="background-color: #20244a;" >
 								  <tr>
 									
 									<th scope="col">image</th>
@@ -117,7 +121,7 @@
 									<th scope="col">Total Hits</th>
 								  </tr>
 								</thead>
-								<tbody>
+								<tbody >
 								  <tr>
 									
 									<td></td>
@@ -167,8 +171,8 @@
 							  </table>
 							</div>
 							<div id="smg" class="tab-pane fade">
-								<table class="table table-primary my-1">
-									<thead>
+								<table class="table table-borderless table-responsive  my-1 text-muted">
+									<thead style="background-color: #20244a;">
 									  <tr>
 										
 										<th scope="col">image</th>
@@ -228,8 +232,8 @@
 								  </table>
 							</div>
 							<div id="heavy" class="tab-pane fade">
-								<table class="table table-primary my-1">
-									<thead>
+								<table class="table table-borderless table-responsive  my-1 text-muted">
+									<thead style="background-color: #20244a;">
 									  <tr>
 										
 										<th scope="col">image</th>
@@ -289,8 +293,8 @@
 								  </table>
 							</div>
 							<div id="pistols" class="tab-pane fade">
-								<table class="table table-primary my-1">
-									<thead>
+								<table class="table table-borderless table-responsive my-1 text-muted">
+									<thead style="background-color: #20244a;">
 									  <tr>
 										
 										<th scope="col">image</th>

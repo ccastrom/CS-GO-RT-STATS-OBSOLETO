@@ -52,11 +52,16 @@ accountRoute.get('/profile', ensureAuthenticated, (req, res)=>{
              userLastTscore:result.demo_Data[164][0].RoundData.tScore,           
              userLastCTscore:result.demo_Data[164][0].RoundData.ctScore,
              userLastMatchTeam: result.demo_Data[173][6].playerPostMatchStats.playerName,            
+             userGameDate: result.date,
+             userRankOld:result.demo_Data[172][7].AccountsInfo.oldRank,            
+             userRankNew:result.demo_Data[172][7].AccountsInfo.NewRank,            
             },
+
+          
          
            
           }
-  
+          console.log(result.date);
        
           res.render('profile',  { steamProfileData: userStats });
          
