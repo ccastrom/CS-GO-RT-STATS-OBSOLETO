@@ -1,6 +1,20 @@
 body {
     font-family: 'Poppins', sans-serif; 
     background-color: #20244a;
+    
+  }
+
+  
+
+  .img-bg{
+    background-image:  linear-gradient(180deg, rgba(42,46,92,0.7323739495798319) 55%, rgba(0,0,0,0.3896288515406162) 95%),
+    url(' csgoBackground.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; 
+   
+   
+   
   }
   
 
@@ -95,9 +109,19 @@ body {
   }
 
   .masthead {
-    height: 320px;
+    height: 300px;
    
-    background-image:  linear-gradient(0deg, rgba(0, 0, 0, 0.704) 10%, rgba(0,0,0,0) 45%),
+    background-image:  linear-gradient(0deg, rgba(0,0,0,0.768032212885154) 0%, rgba(52,52,52,0.8240546218487395) 100%),
+    url(' https://cdn.wallpapersafari.com/57/51/Ci6p3R.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .matchImage {
+   
+   
+    background-image:  linear-gradient(0deg, rgba(0,0,0,0.768032212885154) 0%, rgba(52,52,52,0.8240546218487395) 100%),
     url(' https://cdn.wallpapersafari.com/57/51/Ci6p3R.jpg');
     background-size: cover;
     background-position: center;

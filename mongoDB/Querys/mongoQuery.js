@@ -21,7 +21,8 @@ async function insertBotData(botDataInfo){
 
 async function insertDemoData(dataJson){
    let dataObject= new demoData({
-    demo_Data:dataJson
+    demo_Data:dataJson,
+    gameDate:'2023-03-10'
    })
    return await dataObject.save();
    

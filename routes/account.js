@@ -44,7 +44,7 @@ accountRoute.get('/profile', ensureAuthenticated, (req, res)=>{
           const userStats={
             userAPIData:{
               userData:req.user,
-              userKills:data.playerstats.stats,
+              userStats:data.playerstats.stats,
             },
             userLastMatch:{
              demo_id:result._id,
@@ -52,7 +52,7 @@ accountRoute.get('/profile', ensureAuthenticated, (req, res)=>{
              userLastTscore:result.demo_Data[164][0].RoundData.tScore,           
              userLastCTscore:result.demo_Data[164][0].RoundData.ctScore,
              userLastMatchTeam: result.demo_Data[173][6].playerPostMatchStats.playerName,            
-             userGameDate: result.date,
+             userGameDate: result.gameDate,
              userRankOld:result.demo_Data[172][7].AccountsInfo.oldRank,            
              userRankNew:result.demo_Data[172][7].AccountsInfo.NewRank,            
             },
@@ -61,7 +61,8 @@ accountRoute.get('/profile', ensureAuthenticated, (req, res)=>{
          
            
           }
-          console.log(result.date);
+          console.log(result);
+          
        
           res.render('profile',  { steamProfileData: userStats });
          

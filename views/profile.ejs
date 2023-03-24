@@ -1,399 +1,548 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="bootstrap.css">
-    <link rel="stylesheet" href="style.css">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Profile</title>
+	<link rel="stylesheet" href="bootstrap.css">
+	<link rel="stylesheet" href="style.css">
 </head>
-<body class="gradient-custom">
-    <nav class="navbar navbar-expand-lg navbar-light ">
-		<div class="container-fluid">
-			<a class="navbar-brand " href="#">RT:STATS</a>
-			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-				aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-				<div class="navbar-nav ms-auto">
-					<a class="nav-link" href="/hud">HUD</a>
-					<a class="nav-link" href="#">Settings</a>
-					<a class="nav-link" href="logout">Logout</a>
-				</div>
+
+<body>
+	<div class="img-bg" >
+
+	
+	<nav class="navbar navbar-expand-lg  shadow " style="background-color: #20244a;">
+		<a class="navbar-brand " href="/account/profile">RT:STATS</a>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+			aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+			<div class="navbar-nav ms-auto">
+				<a class="nav-link" href="/hud">HUD</a>
+				
+				<a class="nav-link" href="logout">Logout</a>
 			</div>
 		</div>
 	</nav>
-	<div class="section-2">
-		<div class="container-fluid px-5 mt-3">
-			<div class="card p-3 " style="background-color: #3f4766;">
-				<input type="text" hidden  name="" id="totalKills" value=<%= steamProfileData.userAPIData.userKills[0].value %>>
-				<input type="text" hidden  name="" id="totalDeaths" value=<%= steamProfileData.userAPIData.userKills[1].value %>>
-				<input type="text" hidden  name="" id="userID" value=<%= steamProfileData.userLastMatch.demo_id %>>
-				<input type="text" hidden  name="" id="roundCT" value=<%= steamProfileData.userLastMatch.userLastTscore %>>
-				<input type="text" hidden  name="" id="roundT" value=<%= steamProfileData.userLastMatch.userLastCTscore %>>
-				<input type="text" hidden  name="" id="userTeam" value=<%= steamProfileData.userLastMatch.userLastMatchTeam %>>
-				<input type="text" hidden  name="" id="matchDate" value=<%= steamProfileData.userLastMatch.userGameDate %>>
-				<input type="text" hidden  name="" id="userRankOld" value=<%= steamProfileData.userLastMatch.userRankOld %>>
-				<input type="text" hidden  name="" id="userRankNew" value=<%= steamProfileData.userLastMatch.userRankNew %>>
 
-			
-				
-				<div class="row">
-					<div class="col-1 ms-3" >
-						<img class="img-fluid" src="<%= steamProfileData.userAPIData.userData.photos[2].value %>" alt="">
-					</div>
-					<div class="col-6 ms-4 ">
-						<h1 class="mb-4 " >Victorys: <a href="">image</a></h1>
-						<h2 class=""><%= steamProfileData.userAPIData.userData.displayName %></h3>
-						<h4 class="">Last Match</h4>
-					</div>
-					<div class="col-4 ms-auto  " >
-						<h2 class="text-center mb-4  " id="victoryOrDefeat">Victory/Defeat</h1>
-						
-						<h2 class="text-center  "><%= steamProfileData.userLastMatch.userLastCTscore%> -- <%= steamProfileData.userLastMatch.userLastTscore %></h1>
-						<h2 class="text-center  "><%= steamProfileData.userLastMatch.userLastMap %></h1>
-						<form action="/account/matchDetail" method="POST">
-							<input type="text"   name="demoFileID" id="demoFileID" value=<%= steamProfileData.userLastMatch.demo_id %>>
-							<input type="submit" name="btnSend" class=" btn btn-primary  btn-lg" id="btnSend" value="Check Details">
-						</form>	
-					</div>
-				</div>
-			
-			</div>
-			<div class="row ">
-				<div class="col-12">
-					<div class="card p-3 mt-3">
-						<h1 class="mx-auto">History Match</h1>
-					</div>
-				</div>
-			</div>
-			<h1 class=" mt-3">Perfomance</h1>
-			<div class="row ">
-				<div class="col-3">
-					<div class="card p-3 mt-2">
-						<canvas style="width:20px; height:20px" id="myChart2"></canvas>
-					</div>
-				</div>
-				<div class="col-6">
-					<div class="card p-3 mt-2">
-						<canvas  id="MyChart1"></canvas>
-					</div>
-				</div>
-				<div class="col-3">
-					<div class="card p-3 mt-2">
-						<canvas style="width:70px; height:20px" id="myChart3"></canvas>
-					</div>
-				</div>
-			</div>
-			
-			<div class="row justify-content-center mt-5 ">
-				<div class="col-4  ">
-					<div class="card text-white p-3 mt-4 ">
-					
-						<h5 class="card-title">Top 5 weapons</h5>
-						<ul class="nav nav-tabs card-header-tabs mt-2 " data-bs-tabs="tabs">
-							<li class="nav-item active">
-								<a class="nav-link active" aria-current="true" data-bs-toggle="tab" href="#rifles">Rifles</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" data-bs-toggle="tab" href="#smg">SMG</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" data-bs-toggle="tab" href="#heavy">Heavy Weapons</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" data-bs-toggle="tab" href="#pistols">Pistols</a>
-							</li>
-						</ul>
-						<div class="tab-content mt-4">
-							<div id="rifles" class="tab-pane fade in active">
-							  
-							  <table class="table table-borderless table-responsive  my-1 text-muted ">
-								<thead style="background-color: #20244a;" >
-								  <tr>
-									
-									<th scope="col">image</th>
-									<th scope="col">Weapon</th>
-									<th scope="col">Kills</th>
-									<th scope="col">Total Shots</th>
-									<th scope="col">Total Hits</th>
-								  </tr>
-								</thead>
-								<tbody >
-								  <tr>
-									
-									<td></td>
-									<td>AK-47</td>
-									<td><%= steamProfileData.userAPIData.userKills[20].value  %></td>
-									<td><%= steamProfileData.userAPIData.userKills[54].value  %></td>
-									<td><%= steamProfileData.userAPIData.userKills[68].value  %></td>
-								
-									
-								  </tr>
-								  <tr>
-								
-									<td></td>
-									<td>M4A1</td>
-									<td><%= steamProfileData.userAPIData.userKills[177].value  %></td>
-									<td><%= steamProfileData.userAPIData.userKills[181].value  %></td>
-									<td><%= steamProfileData.userAPIData.userKills[184].value  %></td>
-									
-								  </tr>
-								  <tr>
-								
-									<td></td>
-									<td>AUG</td>
-									<td><%= steamProfileData.userAPIData.userKills[21].value  %></td>
-									<td><%= steamProfileData.userAPIData.userKills[55].value  %></td>
-									<td><%= steamProfileData.userAPIData.userKills[69].value  %></td>
-								  </tr>
-								  <tr>
-								
-									<td></td>
-									<td>AWP</td>
-									<td><%= steamProfileData.userAPIData.userKills[19].value  %></td>
-									<td><%= steamProfileData.userAPIData.userKills[53].value  %></td>
-									<td><%= steamProfileData.userAPIData.userKills[67].value  %></td>
-								  </tr>
-								  <tr>
-								
-									<td></td>
-									<td>FAMAS</td>
-									<td><%= steamProfileData.userAPIData.userKills[22].value  %></td>
-									<td><%= steamProfileData.userAPIData.userKills[56].value  %></td>
-									<td><%= steamProfileData.userAPIData.userKills[70].value  %></td>
-								  </tr>
-								
-								
-								</tbody>
-							  </table>
-							</div>
-							<div id="smg" class="tab-pane fade">
-								<table class="table table-borderless table-responsive  my-1 text-muted">
-									<thead style="background-color: #20244a;">
-									  <tr>
-										
-										<th scope="col">image</th>
-										<th scope="col">Weapon</th>
-										<th scope="col">Kills</th>
-										<th scope="col">Total Shots</th>
-										<th scope="col">Total Hits</th>
-									  </tr>
-									</thead>
-									<tbody>
-									  <tr>
-										
-										<td></td>
-										<td>P90</td>
-										<td><%= steamProfileData.userAPIData.userKills[18].value  %></td>
-										<td><%= steamProfileData.userAPIData.userKills[58].value  %></td>
-										<td><%= steamProfileData.userAPIData.userKills[72].value  %></td>
-									
-										
-									  </tr>
-									  <tr>
-									
-										<td></td>
-										<td>MP7</td>
-										<td><%= steamProfileData.userAPIData.userKills[153].value  %></td>
-										<td><%= steamProfileData.userAPIData.userKills[151].value  %></td>
-										<td><%= steamProfileData.userAPIData.userKills[152].value  %></td>
-										
-									  </tr>
-									  <tr>
-									
-										<td></td>
-										<td>Bizon</td>
-										<td><%= steamProfileData.userAPIData.userKills[168].value  %></td>
-										<td><%= steamProfileData.userAPIData.userKills[166].value  %></td>
-										<td><%= steamProfileData.userAPIData.userKills[167].value  %></td>
-									  </tr>
-									  <tr>
-									
-										<td></td>
-										<td>MAC-10</td>
-										<td><%= steamProfileData.userAPIData.userKills[16].value  %></td>
-										<td><%= steamProfileData.userAPIData.userKills[59].value  %></td>
-										<td><%= steamProfileData.userAPIData.userKills[73].value  %></td>
-									  </tr>
-									  <tr>
-									
-										<td></td>
-										<td>UMP-45</td>
-										<td><%= steamProfileData.userAPIData.userKills[17].value  %></td>
-										<td><%= steamProfileData.userAPIData.userKills[60].value  %></td>
-										<td><%= steamProfileData.userAPIData.userKills[74].value  %></td>
-									  </tr>
-									
-									
-									</tbody>
-								  </table>
-							</div>
-							<div id="heavy" class="tab-pane fade">
-								<table class="table table-borderless table-responsive  my-1 text-muted">
-									<thead style="background-color: #20244a;">
-									  <tr>
-										
-										<th scope="col">image</th>
-										<th scope="col">Weapon</th>
-										<th scope="col">Kills</th>
-										<th scope="col">Total Shots</th>
-										<th scope="col">Total Hits</th>
-									  </tr>
-									</thead>
-									<tbody>
-									  <tr>
-										
-										<td></td>
-										<td>Negev</td>
-										<td><%= steamProfileData.userAPIData.userKills[161].value  %></td>
-										<td><%= steamProfileData.userAPIData.userKills[162].value  %></td>
-										<td><%= steamProfileData.userAPIData.userKills[160].value  %></td>
-									
-										
-									  </tr>
-									  <tr>
-									
-										<td></td>
-										<td>Nova</td>
-										<td><%= steamProfileData.userAPIData.userKills[158].value  %></td>
-										<td><%= steamProfileData.userAPIData.userKills[159].value  %></td>
-										<td><%= steamProfileData.userAPIData.userKills[157].value  %></td>
-										
-									  </tr>
-									  <tr>
-									
-										<td></td>
-										<td>XM1014</td>
-										<td><%= steamProfileData.userAPIData.userKills[15].value  %></td>
-										<td><%= steamProfileData.userAPIData.userKills[61].value  %></td>
-										<td><%= steamProfileData.userAPIData.userKills[75].value  %></td>
-									  </tr>
-									  <tr>
-									
-										<td></td>
-										<td>M249</td>
-										<td><%= steamProfileData.userAPIData.userKills[24].value  %></td>
-										<td><%= steamProfileData.userAPIData.userKills[62].value  %></td>
-										<td><%= steamProfileData.userAPIData.userKills[76].value  %></td>
-									  </tr>
-									  <tr>
-									
-										<td></td>
-										<td>MAG-7</td>
-										<td><%= steamProfileData.userAPIData.userKills[174].value  %></td>
-										<td><%= steamProfileData.userAPIData.userKills[172].value  %></td>
-										<td><%= steamProfileData.userAPIData.userKills[173].value  %></td>
-									  </tr>
-									
-									
-									</tbody>
-								  </table>
-							</div>
-							<div id="pistols" class="tab-pane fade">
-								<table class="table table-borderless table-responsive my-1 text-muted">
-									<thead style="background-color: #20244a;">
-									  <tr>
-										
-										<th scope="col">image</th>
-										<th scope="col">Weapon</th>
-										<th scope="col">Kills</th>
-										<th scope="col">Total Shots</th>
-										<th scope="col">Total Hits</th>
-									  </tr>
-									</thead>
-									<tbody>
-									  <tr>
-										
-										<td></td>
-										<td>P2000</td>
-										<td><%= steamProfileData.userAPIData.userKills[136].value  %></td>
-										<td><%= steamProfileData.userAPIData.userKills[137].value  %></td>
-										<td><%= steamProfileData.userAPIData.userKills[138].value  %></td>
-									
-										
-									  </tr>
-									  <tr>
-									
-										<td></td>
-										<td>Glock-18</td>
-										<td><%= steamProfileData.userAPIData.userKills[11].value  %></td>
-										<td><%= steamProfileData.userAPIData.userKills[50].value  %></td>
-										<td><%= steamProfileData.userAPIData.userKills[64].value  %></td>
-										
-									  </tr>
-									  <tr>
-									
-										<td></td>
-										<td>Deagle</td>
-										<td><%= steamProfileData.userAPIData.userKills[12].value  %></td>
-										<td><%= steamProfileData.userAPIData.userKills[49].value  %></td>
-										<td><%= steamProfileData.userAPIData.userKills[63].value  %></td>
-									  </tr>
-									  <tr>
-									
-										<td></td>
-										<td>P250</td>
-										<td><%= steamProfileData.userAPIData.userKills[140].value  %></td>
-										<td><%= steamProfileData.userAPIData.userKills[141].value  %></td>
-										<td><%= steamProfileData.userAPIData.userKills[139].value  %></td>
-									  </tr>
-									  <tr>
-									
-										<td></td>
-										<td>Five-Seven</td>
-										<td><%= steamProfileData.userAPIData.userKills[14].value  %></td>
-										<td><%= steamProfileData.userAPIData.userKills[52].value  %></td>
-										<td><%= steamProfileData.userAPIData.userKills[66].value  %></td>
-									  </tr>
-									
-									
-									</tbody>
-								  </table>
-							</div>
-						  </div>
-						</div>
 
-						
-					</div>
-				
-				<div class="col-4">
-					<div class="card p-3 mt-4   ">
-						<h2>sdsd</h2>
-					</div>
+
+
+
+	<div class="container-fluid px-5 mt-3">
+		<input type="text" hidden name="" id="totalKills" value=<%=steamProfileData.userAPIData.userStats[0].value %>>
+		<input type="text" hidden name="" id="totalDeaths" value=<%=steamProfileData.userAPIData.userStats[1].value %>>
+		<input type="text" hidden name="" id="userID" value=<%=steamProfileData.userLastMatch.demo_id %>>
+		<input type="text" hidden name="" id="roundCT" value=<%=steamProfileData.userLastMatch.userLastTscore %>>
+		<input type="text" hidden name="" id="roundT" value=<%=steamProfileData.userLastMatch.userLastCTscore %>>
+		<input type="text" hidden name="" id="userTeam" value=<%=steamProfileData.userLastMatch.userLastMatchTeam %>>
+		<input type="text" hidden name="" id="matchDate" value=<%=steamProfileData.userLastMatch.userGameDate %>>
+		<input type="text" hidden name="" id="userRankOld" value=<%=steamProfileData.userLastMatch.userRankOld %>>
+		<input type="text" hidden name="" id="userRankNew" value=<%=steamProfileData.userLastMatch.userRankNew %>>
+
+		<input type="text" hidden name="" id="dust2Map" value=<%=steamProfileData.userAPIData.userStats[33].value %>>
+		<input type="text" hidden name="" id="infernoMap" value=<%=steamProfileData.userAPIData.userStats[35].value %>>
+		<input type="text" hidden name="" id="nukeMap" value=<%=steamProfileData.userAPIData.userStats[36].value %>>
+		<input type="text" hidden name="" id="lakeMap" value=<%=steamProfileData.userAPIData.userStats[121].value %>>
+		<input type="text" hidden name="" id="trainMap" value=<%=steamProfileData.userAPIData.userStats[37].value %>>
+		<input type="text" hidden name="" id="mapName" value=<%=steamProfileData.userLastMatch.userLastMap %>>
+
+		<div class="card p-3  matchImage " style="background-color: #3f4766;">
+			<div class="row">
+				<div class="col-1 ms-3">
+					<img class="img-fluid" src="<%= steamProfileData.userAPIData.userData.photos[2].value %>" alt="">
 				</div>
-				<div class="col-4 ms-auto ">
-					<div class="card p-3 mt-4">
-						<h2 class="mx-auto">Clutch success</h2>
-					</div>
+				<div class="col-6 ms-4 ">
+					<h1 class="mb-3 text-white">Victorys: <a href="">image</a></h1>
+					<h3 class="text-white">
+						<%= steamProfileData.userAPIData.userData.displayName %>
+					</h3>
+					<h5 class="fst-italic text-white">Last Match: 10-03-2023</h5>
+				</div>
+				<div class="col-2 me-5 mx-auto  ">
+					<h2 class=" mb-2 text-center text-white  " id="victoryOrDefeat">Victory/Defeat</h1>
+						<h2 class="text-center text-white ">
+							<%= steamProfileData.userLastMatch.userLastCTscore%> -- <%=
+									steamProfileData.userLastMatch.userLastTscore %>
+									</h1>
+									<img class="img-fluid mx-auto d-block" id="mapImage" width="90px" height="70px"
+										alt="">
+									<form class="mt-3 " action="/account/matchDetail" method="POST">
+										<input type="hidden" name="demoFileID" id="demoFileID"
+											value=<%=steamProfileData.userLastMatch.demo_id %>>
+										<input type="submit" name="btnSend" class=" btn btn-primary mx-4 btn-lg"
+											id="btnSend" value="Check Details">
+									</form>
 				</div>
 			</div>
-			
-			
-			
-	
-		
-			
-			
+
 		</div>
-	</div>
-	
+		<div class="row ">
+			<div class="col-12">
+				<h1 class="mt-3">Matchs History</h1>
+				<div class="card shadow p-3 mt-2">
 
-    
+					<img class="img-fluid mx-auto d-block" id="imgMapHistory" width="90px" height="70px" alt="">
+				</div>
+			</div>
+		</div>
+		<h1 class=" mt-3">Perfomance</h1>
+		<div class="row ">
+			<div class="col-3">
+				<div class="card shadow p-2 mt-2">
+					<div class="card-header" style="background-color: #20244a;">
+						<h5 class="my-auto">K/D</h5>
+					</div>
+					<canvas style="width:20px; height:20px" id="myChart2"></canvas>
+				</div>
+			</div>
+			<div class="col-6">
+				<div class="card shadow p-3 mt-2">
+					<div class="card-header" style="background-color: #20244a;">
+						<h5 class="my-auto">Rank History</h5>
+					</div>
+					<canvas id="MyChart1"></canvas>
+				</div>
+			</div>
+			<div class="col-3">
+				<div class="card shadow p-3 mt-2">
+					<div class="card-header" style="background-color: #20244a;">
+						<h5 class="my-auto">Rounds wins </h5>
+					</div>
+					<canvas style="width:70px; height:20px" id="myChart3"></canvas>
+				</div>
+			</div>
+		</div>
+
+		<div class="row justify-content-center mt-5 ">
+			<div class="col-3">
+				<div class="card shadow p-3 mt-4   ">
+					<h2>sdsd</h2>
+				</div>
+			</div>
+			<div class="col-6  ">
+				<div class="card shadow text-white p-3 mt-4 ">
+
+					<div class="card-header" style="background-color: #20244a;">
+						<h5 class="my-auto">Top 5 weapons</h5>
+					</div>
+					<ul class="nav nav-tabs card-header-tabs mt-2 mx-auto " data-bs-tabs="tabs">
+						<li class="nav-item active">
+							<a class="nav-link active" aria-current="true" data-bs-toggle="tab"
+								href="#rifles">Rifles</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" data-bs-toggle="tab" href="#smg">SMG</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" data-bs-toggle="tab" href="#heavy">Heavy Weapons</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" data-bs-toggle="tab" href="#pistols">Pistols</a>
+						</li>
+					</ul>
+					<div class="tab-content mt-4">
+						<div id="rifles" class="tab-pane fade in active">
+
+							<table class="table table-borderless table-responsive  my-1 text-muted ">
+								<thead style="background-color: #20244a;">
+									<tr>
+
+										<th scope="col"></th>
+										<th scope="col">Weapon</th>
+										<th scope="col">Kills</th>
+										<th scope="col">Total Shots</th>
+										<th scope="col">Total Hits</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+
+										<td><img id="akImage" width="90px" height="30px"></img></td>
+										<td>AK-47</td>
+										<td>
+											<%= steamProfileData.userAPIData.userStats[20].value %>
+										</td>
+										<td>
+											<%= steamProfileData.userAPIData.userStats[54].value %>
+										</td>
+										<td>
+											<%= steamProfileData.userAPIData.userStats[68].value %>
+										</td>
+
+
+									</tr>
+									<tr>
+
+										<td><img id="m4Image" width="90px" height="30px"></img></td>
+										<td>M4A1</td>
+										<td>
+											<%= steamProfileData.userAPIData.userStats[177].value %>
+										</td>
+										<td>
+											<%= steamProfileData.userAPIData.userStats[181].value %>
+										</td>
+										<td>
+											<%= steamProfileData.userAPIData.userStats[184].value %>
+										</td>
+
+									</tr>
+									<tr>
+
+										<td><img id="awpImage" width="90px" height="30px"></img></td>
+										<td>AWP</td>
+										<td>
+											<%= steamProfileData.userAPIData.userStats[19].value %>
+										</td>
+										<td>
+											<%= steamProfileData.userAPIData.userStats[53].value %>
+										</td>
+										<td>
+											<%= steamProfileData.userAPIData.userStats[67].value %>
+										</td>
+									</tr>
+									<tr>
+
+										<td><img id="augImage" width="90px" height="30px"></img></td>
+										<td>AUG</td>
+										<td>
+											<%= steamProfileData.userAPIData.userStats[21].value %>
+										</td>
+										<td>
+											<%= steamProfileData.userAPIData.userStats[55].value %>
+										</td>
+										<td>
+											<%= steamProfileData.userAPIData.userStats[69].value %>
+										</td>
+									</tr>
+								
+									<tr>
+
+										<td><img id="famasImage" width="90px" height="30px"></img></td>
+										<td>FAMAS</td>
+										<td>
+											<%= steamProfileData.userAPIData.userStats[22].value %>
+										</td>
+										<td>
+											<%= steamProfileData.userAPIData.userStats[56].value %>
+										</td>
+										<td>
+											<%= steamProfileData.userAPIData.userStats[70].value %>
+										</td>
+									</tr>
+
+
+								</tbody>
+							</table>
+						</div>
+						<div id="smg" class="tab-pane fade">
+							<table class="table table-borderless table-responsive  my-1 text-muted">
+								<thead style="background-color: #20244a;">
+									<tr>
+
+										<th scope="col"></th>
+										<th scope="col">Weapon</th>
+										<th scope="col">Kills</th>
+										<th scope="col">Total Shots</th>
+										<th scope="col">Total Hits</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+
+										<td><img id="p90Image" width="70px" height="30px"></img></td>
+										<td>P90</td>
+										<td>
+											<%= steamProfileData.userAPIData.userStats[18].value %>
+										</td>
+										<td>
+											<%= steamProfileData.userAPIData.userStats[58].value %>
+										</td>
+										<td>
+											<%= steamProfileData.userAPIData.userStats[72].value %>
+										</td>
+
+
+									</tr>
+									<tr>
+
+										<td><img id="mp7Image" width="70px" height="30px"></img></td>
+										<td>MP7</td>
+										<td>
+											<%= steamProfileData.userAPIData.userStats[153].value %>
+										</td>
+										<td>
+											<%= steamProfileData.userAPIData.userStats[151].value %>
+										</td>
+										<td>
+											<%= steamProfileData.userAPIData.userStats[152].value %>
+										</td>
+
+									</tr>
+									<tr>
+
+										<td><img id="bizonImage" width="70px" height="30px"></img></td>
+										<td>Bizon</td>
+										<td>
+											<%= steamProfileData.userAPIData.userStats[168].value %>
+										</td>
+										<td>
+											<%= steamProfileData.userAPIData.userStats[166].value %>
+										</td>
+										<td>
+											<%= steamProfileData.userAPIData.userStats[167].value %>
+										</td>
+									</tr>
+									<tr>
+
+										<td><img id="macImage" width="70px" height="30px"></img></td>
+										<td>MAC-10</td>
+										<td>
+											<%= steamProfileData.userAPIData.userStats[16].value %>
+										</td>
+										<td>
+											<%= steamProfileData.userAPIData.userStats[59].value %>
+										</td>
+										<td>
+											<%= steamProfileData.userAPIData.userStats[73].value %>
+										</td>
+									</tr>
+									<tr>
+
+										<td><img id="umpImage" width="70px" height="30px"></img></td>
+										<td>UMP-45</td>
+										<td>
+											<%= steamProfileData.userAPIData.userStats[17].value %>
+										</td>
+										<td>
+											<%= steamProfileData.userAPIData.userStats[60].value %>
+										</td>
+										<td>
+											<%= steamProfileData.userAPIData.userStats[74].value %>
+										</td>
+									</tr>
+
+
+								</tbody>
+							</table>
+						</div>
+						<div id="heavy" class="tab-pane fade">
+							<table class="table table-borderless table-responsive  my-1 text-muted">
+								<thead style="background-color: #20244a;">
+									<tr>
+
+										<th scope="col"></th>
+										<th scope="col">Weapon</th>
+										<th scope="col">Kills</th>
+										<th scope="col">Total Shots</th>
+										<th scope="col">Total Hits</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+
+										<td><img id="negevImage" width="90px" height="30px"></img></td>
+										<td>Negev</td>
+										<td>
+											<%= steamProfileData.userAPIData.userStats[161].value %>
+										</td>
+										<td>
+											<%= steamProfileData.userAPIData.userStats[162].value %>
+										</td>
+										<td>
+											<%= steamProfileData.userAPIData.userStats[160].value %>
+										</td>
+
+
+									</tr>
+									<tr>
+
+										<td><img id="novaImage" width="90px" height="30px"></img></td>
+										<td>Nova</td>
+										<td>
+											<%= steamProfileData.userAPIData.userStats[158].value %>
+										</td>
+										<td>
+											<%= steamProfileData.userAPIData.userStats[159].value %>
+										</td>
+										<td>
+											<%= steamProfileData.userAPIData.userStats[157].value %>
+										</td>
+
+									</tr>
+									<tr>
+
+										<td><img id="xm1014Image" width="90px" height="30px"></img></td>
+										<td>XM1014</td>
+										<td>
+											<%= steamProfileData.userAPIData.userStats[15].value %>
+										</td>
+										<td>
+											<%= steamProfileData.userAPIData.userStats[61].value %>
+										</td>
+										<td>
+											<%= steamProfileData.userAPIData.userStats[75].value %>
+										</td>
+									</tr>
+									<tr>
+
+										<td><img id="m249Image" width="90px" height="30px"></img></td>
+										<td>M249</td>
+										<td>
+											<%= steamProfileData.userAPIData.userStats[24].value %>
+										</td>
+										<td>
+											<%= steamProfileData.userAPIData.userStats[62].value %>
+										</td>
+										<td>
+											<%= steamProfileData.userAPIData.userStats[76].value %>
+										</td>
+									</tr>
+									<tr>
+
+										<td><img id="magImage" width="90px" height="30px"></img></td>
+										<td>MAG-7</td>
+										<td>
+											<%= steamProfileData.userAPIData.userStats[174].value %>
+										</td>
+										<td>
+											<%= steamProfileData.userAPIData.userStats[172].value %>
+										</td>
+										<td>
+											<%= steamProfileData.userAPIData.userStats[173].value %>
+										</td>
+									</tr>
+
+
+								</tbody>
+							</table>
+						</div>
+						<div id="pistols" class="tab-pane fade">
+							<table class="table table-borderless table-responsive my-1 text-muted">
+								<thead style="background-color: #20244a;">
+									<tr>
+
+										<th scope="col"></th>
+										<th scope="col">Weapon</th>
+										<th scope="col">Kills</th>
+										<th scope="col">Total Shots</th>
+										<th scope="col">Total Hits</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+
+										<td><img id="p2000Image" width="50px" height="35px"></img></td>
+										<td>P2000</td>
+										<td>
+											<%= steamProfileData.userAPIData.userStats[136].value %>
+										</td>
+										<td>
+											<%= steamProfileData.userAPIData.userStats[137].value %>
+										</td>
+										<td>
+											<%= steamProfileData.userAPIData.userStats[138].value %>
+										</td>
+
+
+									</tr>
+									<tr>
+
+										<td><img id="glockImage" width="50px" height="35px"></img></td>
+										<td>Glock-18</td>
+										<td>
+											<%= steamProfileData.userAPIData.userStats[11].value %>
+										</td>
+										<td>
+											<%= steamProfileData.userAPIData.userStats[50].value %>
+										</td>
+										<td>
+											<%= steamProfileData.userAPIData.userStats[64].value %>
+										</td>
+
+									</tr>
+									<tr>
+
+										<td><img id="deagleImage" width="50px" height="35px"></img></td>
+										<td>Deagle</td>
+										<td>
+											<%= steamProfileData.userAPIData.userStats[12].value %>
+										</td>
+										<td>
+											<%= steamProfileData.userAPIData.userStats[49].value %>
+										</td>
+										<td>
+											<%= steamProfileData.userAPIData.userStats[63].value %>
+										</td>
+									</tr>
+									<tr>
+
+										<td><img id="p250Image" width="50px" height="40px"></img></td>
+										<td>P250</td>
+										<td>
+											<%= steamProfileData.userAPIData.userStats[140].value %>
+										</td>
+										<td>
+											<%= steamProfileData.userAPIData.userStats[141].value %>
+										</td>
+										<td>
+											<%= steamProfileData.userAPIData.userStats[139].value %>
+										</td>
+									</tr>
+									<tr>
+
+										<td><img id="fiveSevenImage" width="50px" height="40px"></img></td>
+										<td>Five-Seven</td>
+										<td>
+											<%= steamProfileData.userAPIData.userStats[14].value %>
+										</td>
+										<td>
+											<%= steamProfileData.userAPIData.userStats[52].value %>
+										</td>
+										<td>
+											<%= steamProfileData.userAPIData.userStats[66].value %>
+										</td>
+									</tr>
+
+
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+
+
+			</div>
+
+
+			<div class="col-3 ms-auto ">
+				<div class="card shadow p-3 mt-4">
+					<h2 class="mx-auto">Clutch success</h2>
+				</div>
+			</div>
+		</div>
+
+
+
+
+
+
+
+	</div>
+</div>	
+	</div>
+
 </body>
 <script src="/bootstrap.min.js"></script>
 <script type="text/javascript" src="chart.min.js"></script>
+<script type="text/javascript" src="csgo weapons/icons.js"></script>
 <script type="text/javascript" src="JavaScript/profileCharts/middleChart.js"></script>
 <script type="text/javascript" src="JavaScript/profileCharts/leftChart.js"></script>
 <script type="text/javascript" src="JavaScript/profileCharts/rightChart.js"></script>
 <script type="text/javascript" src="JavaScript/profile.js"></script>
 
 </html>
-
-
-
-
-
-

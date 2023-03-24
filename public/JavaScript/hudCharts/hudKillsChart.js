@@ -163,9 +163,10 @@ const data_bar_chart = {
   labels: labels_bar_chart,
   datasets: [{
     label: ['CT Consecutive Loss','T Consecutive Loss'],
-    backgroundColor: ['rgba(255, 99, 132,1)',"green"],
-    borderColor: ['rgba(255, 99, 132,1)', "green"],
+    backgroundColor: ['rgba(255, 99, 132,0.2)',"green"],
+    borderColor: ['rgb(255, 99, 132)', "green"],
     barPercentage:0.4,
+    borderWith:1,
     data: [],
   },
   

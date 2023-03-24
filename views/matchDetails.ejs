@@ -5,15 +5,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Match Details</title>
     <link rel="stylesheet" href="bootstrap.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="gradient-custom">
-    <nav class="navbar navbar-expand-lg navbar-light ">
+<body >
+  <div class="img-bg" >
+  <input type="text" hidden name="" id="totalKills" value=<%= dataDemoFile.userLastMatch.userLastMatchTeamKDA.kills %>>
+  <input type="text" hidden name="" id="totalDeaths" value=<%= dataDemoFile.userLastMatch.userLastMatchTeamKDA.deaths %>>
+  <input type="text" hidden name="" id="totalAssists" value=<%= dataDemoFile.userLastMatch.userLastMatchTeamKDA.assists %>>
+    <nav class="navbar navbar-expand-lg shadow " style="background-color: #20244a;">
         <div class="container-fluid">
-            <a class="navbar-brand " href="#">RT:STATS</a>
+            <a class="navbar-brand " href="/account/profile">RT:STATS</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -21,23 +25,21 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ms-auto">
                     <a class="nav-link" href="/account/profile">Profile</a>
-                    <a class="nav-link" href="#">Settings</a>
+                   
                     <a class="nav-link" href="logout">Logout</a>
                 </div>
             </div>
         </div>
     </nav>
-    <input type="text" hidden name="" id="totalKills" value=<%= dataDemoFile.userLastMatch.userLastMatchTeamKDA.kills %>>
-    <input type="text" hidden name="" id="totalDeaths" value=<%= dataDemoFile.userLastMatch.userLastMatchTeamKDA.deaths %>>
-    <input type="text" hidden name="" id="totalAssists" value=<%= dataDemoFile.userLastMatch.userLastMatchTeamKDA.assists %>>
+   
     <header class="masthead">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
-                <div class="col-3 text-center">
-                    <h5 class="text-white text-end">
+                <div class="col-3 ">
+                    <h5 class="text-white text-center">
                         CT
                     </h5>
-                    <h1 class="text-white text-end">
+                    <h1 class="text-white text-center">
                         <%= dataDemoFile.userLastMatch.userLastCTscore %>
                     </h1>
 
@@ -51,11 +53,11 @@
                     </h5>
 
                 </div>
-                <div class="col-3 text-center">
-                    <h5 class="text-white text-start">
+                <div class="col-3 ">
+                    <h5 class="text-white text-center">
                         Terrorist
                     </h5>
-                    <h1 class="text-white text-start">
+                    <h1 class="text-white text-center">
                         <%= dataDemoFile.userLastMatch.userLastTscore %>
                     </h1>
 
@@ -64,38 +66,14 @@
         </div>
     </header>
 
-    <div class="section-2 ">
+    
         <div class="container-fluid px-5 my-2  " >
 
 
             <div class="row ">
-                <div class="col-1 ">
-                    
-                </div>
-                <div class="card shadow  col-4 my-2 ">
-                    <div class="card-header">
-                      <h5>Favorite Gun</h5>
-                      </div>
-                      <div class="card-body">
-                          <ul class="list-group list-group-horizontal ">
-                              <li class="list-group-item">
-                                <div class="card-title">
-                                    <h5>Favorite Gun</h5>
-                                </div>
-                                  <%= dataAPI.steamUser_APIGame_Data[94].value %>
-                              </li>
-                              <li class="list-group-item">
-                                <h5 class="card-title">Shots</h5>
-                                <%= dataAPI.steamUser_APIGame_Data[95].value %>
-                            </li>
-                            <li class="list-group-item">
-                                <h5 class="card-title">Favorite Gun Kills</h5>
-                                <%= dataAPI.steamUser_APIGame_Data[97].value %>
-                            </li>
-                          </ul>
-                      </div>
-                </div>
-                <div class="col-6 my-2 "  >
+              
+               
+                <div class="col-6 my-2 mx-auto "  >
                     <div class=" card shadow   col-12 mx-auto " style="background-color:#385170 ;">
                         <div class="card-header">
                             <h5>KDA</h5>
@@ -105,9 +83,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-1 ms-5">
-                    
-                </div>
+              
                 
 
 
@@ -200,8 +176,8 @@
         
 
         </div>
-    </div>
-
+  
+      </div>
 </body>
 <script src="/bootstrap.min.js"></script>
 <script type="text/javascript" src="chart.min.js"></script>

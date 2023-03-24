@@ -4,7 +4,7 @@ const DemoDataSchema= new mongoose.Schema({
     
     demo_Data:{
         type:Object,
-        date:Date
+        gameDate:Date
          
     },
     

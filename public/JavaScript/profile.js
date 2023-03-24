@@ -1,6 +1,4 @@
-var rankOld= document.getElementById('userRankOld').value;
-var rankNew= document.getElementById('userRankNew').value;
-var date= document.getElementById('matchDate').value;
+
 
 console.log("Old Rank: "+rankOld+" "+"New Rank: "+rankNew+" "+"Date: "+date);
 
