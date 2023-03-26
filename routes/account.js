@@ -293,9 +293,15 @@ accountRoute.get('/profile', ensureAuthenticated, (req, res)=>{
 
          
     ]
-    const kdaPlayers=[
-      
-    ]
+    const kdaPlayers= result.demo_Data[173]   
+
+   for (let i = 0; i < kdaPlayers.length; i++) {
+    const element = kdaPlayers[i];
+    console.log(element.playerPostMatchStats.playerName);
+    
+   }
+    
+
     // for (let i = 0; i < roundDemoLogs.length; i++) {
     //   const element = roundDemoLogs[i];
     //   //console.log(element);
@@ -314,7 +320,7 @@ accountRoute.get('/profile', ensureAuthenticated, (req, res)=>{
      
        
                   
-        res.render('matchDetails',  { dataDemoFile: userStatsDemoFile,roundData:roundDemoLogs});
+        res.render('matchDetails',  { dataDemoFile: userStatsDemoFile,roundData:roundDemoLogs,playerKda:kdaPlayers});
       
     
        

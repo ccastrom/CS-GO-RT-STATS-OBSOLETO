@@ -73,7 +73,7 @@
             <div class="row ">
               
                
-                <div class="col-6 my-2 mx-auto "  >
+                <div class="col-6 my-2  "  >
                     <div class=" card shadow   col-12 mx-auto " style="background-color:#385170 ;">
                         <div class="card-header">
                             <h5>KDA</h5>
@@ -83,6 +83,39 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-6 my-2">
+                  <div class=" card shadow   col-10 mx-auto " style="background-color:#385170 ;">
+                    <div class="card-header"> 
+                      <h5>Players KDA</h5>
+                    </div>
+                      <table class="table table-borderless table-responsive  my-1 text-light text-center ">
+                        <thead>
+                          <tr>
+                            <th scope="col">Player Name</th>
+                            <th scope="col">Kills</th>
+                            <th scope="col">Assists</th>
+                            <th scope="col">Deaths</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <%   for (let i = 1; i < playerKda.length; i++) { %>
+                          <tr>
+                            
+                              <td><%= playerKda[i].playerPostMatchStats.playerName %></td>
+                              <td><%= playerKda[i].playerPostMatchStats.kills %></td>
+                              <td><%= playerKda[i].playerPostMatchStats.deaths %></td>
+                              <td><%= playerKda[i].playerPostMatchStats.assists %></td>
+                            
+                            
+                          </tr>
+
+                          <% } %> 
+                        </tbody>
+                        </table>
+
+                   
+                    </div>
+                </div>
               
                 
 
@@ -90,7 +123,7 @@
 
             </div>
             <div class="row ">
-                <div class="col-10 mx-auto card shadow" >
+                <div class="col-12 mx-auto card shadow " >
                   <div class="card-header">
                     <h5>Round History</h5>
                     </div>
