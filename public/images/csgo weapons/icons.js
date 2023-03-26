@@ -88,3 +88,4 @@ document.getElementById("glockImage").src=icons.glock;
 document.getElementById("deagleImage").src=icons.deagle;
 document.getElementById("p250Image").src=icons.p250;
 document.getElementById("fiveSevenImage").src=icons.fiveseven;
+

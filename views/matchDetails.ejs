@@ -97,7 +97,7 @@
                   <div id="carouselExampleControls" class="carousel slide"  data-bs-interval="false" data-bs-ride="carousel">
                     <div class="carousel-inner">
                       <div class="carousel-item active">
-                        <table class="table table-success">
+                        <table class="table table-borderless table-responsive  my-1 text-light ">
                           <thead>
                             <tr>
                               <th scope="col">Round 0</th>
@@ -107,23 +107,17 @@
                             </tr>
                           </thead>
                           <tbody>
-                            <tr>
-                              <th scope="row"></th>
-                              <td>Mark</td>
-                              <td>Otto</td>
-                              <td>@mdo</td>
-                            </tr>
-                            <tr>
-                              <th scope="row"></th>
-                              <td>Jacob</td>
-                              <td>Thornton</td>
-                              <td>@fat</td>
-                            </tr>
-                            <tr>
-                              <th scope="row"></th>
-                              <td colspan="2">Larry the Bird</td>
-                              <td>@twitter</td>
-                            </tr>
+                            <%   for (let i = 0; i < roundData[0][1].length; i++) { %>
+                              <tr>
+                                <th scope="row"></th>
+                                
+                                <td><%= roundData[0][1][i].AttackerLogs.attacker %></td>
+                                <td><%= roundData[0][1][i].AttackerLogs.weaponUsed %></td>
+                                <td><%= roundData[0][1][i].AttackerLogs.victim %></td>
+                                
+                              </tr>
+                              <% }%>
+                           
                           </tbody>
                         </table>
                       </div>
@@ -131,7 +125,7 @@
                       <%   for (let i = 1; i < roundData.length; i++) { %>
                        
                       <div class="carousel-item">
-                        <table class="table table-success">
+                        <table class="table table-borderless table-responsive  my-1 text-light ">
                           <thead>
                             <tr>
                               <th scope="col">Round <%= i %></th>
@@ -141,15 +135,21 @@
                             </tr>
                           </thead>
                           <tbody>
-                         
+                            <%   for (let j = 0; j < roundData[i][1].length; j++) { %>
                             <tr>
                               <th scope="row"></th>
                               
-                              <td>Mark</td>
-                              <td>Otto</td>
-                              <td>@mdo</td>
+                              <td><%= roundData[i][1][j].AttackerLogs.attacker %></td>
+                              <td><%= roundData[i][1][j].AttackerLogs.weaponUsed %>
+                                <%= roundData[i][1][j].AttackerLogs.headshotStatus %>
+                               </td>
+                              <td><%= roundData[i][1][j].AttackerLogs.victim %></td>
                               
                             </tr>
+                            <% }%>
+                          
+                          
+                           
                           
                            
                           </tbody>
