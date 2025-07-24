@@ -1,5 +1,19 @@
-Para la persona que vaya a leer el código de esta atrocidad de proyecto pido disculpas. No se burlen del Claudio del pasado, si no de este, que sigue haciendo las mismas estupideces, no aprende y se frustra. 
-- Nota mental: Queda pendiente reworkear este proyecto.
-- Nota mental 2: No tocar nada, ni una línea de código, ni un mismismo .SVG, no sé como funciona así que lo dejo tal cual para rescatar algo.
-- Nota mental 3: Me agradezco de haber comprado un segundo monitor, porque si que es entretenido tener 5 ventanas abiertas en una misma pantalla.
-- Nota mental 4: Aprender a utilizar bien el markdown
+# 🕹️ [CS:GO STATS] - Análisis en tiempo real y post-partida para jugadores competitivos
+
+🚀 Aplicación web diseñada para capturar, visualizar y almacenar datos en tiempo real del videojuego **Counter-Strike: Global Offensive** (CS:GO), con el objetivo de apoyar la mejora continua del jugador mediante el análisis de métricas.
+
+🎮 Utilizando la funcionalidad **Game State Integration** (GSI),un archivo de texto almacenado en la carpeta del juego, el sistema recibe eventos en tiempo real con información básica del estado de la partida, tales como:
+
+- estado del jugador (vivo,muerto,desconectado)
+- número de rondas 
+- recursos
+- equipo ganador y perdedor 
+- armas equipadas 
+
+🧩 Para acceder a estadísticas más profundas, se emplea paquetes de terceros (NPM) que permite recuperar:
+- Perfil público de steam del jugador
+- Estadísticas globales del jugador (mapas más jugados, armas favoritas, KDA, etc.)
+- 📂 Análisis profundo de replays (`.dem`) para obtener:
+  -  Coordenadas de cada jugador
+  - 🔫 Seguimiento de asesinatos por ronda
+  - 📋 Eventos detallados (quién mató a quién, con qué arma y en qué momento)
