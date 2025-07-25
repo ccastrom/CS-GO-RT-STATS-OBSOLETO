@@ -31,16 +31,16 @@ A continuación se detallan las principales tecnologías empleadas en el desarro
   <img src="assets/back-end/express.png" alt="express" width="70"/>
      <sub>Express.js</sub>
   &nbsp;&nbsp;&nbsp;&nbsp;
-   <img src="assets/back-end/socketIO.png" alt="mongo" width="80"/>
+   <img src="assets/back-end/socketIO.png" alt="socketIO" width="80"/>
 </p>
 
 ## 🎨 Front-end
 
 <p align="left">
-  <img src="assets/front-end/bootstrap.png" alt="Node.js" width="70"/>
+  <img src="assets/front-end/bootstrap.png" alt="bootstrap" width="70"/>
      <sub>Bootstrap</sub>
   &nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="assets/front-end/chartjs.png" alt="mongo" width="70"/>
+  <img src="assets/front-end/chartjs.png" alt="chartjs" width="70"/>
   &nbsp;&nbsp;&nbsp;&nbsp;
    <a href="https://www.npmjs.com/package/ejs">
   <img src="assets/front-end/ejs_icon.png" alt="EJS" width="70" />
@@ -54,16 +54,16 @@ A continuación se detallan las principales tecnologías empleadas en el desarro
      <sub>Passport</sub>
   &nbsp;&nbsp;&nbsp;&nbsp;
   <a href="https://www.npmjs.com/package/steam">
-  <img src="assets/NPM/steam.png" alt="EJS" width="110" />
+  <img src="assets/NPM/steam.png" alt="steam" width="110" />
   &nbsp;&nbsp;&nbsp;&nbsp;
   <a href="https://www.npmjs.com/package/steam-web">
-  <img src="assets/NPM/steam-web.png" alt="EJS" width="110" />
+  <img src="assets/NPM/steam-web.png" alt="steam-web" width="110" />
   &nbsp;&nbsp;&nbsp;&nbsp;
   <a href="https://www.npmjs.com/package/csgo">
-  <img src="assets/NPM/CSGO.png" alt="EJS" width="120" />
+  <img src="assets/NPM/CSGO.png" alt="csgo" width="120" />
   &nbsp;&nbsp;&nbsp;&nbsp;
   <a href="https://www.npmjs.com/package/demofile">
-  <img src="assets/NPM/demo_file.png" alt="EJS" width="120" />
+  <img src="assets/NPM/demo_file.png" alt="demo_file" width="120" />
   
    
   
