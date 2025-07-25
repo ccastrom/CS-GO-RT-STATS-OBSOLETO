@@ -43,9 +43,9 @@ A continuación se detallan las principales tecnologías empleadas en el desarro
   <img src="assets/front-end/chartjs.png" alt="chartjs" width="70"/>
   &nbsp;&nbsp;&nbsp;&nbsp;
    <a href="https://www.npmjs.com/package/ejs">
-  <img src="assets/front-end/ejs_icon.png" alt="EJS" width="70" />
+  <img src="assets/front-end/ejs_icon.png" alt="EJS" width="70" /></a>
     
-  &nbsp;&nbsp;&nbsp;&nbsp;
+
   </p>
   
 ## 📦 NPM
@@ -54,19 +54,19 @@ A continuación se detallan las principales tecnologías empleadas en el desarro
      <sub>Passport</sub>
   &nbsp;&nbsp;&nbsp;&nbsp;
   <a href="https://www.npmjs.com/package/steam">
-  <img src="assets/NPM/steam.png" alt="steam" width="110" />
+  <img src="assets/NPM/steam.png" alt="steam" width="110" /></a>
   &nbsp;&nbsp;&nbsp;&nbsp;
   <a href="https://www.npmjs.com/package/steam-web">
-  <img src="assets/NPM/steam-web.png" alt="steam-web" width="110" />
+  <img src="assets/NPM/steam-web.png" alt="steam-web" width="110" /></a>
   &nbsp;&nbsp;&nbsp;&nbsp;
   <a href="https://www.npmjs.com/package/csgo">
-  <img src="assets/NPM/csgo.png" alt="csgo" width="120" />
+  <img src="assets/NPM/csgo.png" alt="csgo" width="120" /></a>
   &nbsp;&nbsp;&nbsp;&nbsp;
   <a href="https://www.npmjs.com/package/demofile">
-  <img src="assets/NPM/demo_file.png" alt="demo_file" width="120" />
+  <img src="assets/NPM/demo_file.png" alt="demo_file" width="120" /></a>
   
-   
+
   
-</a>
+
  
 </p>
