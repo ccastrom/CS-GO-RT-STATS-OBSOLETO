@@ -41,10 +41,10 @@ A continuación se detallan las principales tecnologías empleadas en el desarro
      <sub>Bootstrap</sub>
   &nbsp;&nbsp;&nbsp;&nbsp;
   <img src="assets/front-end/chartjs.png" alt="mongo" width="70"/>
-     <sub>MongoDB</sub>
   &nbsp;&nbsp;&nbsp;&nbsp;
-    <img src="assets/front-end/ejs_icon.png" alt="mongo" width="70"/>
-     <sub>Embedded JavaScript templating</sub>
+   <a href="https://www.npmjs.com/package/ejs">
+  <img src="assets/front-end/ejs_icon.png" alt="EJS" width="70" />
+    
   &nbsp;&nbsp;&nbsp;&nbsp;
   </p>
   
@@ -53,8 +53,20 @@ A continuación se detallan las principales tecnologías empleadas en el desarro
   <img src="assets/NPM/passport.png" alt="mongo" width="70"/>
      <sub>Passport</sub>
   &nbsp;&nbsp;&nbsp;&nbsp;
-   <img src="assets/NPM/steam-web.png" alt="mongo" width="120"/>
+  <a href="https://www.npmjs.com/package/steam">
+  <img src="assets/NPM/steam.png" alt="EJS" width="110" />
   &nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="assets/NPM/csgo.png" alt="mongo" width="120"/>
+  <a href="https://www.npmjs.com/package/steam-web">
+  <img src="assets/NPM/steam-web.png" alt="EJS" width="110" />
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="https://www.npmjs.com/package/csgo">
+  <img src="assets/NPM/CSGO.png" alt="EJS" width="120" />
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="https://www.npmjs.com/package/demofile">
+  <img src="assets/NPM/demo_file.png" alt="EJS" width="120" />
+  
+   
+  
+</a>
  
 </p>
