@@ -126,7 +126,7 @@ var onSteamLogOn = function onSteamLogOn(response){
     }
 
 var username = 'franz09ish'
-var password = 'youtube11'
+var password = ''
 
 
 var logOnDetails = {

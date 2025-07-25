@@ -1,6 +1,3 @@
-
-# 🕹️ [CS:GO STATS] - Análisis en tiempo real y post-partida para jugadores competitivos
-
 🚀 Aplicación web diseñada para capturar, visualizar y almacenar datos en tiempo real del videojuego **Counter-Strike: Global Offensive** (CS:GO), con el objetivo de apoyar la mejora continua del jugador mediante el análisis de métricas.
 
 🎮 Utilizando la funcionalidad **Game State Integration** (GSI),un archivo de texto almacenado en la carpeta del juego, el sistema recibe eventos en tiempo real con información básica del estado de la partida, tales como:
@@ -19,5 +16,49 @@
   - 🔫 Seguimiento de asesinatos por ronda
   - 📋 Eventos detallados (quién mató a quién, con qué arma y en qué momento)
 
+# ⚙️ Stack tecnológico
+A continuación se detallan las principales tecnologías empleadas en el desarrollo del sistema, tanto para la recolección de datos como para la visualización y almacenamiento:
 
+## 🔧 Back-End
 
+<p align="left">
+  <img src="assets/back-end/nodejs.png" alt="Node.js" width="70"/>
+     <sub>Node.js</sub>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="assets/back-end/mongoDB.png" alt="mongo" width="70"/>
+     <sub>MongoDB</sub>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="assets/back-end/express.png" alt="express" width="70"/>
+     <sub>Express.js</sub>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+   <img src="assets/back-end/socketIO.png" alt="mongo" width="80"/>
+</p>
+
+## 🎨 Front-end
+
+<p align="left">
+  <img src="assets/front-end/bootstrap.png" alt="Node.js" width="70"/>
+     <sub>Bootstrap</sub>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="assets/front-end/chartjs.png" alt="mongo" width="70"/>
+     <sub>MongoDB</sub>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+    <img src="assets/front-end/ejs_icon.png" alt="mongo" width="70"/>
+     <sub>Embedded JavaScript templating</sub>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  
+## 📦 NPM
+ 
+  <img src="assets/NPM/passport.png" alt="mongo" width="70"/>
+     <sub>Passport</sub>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+   <img src="assets/NPM/steam-web.png" alt="mongo" width="120"/>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="assets/NPM/csgo.png" alt="mongo" width="120"/>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+   
+     
+  &nbsp;&nbsp;&nbsp;&nbsp;
+
+ 
+</p>
