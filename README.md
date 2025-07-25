@@ -46,19 +46,15 @@ A continuación se detallan las principales tecnologías empleadas en el desarro
     <img src="assets/front-end/ejs_icon.png" alt="mongo" width="70"/>
      <sub>Embedded JavaScript templating</sub>
   &nbsp;&nbsp;&nbsp;&nbsp;
+  </p>
   
 ## 📦 NPM
- 
+ <p align="left">
   <img src="assets/NPM/passport.png" alt="mongo" width="70"/>
      <sub>Passport</sub>
   &nbsp;&nbsp;&nbsp;&nbsp;
    <img src="assets/NPM/steam-web.png" alt="mongo" width="120"/>
   &nbsp;&nbsp;&nbsp;&nbsp;
   <img src="assets/NPM/csgo.png" alt="mongo" width="120"/>
-  &nbsp;&nbsp;&nbsp;&nbsp;
-   
-     
-  &nbsp;&nbsp;&nbsp;&nbsp;
-
  
 </p>
