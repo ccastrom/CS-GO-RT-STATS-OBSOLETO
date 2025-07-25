@@ -60,7 +60,7 @@ A continuación se detallan las principales tecnologías empleadas en el desarro
   <img src="assets/NPM/steam-web.png" alt="steam-web" width="110" />
   &nbsp;&nbsp;&nbsp;&nbsp;
   <a href="https://www.npmjs.com/package/csgo">
-  <img src="assets/NPM/CSGO.png" alt="csgo" width="120" />
+  <img src="assets/NPM/csgo.png" alt="csgo" width="120" />
   &nbsp;&nbsp;&nbsp;&nbsp;
   <a href="https://www.npmjs.com/package/demofile">
   <img src="assets/NPM/demo_file.png" alt="demo_file" width="120" />
